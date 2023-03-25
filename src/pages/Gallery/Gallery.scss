@@ -1,0 +1,148 @@
+.gallery_container {
+  padding-top: 4rem;
+}
+
+.photo-gallery-cont {
+  width: 90%;
+  margin: 6rem auto;
+}
+
+.photo-gallery {
+  /* add code here*/
+  display: flex;
+  gap: 20px;
+}
+
+.photo-gallery .column {
+  /* add code here*/
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.photo-item img {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* add code here: add a media query here */
+@media only screen and (max-width: 768px) {
+  .photo-gallery {
+    flex-direction: column;
+  }
+}
+
+.photo-item {
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+.gallery_popup {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  z-index: 1;
+}
+
+
+
+
+.slideshow-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999;
+
+  .slide {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img-display {
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -3rem;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      gap: 1rem;
+      position: absolute;
+      bottom: 8%;
+
+      @media screen and (max-width:800px) {
+        bottom: 10%;
+      }
+
+      button {
+        border-radius: 100%;
+        height: 3rem;
+        width: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(84, 84, 84);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgb(206, 205, 205);
+      }
+    }
+
+    img {
+      height: 70vh;
+
+      @media screen and (max-width:800px) {
+        height: unset;
+        width: 95%;
+      }
+    }
+  }
+}
+
+
+.image-container {
+  columns: 3 10rem;
+  gap: 1.5rem;
+
+  @media screen and (max-width:1000px) {
+    columns: 2 10rem;
+  }
+
+  @media screen and (max-width:750px) {
+    columns: 1 10rem;
+  }
+
+  img {
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+    filter: brightness(0.9);
+    transition: ease-in-out 0.1s;
+  }
+  img:hover{
+    filter: brightness(1);
+  }
+}
