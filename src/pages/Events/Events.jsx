@@ -6,7 +6,7 @@ const Events = () => {
   return (
     <div className='pt-16'>
       <Heading heading="EVENTS"></Heading>
-      <h1>No any events</h1>
+      <h1>No any events!</h1>
     </div>
   )
 }
