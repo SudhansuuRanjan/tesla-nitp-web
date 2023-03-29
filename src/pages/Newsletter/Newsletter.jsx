@@ -1,6 +1,7 @@
 import React from 'react'
 import './Newsletter.scss'
 import Heading from '../../components/Headings/Heading'
+import News from './News'
 
 const Newsletter = () => {
   return (
