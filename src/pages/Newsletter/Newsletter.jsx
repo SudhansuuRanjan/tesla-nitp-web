@@ -7,7 +7,7 @@ const Newsletter = () => {
   return (
     <div className='pt-16'>
       <Heading heading="NEWS" />
-      <div className='news-grid'>
+      <div className='news-grid lg:max-w-[85rem] m-auto'>
         <News />
         <News />
         <News />
