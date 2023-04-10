@@ -1,0 +1,29 @@
+.team-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5rem 0;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 70rem;
+    margin: auto;
+    
+}
+
+.team-card {
+    max-width: 17rem;
+    border: 1px solid rgb(20, 20, 20);
+    padding: 1rem;
+    border-radius: 0.8rem;
+}
+
+.team-card img {
+    width: 17rem;
+}
+
+.team-card h3 {
+    color: blue;
+    font-size: large;
+    font-weight: 700;
+    padding-top: 1rem;
+}
