@@ -12,7 +12,7 @@ const Footer = () => {
         <div className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-1 md:order-1 lg:order-1'>
 
           <Link href="/">
-            <img src="/images/logo.svg" alt="logo" className='h-14 mb-2' />
+            <img src="/images/logo.svg" alt="logo" className='h-14 mb-2 w-auto' />
           </Link>
 
           <p className='max-w-[17rem] py-3 text-base'>Tesla is the most active technical club of NIT Patna.</p>

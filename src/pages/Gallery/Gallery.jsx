@@ -12,13 +12,13 @@ const Gallery = () => {
 
     const gallery = [
         {
-            url: "https://images8.alphacoders.com/668/thumbbig-668459.webp"
+            url: "src/assets/Images/algosession.jpg"
         },
         {
             url: "https://images5.alphacoders.com/775/thumbbig-775602.webp"
         },
         {
-            url: "https://images5.alphacoders.com/781/thumbbig-781497.webp"
+            url: "src/assets/Images/DSC_0178.jpg"
         },
         {
             url: "https://images4.alphacoders.com/190/thumbbig-190618.webp"
