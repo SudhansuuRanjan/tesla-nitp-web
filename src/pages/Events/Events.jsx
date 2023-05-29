@@ -7,38 +7,38 @@ const Events = () => {
 
   const events = [
     {
-      id: 0,
-      name: "AlgoCamp",
-      image: "https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png",
-      tag: "BlockChain",
-      description: "Details about the event.",
-      date: "2023-05-25",
-      time: "10:00 AM",
-      venue: "LT-1",
-      link: "https://www.google.com"
-    },
-    {
-      id: 1,
-      name: "Event Name",
-      image: "https://miro.medium.com/max/700/1*BFpFCJepifaREIg7qLSLag.jpeg",
-      tag: "Web Dev",
-      description: "Details about the event.",
-      date: "2023-05-25",
-      time: "10:00 AM",
-      venue: "LT-1",
-      link: "https://www.google.com"
-    },
-    {
-      id: 2,
-      name: "Event Name",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq-N3suU4cbFWeot4OxL9gI90VxkyCTH5vPAZGOPvne65pbJ__g41hsUrpOfVsHYQWIBg&usqp=CAU",
-      tag: "Core",
-      description: "Details about the event.",
-      date: "2023-05-25",
-      time: "10:00 AM",
-      venue: "LT-1",
-      link: "https://www.google.com"
-    }]
+            id: 0,
+            name: "Blockchain Technology for Next-Generation Applications",
+            image: "https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png",
+            tag: "BlockChain",
+            description: 'Faculty Development Program on “Blockchain Technology for Next-Generation Applications”',
+            date: "19th-24th June 2023",
+            time: "10:00 AM",
+            venue: "Vishwesharaiya Hall",
+            link: "https://forms.gle/G29EKJovMpqAr4ei6"
+        },
+        {
+            id: 1,
+            name: "Algo Camp",
+            image: "https://miro.medium.com/max/700/1*BFpFCJepifaREIg7qLSLag.jpeg",
+            tag: "BlockChain",
+            description: "A 3-day workshop on Blockchain Technology by Algorand Foundation.",
+            date: "2023-01-25",
+            time: "10:00 AM",
+            venue: "Meghnad Saha Hall",
+            link: "https://www.google.com"
+        },
+        {
+            id: 2,
+            name: "EduDAO Info Session",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq-N3suU4cbFWeot4OxL9gI90VxkyCTH5vPAZGOPvne65pbJ__g41hsUrpOfVsHYQWIBg&usqp=CAU",
+            tag: "Technology",
+            description: "An info session on EduDAO, a DAO for students by students.",
+            date: "2023-05-02",
+            time: "05:00 PM",
+            venue: "Meghnad Saha Hall",
+            link: "https://www.google.com"
+        }]
 
   return (
     <div className='pt-16'>
