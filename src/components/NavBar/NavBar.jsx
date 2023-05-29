@@ -20,10 +20,10 @@ const NavBar = () => {
     window.addEventListener("scroll", changeNavbarColor);
 
     return (
-        <div className={`fixed z-10 w-[100%] items-center justify-center ${colorChange && "border-b bg-gray-700 transition-all delay-100  ease-in-out bg-opacity-20 backdrop-blur-md border-gray-900 shadow-md"}`}>
+        <div className={`fixed z-10 w-[100%] items-center justify-center ${colorChange && "border-b bg-black transition-all delay-100  ease-in-out bg-opacity-20 backdrop-blur-md border-gray-800 shadow-lg"}`}>
             <div className="flex items-center justify-between lg:w-[75rem] md:w-[100%] px-4 md:px-3 py-5 m-auto text-lg">
                 <div className="flex items-center">
-                    <Link to="/">
+                    <Link style={{ textDecoration: "none" }} to="/">
                         <img src="/images/logo.svg" alt="logo" className="h-10" />
                     </Link>
                 </div>
@@ -37,7 +37,17 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/events">Events</Link>
+                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/about">About</Link>
+                        </li>
+                        <li
+                            className={
+                                focus === 0
+                                    ? "hover:underline mx-3 border-blue-300  border-[3px]  bg-blue-50 dark:bg-[#7b2c5d] px-2 py-1"
+                                    : "hover:underline hover:text-blue-500 px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
+                            }
+
+                        >
+                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/events">Events</Link>
                         </li>
                         <li
                             className={
@@ -47,7 +57,7 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/news">News</Link>
+                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/news">News</Link>
                         </li>
                         <li
                             className={
@@ -57,7 +67,7 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/projects">
+                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/projects">
                                 Projects
                             </Link>
                         </li>
@@ -70,7 +80,7 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/team">
+                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/team">
                                 Team
                             </Link>
                         </li>
@@ -82,7 +92,7 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/gallery">Gallery</Link>
+                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/gallery">Gallery</Link>
                         </li>
 
                     </ul>
@@ -107,7 +117,7 @@ const NavBar = () => {
                 <div className="md:hidden fixed top-[4rem] right-0 bg-white rounded-xl w-[12rem] py-2 mr-5 shadow-md text-gray-800 dark:text-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 border">
                     <ul>
                         <li>
-                            <Link to="/">
+                            <Link style={{ textDecoration: "none" }} to="/">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -120,7 +130,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/events">
+                            <Link style={{ textDecoration: "none" }} to="/events">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -133,7 +143,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/projects">
+                            <Link style={{ textDecoration: "none" }} to="/projects">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -146,7 +156,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/gallery">
+                            <Link style={{ textDecoration: "none" }} to="/gallery">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -159,7 +169,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/team">
+                            <Link style={{ textDecoration: "none" }} to="/team">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -172,7 +182,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/news">
+                            <Link className="visited:text-white text-white" style={{ textDecoration: "none" }} to="/news">
                                 <button
                                     onClick={() => {
                                         setMenu(false);

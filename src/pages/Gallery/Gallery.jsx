@@ -12,13 +12,13 @@ const Gallery = () => {
 
     const gallery = [
         {
-            url: "src/assets/Images/algosession.jpg"
+            url: "https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png"
         },
         {
             url: "https://images5.alphacoders.com/775/thumbbig-775602.webp"
         },
         {
-            url: "src/assets/Images/DSC_0178.jpg"
+            url: "https://crypto-economy.com//wp-content/uploads/2020/03/algorand-review.jpg"
         },
         {
             url: "https://images4.alphacoders.com/190/thumbbig-190618.webp"
@@ -84,10 +84,10 @@ const Gallery = () => {
                                     setCurrentImg(currentImg - 1);
                                 }
                             }}>
-                                <MdKeyboardArrowLeft size={20} />
+                                <MdKeyboardArrowLeft className="text-white" size={20} />
                             </button>
                             <button onClick={() => setModal(false)}>
-                                <MdClose size={20} />
+                                <MdClose className="text-white" size={20} />
                             </button>
                             <button onClick={() => {
                                 if (currentImg === gallery.length - 1) {
@@ -96,7 +96,7 @@ const Gallery = () => {
                                     setCurrentImg(currentImg + 1);
                                 }
                             }}>
-                                <MdKeyboardArrowRight size={20} />
+                                <MdKeyboardArrowRight className="text-white" size={20} />
                             </button>
                         </div>
                     </div>

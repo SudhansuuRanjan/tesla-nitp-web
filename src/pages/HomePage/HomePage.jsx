@@ -6,6 +6,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useGLTF, PresentationControls, Stage } from '@react-three/drei';
 import { gsap } from 'gsap';
 import SmoothScroll from './SmoothScroll';
+import About from '../../components/HomePage/About';
+import Event from '../../components/HomePage/Event';
+import Team from '../../components/HomePage/Team';
+import Blog from '../../components/HomePage/Blog';
+import Faq from '../../components/HomePage/Faq';
 
 
 const Model = (props) => {
@@ -49,12 +54,12 @@ const HomePage = () => {
         <h1 className='font-extrabold text-transparent lg:text-7xl md:text-5xl text-4xl bg-clip-text bg-gradient-to-r from-blue-400 to-sky-600 mt-2'>Tesla NIT Patna</h1>
       </div> */}
 
-      <div className='h-[110vh] w-[100%] relative items-center flex'>
+      <div className='h-[110vh] w-[100%] relative items-center flex lg:flex-row md:flex-row flex-col-reverse'>
 
-        <div className='w-[40%] flex justify-evenly h-fit items-center mt-[-10rem]'>
+        <div className='lg:w-[40%] md:w-[40%] w-[90%] flex justify-evenly h-fit items-center lg:mt-[-10rem] md:mt-[-10rem] mb-16'>
           <div >
-            <h1 className='text-4xl font-semibold text-sky-500 py-5'>TESLA Club NIT Patna</h1>
-            <p className='max-w-[19rem] text-lg'>
+            <h1 className='lg:text-4xl md:text-3xl text-3xl font-bold text-sky-500 py-5'>TESLA Club NIT Patna</h1>
+            <p className='max-w-[19rem] lg:text-lg md:text-base text-base'>
               The Official  Technical Club of Electrical Engineering Department NIT, Patna and most active club of the college.
             </p>
           </div>
@@ -84,6 +89,13 @@ const HomePage = () => {
         </Suspense>
       </Canvas> */}
 
+      <div className='lg:mx-[4rem] md:mx-[3rem] mx-[2rem]'>
+        <About />
+        <Event/>
+        <Team/>
+        <Blog/>
+        <Faq/>
+      </div>
     </div>
   )
 }
