@@ -24,9 +24,9 @@ const Footer = () => {
               <FaInstagram size={26} />
             </a>
 
-            <a style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://instagram.com" className='transition ease-in delay-50 text-slate-500 visited:text-slate-500 hover:text-slate-600 hover:scale-[110%]'>
-              <FaDiscord size={26} />
-            </a>
+//             <a style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://instagram.com" className='transition ease-in delay-50 text-slate-500 visited:text-slate-500 hover:text-slate-600 hover:scale-[110%]'>
+//               <FaDiscord size={26} />
+//             </a>
             <a style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/tesla-club-nitp/" className='transition ease-in delay-50 text-blue-500 visited:text-blue-500 hover:text-blue-600 hover:scale-[110%]'>
               <FaLinkedinIn size={26} />
             </a>
