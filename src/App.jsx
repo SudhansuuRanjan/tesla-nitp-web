@@ -4,8 +4,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './utils/Layout';
-import { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog } from './pages/index'
-import About from './components/HomePage/About';
+import { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About } from './pages/index'
 import ScrollToTop from './hooks/useScrollToTop';
 
 function App() {
