@@ -44,7 +44,7 @@ const EventCard = ({ data }) => {
                 <p className='py-1 absolute bottom-2 right-1 z-[5] px-3 rounded-full mt-2 text-sky-500 text-xs  bg-gray-900 w-fit bg-opacity-90'>{data.tag}</p>
             </div>
             <h3 className='text-xl font-semibold pl-2 mt-2'>{data.name}</h3>
-            <p className='text-gray-500 text-sm pt-1 pl-2'>{data.description.substring(0, 90) + "..."}</p>
+            <p className='text-gray-500 text-sm pt-1 pl-2'>{data.description.length > 100 ? data.description.substring(0, 90) + "..." : data.description}</p>
             <div className='bg-gray-800 rounded-lg p-2 flex justify-between mt-2 flex-col'>
                 <div className='flex justify-between text-xs'>
                     <div>
