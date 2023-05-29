@@ -35,7 +35,7 @@ function App() {
         } />
         <Route path="/about" element={
           <Layout>
-           <About/>
+            <About />
           </Layout>
         } />
         <Route path="/events" element={
@@ -55,12 +55,13 @@ function App() {
         } />
         <Route path="/news/:topicSlug" element={
           <Layout>
-            <Blog/>
+            <Blog />
           </Layout>
         } />
+
         <Route path="*" element={
           <Layout>
-            <Error/>
+            <Error />
           </Layout>
         } />
       </Routes>
