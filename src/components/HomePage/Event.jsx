@@ -31,7 +31,7 @@ const Event = () => {
         {
             id: 2,
             name: "EduDAO Info Session",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq-N3suU4cbFWeot4OxL9gI90VxkyCTH5vPAZGOPvne65pbJ__g41hsUrpOfVsHYQWIBg&usqp=CAU",
+            image: "https://pbs.twimg.com/profile_images/1470977630946181122/rXTRvqJV_400x400.jpg",
             tag: "Technology",
             description: "An info session on EduDAO, a DAO for students by students.",
             date: "2023-05-02",
@@ -43,7 +43,7 @@ const Event = () => {
 
     return (
         <div>
-            <Heading1 text1={"Our Exclusive"} text2={"Events"} />
+            <Heading1 details={"Experience our exclusive events, workshops, expert sessions, and valuable networking opportunities. Stay tuned for updates on upcoming events!"} text1={"Our Exclusive"} text2={"Events"} />
             <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
                 {events.map((event, id) => (
                     <EventCard data={event} key={id} />

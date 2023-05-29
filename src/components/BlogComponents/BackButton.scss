@@ -1,0 +1,23 @@
+.backbtn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 80%;
+    text-align: left;
+    margin-left: 4rem;
+    margin-top: 4rem;
+
+
+    .link {
+        text-decoration: none;
+        color: skyblue;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .link:hover {
+        color: skyblue;
+        font-weight: 600;
+    }
+}

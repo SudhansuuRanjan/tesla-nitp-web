@@ -1,0 +1,80 @@
+.share-news {
+  position: absolute;
+  right: 0;
+  margin-right: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+
+  a{
+    text-decoration: none
+  }
+}
+
+.share-btn {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.share-popup {
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.6rem;
+  padding: 0.3rem;
+  background-color: black;
+  margin-top: -15rem;
+  margin-left: -9.6rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 1px solid rgb(40, 40, 40);
+}
+
+//flex items-center gap-3 hover:bg-[rgb(39,84,189)] cursor-pointer rounded px-5 py-1 pr-10
+// flex items-center gap-3 hover:bg-[rgb(39,84,189)] cursor-pointer rounded px-5 py-1 pr-10
+
+.popup-btn {
+  display: flex;
+  align-items: center;
+  gap: 3;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  width: 100%;
+  padding-right: 2rem;
+  border: none;
+  background-color: black;
+  border-radius: 0.5rem;
+  justify-content: flex-start;
+  color:rgb(0, 183, 255);
+
+  p {
+    margin-left: 0.5rem;
+  }
+}
+
+.popup-btn:hover {
+  background-color: rgb(32, 32, 32);
+  color: skyblue;
+}
+
+.br {
+  height: 1px;
+  width: 85%;
+  margin: auto;
+  background-color: rgb(40, 40, 40);
+}
+
+@media screen and (max-width: 800px) {
+    .share-news {
+  position: absolute;
+  right: 0;
+  margin-right: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+}

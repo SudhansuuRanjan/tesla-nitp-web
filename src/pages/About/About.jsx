@@ -1,8 +1,14 @@
-import React from 'react'
+import './About.scss'
+import Heading from '../../components/Headings/Heading'
 
 const About = () => {
   return (
-    <div>About</div>
+    <div className='pt-16 min-h-screen'>
+      <Heading heading="ABOUT"></Heading>
+      <div className='about-container'>
+
+      </div>
+    </div>
   )
 }
 
