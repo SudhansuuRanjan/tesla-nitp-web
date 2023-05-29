@@ -4,6 +4,7 @@ import './Blog.scss'
 import BackButton from '../../components/BlogComponents/BackButton';
 import Loader from '../../components/BlogComponents/Loader';
 import Share from '../../components/BlogComponents/Share';
+import { BsDot } from 'react-icons/bs'
 
 const Blog = () => {
   const { topicSlug } = useParams("");
@@ -90,6 +91,17 @@ const Blog = () => {
         </div>
         : <div>
           <h1 data-aos="fade-up" className='news-topic font-bold text-sky-400'>{news[parseInt(topicSlug)].title}</h1>
+          <div className='flex items-center justify-center flex-col'>
+            <div className='flex items-center gap-1 text-gray-400 mt-3'>
+              <p>{news[parseInt(topicSlug)].tag}</p>
+              <BsDot/>
+              <p>{news[parseInt(topicSlug)].minutes} min read</p>
+            </div>
+            <div className='flex items-center gap-3 mt-4'>
+              <img loading='lazy' className='w-9 h-9 rounded-full' src={news[parseInt(topicSlug)].authorImage} alt={news[parseInt(topicSlug)].author} />
+              <p className='font-semibold text-gray-300'>{news[parseInt(topicSlug)].author}</p>
+            </div>
+          </div>
           <div data-aos="fade-up" className="img-container">
             <img className='blog-header-img' src={news[parseInt(topicSlug)].image} alt="header-img" />
           </div>
@@ -100,9 +112,9 @@ const Blog = () => {
               ))
             }
           </div>
-          <div className="credits">
+          {/* <div className="credits">
             <p>This article is contributed by <span>{news[parseInt(topicSlug)].author}</span>.</p>
-          </div>
+          </div> */}
         </div>
       }
       <BackButton to="/news" />
