@@ -1,6 +1,6 @@
 
 
-.container{
+.error_container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,13 +9,13 @@
     height: 100vh;
     
 }
-.err{
+.error_img{
     width: 30%;
     height: auto;
     margin: 0;
     
 }
-.head{
+.error_head{
     font-size: 4em;
     font-weight: 800;
     margin: 0;
@@ -33,14 +33,14 @@
     }
     
 }
-.line{
+.error_line{
     font-size: 1.5em;
     margin: 0;
     font-weight: 700;
     
 }
 
-.btn{
+.error_btn{
     display: inline-block;
     padding: 10px 20px;
     background-color:rgb(58 130 246 ) ;
