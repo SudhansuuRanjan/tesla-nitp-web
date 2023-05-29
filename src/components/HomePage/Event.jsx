@@ -43,7 +43,7 @@ const Event = () => {
 
     return (
         <div>
-            <Heading1 text1={"Our Exclusive"} text2={"Events"} />
+            <Heading1 details={"Experience our exclusive events, workshops, expert sessions, and valuable networking opportunities. Stay tuned for updates on upcoming events!"} text1={"Our Exclusive"} text2={"Events"} />
             <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
                 {events.map((event, id) => (
                     <EventCard data={event} key={id} />

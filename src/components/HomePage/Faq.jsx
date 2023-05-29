@@ -34,7 +34,7 @@ const Faq = () => {
 
     return (
         <div className='pt-20'>
-            <Heading1 text1={"Frequently Asked"} text2={" Questions"} />
+            <Heading1 details={"We have compiled some commonly asked questions and their answers to provide you with the information you need. If you have any additional inquiries, feel free to reach out to us."} text1={"Frequently Asked"} text2={" Questions"} />
 
             <div className='flex flex-col items-center justify-center gap-4 my-16'>
                 {

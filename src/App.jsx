@@ -4,7 +4,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './utils/Layout';
-import { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About } from './pages/index'
+import { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About, Error } from './pages/index'
 import ScrollToTop from './hooks/useScrollToTop';
 
 function App() {
@@ -56,6 +56,11 @@ function App() {
         <Route path="/news/:topicSlug" element={
           <Layout>
             <Blog/>
+          </Layout>
+        } />
+        <Route path="*" element={
+          <Layout>
+            <Error/>
           </Layout>
         } />
       </Routes>

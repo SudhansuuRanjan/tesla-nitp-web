@@ -50,12 +50,12 @@ const Footer = () => {
         <div className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-2 md:order-2 lg:order-2'>
           <div className='flex items-center justify-start'><h1 className='font-extrabold text-2xl text-blue-700 mr-3'>|</h1><h1 className='text-lg font-semibold'>Must Check</h1></div>
           <ul className='mt-4 flex flex-col gap-2 text-base'>
-            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/legals/privacy-policy">
+            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/">
               <p className='text-gray-400 hover:text-sky-500'>Web3</p></Link></li>
-            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/legals/terms-of-service"><p className='text-gray-400 hover:text-sky-500'>Web Dev</p></Link></li>
-            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/legals/code-of-conduct"><p className='text-gray-400 hover:text-sky-500'>Free Courses</p></Link></li>
-            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/legals/refund-policy"><p className='text-gray-400 hover:text-sky-500'>Notes</p></Link></li>
-            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/legals/refund-policy"><p className='text-gray-400 hover:text-sky-500'>Opportunities</p></Link></li>
+            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Web Dev</p></Link></li>
+            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Free Courses</p></Link></li>
+            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Notes</p></Link></li>
+            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Opportunities</p></Link></li>
           </ul>
         </div>
 
@@ -71,7 +71,7 @@ const Footer = () => {
       <div className="w-[90%] m-[auto] bg-gray-800 h-[1px]"></div>
       <div className="m-[auto] pb-8 pt-5 text-gray-600 font-medium text-sm flex flex-col md:flex-row lg:flex-row justify-between items-center w-[90%]">
         <p>
-          © {year} Kaizen. All Rights Reserved.
+          © {year} T.E.S.L.A NITP. All Rights Reserved.
         </p>
         <p>
           Designed & Developed by <a style={{ textDecoration: "none" }} className="font-medium text-blue-500" href="#">
