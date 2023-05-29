@@ -60,7 +60,7 @@ The Application Runs on [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
 `Contributions are welcome 🎉🎉`
 
 # Ways to contribute:
-1. Solve the issues which are listed
+1. Solve the issues which are listed.
 2. Create your own issue and then send PR.
 
 Please refer to the project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
