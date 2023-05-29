@@ -44,25 +44,25 @@ const About = () => {
         <p>
           Paragraph 0
 
-          Civil Engineering Students Club with all it's past success and legacy is a Civil oriented technical club that intends to bridge the gap between academic life and industrial job experience in order to develop students' abilities and prepare them for the workforce, which will not only make them more disciplined in attitude but will also provide them a platform similar to that of a real-life professional work environment.
+         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, ut optio. Quas atque vero nesciunt corporis necessitatibus, voluptatibus recusandae est, laudantium, voluptates consectetur vitae quod libero illo assumenda ipsum. Aliquid?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis magni perferendis similique amet laborum illo quia provident esse quas voluptatem ullam, quis itaque. Error quis ex commodi magni minus eaque.
         </p>
         <br />
 
         <p className={`scroll-down-paragraph ${visibleParagraphs.includes('paragraph1') ? 'visible' : ''}`} id="paragraph1">
           Paragraph 1
 
-          Civil Engineering Students Club with all it's past success and legacy is a Civil oriented technical club that intends to bridge the gap between academic life and industrial job experience in order to develop students' abilities and prepare them for the workforce, which will not only make them more disciplined in attitude but will also provide them a platform similar to that of a real-life professional work environment.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, ut optio. Quas atque vero nesciunt corporis necessitatibus, voluptatibus recusandae est, laudantium, voluptates consectetur vitae quod libero illo assumenda ipsum. Aliquid?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis magni perferendis similique amet laborum illo quia provident esse quas voluptatem ullam, quis itaque. Error quis ex commodi magni minus eaque.
         </p>
         <br />
         <p className={`scroll-down-paragraph ${visibleParagraphs.includes('paragraph2') ? 'visible' : ''}`} id="paragraph2">
           Paragraph 2
-          Civil Engineering Students Club with all it's past success and legacy is a Civil oriented technical club that intends to bridge the gap between academic life and industrial job experience in order to develop students' abilities and prepare them for the workforce, which will not only make them more disciplined in attitude but will also provide them a platform similar to that of a real-life professional work environment.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, ut optio. Quas atque vero nesciunt corporis necessitatibus, voluptatibus recusandae est, laudantium, voluptates consectetur vitae quod libero illo assumenda ipsum. Aliquid?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis magni perferendis similique amet laborum illo quia provident esse quas voluptatem ullam, quis itaque. Error quis ex commodi magni minus eaque.
         </p>
         <br />
 
         <p className={`scroll-down-paragraph ${visibleParagraphs.includes('paragraph3') ? 'visible' : ''}`} id="paragraph3">
           Paragraph 3
-          Civil Engineering Students Club with all it's past success and legacy is a Civil oriented technical club that intends to bridge the gap between academic life and industrial job experience in order to develop students' abilities and prepare them for the workforce, which will not only make them more disciplined in attitude but will also provide them a platform similar to that of a real-life professional work environment.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, ut optio. Quas atque vero nesciunt corporis necessitatibus, voluptatibus recusandae est, laudantium, voluptates consectetur vitae quod libero illo assumenda ipsum. Aliquid?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis magni perferendis similique amet laborum illo quia provident esse quas voluptatem ullam, quis itaque. Error quis ex commodi magni minus eaque.
 
         </p>
 
