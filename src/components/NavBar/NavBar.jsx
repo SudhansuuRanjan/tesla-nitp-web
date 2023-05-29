@@ -130,6 +130,19 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link style={{ textDecoration: "none" }} to="/about">
+                                <button
+                                    onClick={() => {
+                                        setMenu(false);
+                                        // setFocus(0);
+                                    }}
+                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                >
+                                    About
+                                </button>
+                            </Link>
+                        </li>
+                        <li>
                             <Link style={{ textDecoration: "none" }} to="/events">
                                 <button
                                     onClick={() => {
