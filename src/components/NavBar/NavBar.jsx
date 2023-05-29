@@ -84,14 +84,14 @@ const NavBar = () => {
                                 setMenu(false);
                             }
                         }}
-                        className="animate-pulse md:hidden text-gray-900 bg-blue-50 hover:bg-blue-50 border border-gray-200 focus:ring-[2.5px] focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-lg px-2.5 py-2.5 text-center items-center dark:focus:ring-gray-400 dark:bg-gray-800 dark:border-gray-900 dark:text-white dark:hover:bg-gray-700 mr-2"
+                        className="animate-pulse md:hidden border focus:ring-[2.5px] focus:outline-none font-medium rounded-lg text-lg px-2.5 py-2.5 text-center items-center focus:ring-gray-500 bg-gray-800 border-gray-900 text-white hover:bg-gray-700 mr-2"
                     >
                         {!menu ? <HiMenuAlt3 /> : <FiX />}
                     </button>
                 </div>
             </div>
             {menu && (
-                <div className="md:hidden fixed top-[4rem] right-0 bg-white rounded-xl w-[12rem] py-2 mr-5 shadow-md text-gray-800 dark:text-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 border">
+                <div className="md:hidden fixed top-[4rem] right-0 rounded-xl w-[12rem] py-2 mr-5 shadow-md text-white bg-gray-900 border-gray-700 border">
                     <ul>
                         <li>
                             <NavLink style={{ textDecoration: "none" }} to="/">
@@ -100,7 +100,7 @@ const NavBar = () => {
                                         setMenu(false);
                                         // setFocus(0);
                                     }}
-                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
+                                    className="hover:underline hover:border-blue-300 border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     Home
                                 </button>
