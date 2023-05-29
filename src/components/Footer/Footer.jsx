@@ -17,9 +17,6 @@ const Footer = () => {
 
           <p className='max-w-[17rem] py-3 text-base'>Tesla is the most active technical club of NIT Patna.</p>
           <div className='flex gap-3 py-2 '>
-            <a style={{ textDecoration: "none" }} href="https://facebook.com" className='transition ease-in delay-50 visited:text-blue-500 text-blue-500 hover:text-blue-600 hover:scale-[110%]'>
-              <FaFacebook className='text-blue-600' size={26} />
-            </a>
             <a style={{ textDecoration: "none" }} href="https://web.whatsapp.com" className='transition ease-in delay-50 text-green-400 visited:text-green-400 hover:text-green-500 hover:scale-[110%]'>
               <IoLogoWhatsapp size={26} />
             </a>
