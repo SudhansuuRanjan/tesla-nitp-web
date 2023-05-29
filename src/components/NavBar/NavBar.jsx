@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FiX } from "react-icons/fi";
@@ -6,7 +6,6 @@ import { FiX } from "react-icons/fi";
 
 const NavBar = () => {
     const [menu, setMenu] = useState(false);
-    const [focus, setFocus] = useState(-1);
     const [colorChange, setColorchange] = useState(false);
 
     const changeNavbarColor = () => {
@@ -21,78 +20,56 @@ const NavBar = () => {
 
     return (
         <div className={`fixed z-10 w-[100%] items-center justify-center ${colorChange && "border-b bg-black transition-all delay-100  ease-in-out bg-opacity-20 backdrop-blur-md border-gray-800 shadow-lg"}`}>
-            <div className="flex items-center justify-between lg:w-[75rem] md:w-[100%] px-4 md:px-3 py-5 m-auto text-lg">
+            <div className="flex items-center justify-between lg:w-[65rem] md:w-[100%] px-4 md:px-3 py-5 m-auto text-lg">
                 <div className="flex items-center">
                     <Link style={{ textDecoration: "none" }} to="/">
                         <img src="/images/logo.svg" alt="logo" className="h-10" />
                     </Link>
                 </div>
                 <div className="flex items-center">
-                    <ul className="md:flex hidden items-center">
-                        <li
-                            className={
-                                focus === 0
-                                    ? "hover:underline mx-3 border-blue-300  border-[3px]  bg-blue-50 dark:bg-[#7b2c5d] px-2 py-1"
-                                    : "hover:underline hover:text-blue-500 px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
-                            }
-
-                        >
-                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/about">About</Link>
+                    <ul className="md:flex gap-8 hidden items-center text-base">
+                        <li>
+                            <NavLink style={{ textDecoration: "none" }} to="/about">
+                                {({ isActive, isPending }) => (
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>About</span>
+                                )}
+                            </NavLink>
                         </li>
-                        <li
-                            className={
-                                focus === 0
-                                    ? "hover:underline mx-3 border-blue-300  border-[3px]  bg-blue-50 dark:bg-[#7b2c5d] px-2 py-1"
-                                    : "hover:underline hover:text-blue-500 px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
-                            }
-
-                        >
-                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/events">Events</Link>
+                        <li>
+                            <NavLink style={{ textDecoration: "none" }} to="/events">
+                                {({ isActive, isPending }) => (
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Events</span>
+                                )}
+                            </NavLink>
                         </li>
-                        <li
-                            className={
-                                focus === 1
-                                    ? "hover:underline mx-3 border-blue-300  border-[3px]  bg-blue-50 dark:bg-[#7b2c5d] px-2 py-1"
-                                    : "hover:underline hover:text-blue-500 px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
-                            }
-
-                        >
-                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/news">News</Link>
+                        <li>
+                            <NavLink style={{ textDecoration: "none" }} to="/news">
+                                {({ isActive, isPending }) => (
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>News</span>
+                                )}
+                            </NavLink>
                         </li>
-                        <li
-                            className={
-                                focus === 2
-                                    ? "hover:underline mx-3 border-blue-300  border-[3px]  bg-blue-50 dark:bg-[#7b2c5d] px-2 py-1"
-                                    : "hover:underline hover:text-blue-500 px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
-                            }
-
-                        >
-                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/projects">
-                                Projects
-                            </Link>
+                        <li>
+                            <NavLink style={{ textDecoration: "none" }} to="/projects">
+                                {({ isActive, isPending }) => (
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Projects</span>
+                                )}
+                            </NavLink>
                         </li>
 
-                        <li
-                            className={
-                                focus === 2
-                                    ? "hover:underline mx-3 border-blue-300  border-[3px]  bg-blue-50 dark:bg-[#7b2c5d] px-2 py-1"
-                                    : "hover:underline hover:text-blue-500 px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
-                            }
-
-                        >
-                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/team">
-                                Team
-                            </Link>
+                        <li>
+                            <NavLink style={{ textDecoration: "none" }} to="/team">
+                                {({ isActive, isPending }) => (
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Team</span>
+                                )}
+                            </NavLink>
                         </li>
-                        <li
-                            className={
-                                focus === 1
-                                    ? "hover:underline mx-3 border-blue-300  border-[3px]  bg-blue-50 dark:bg-[#7b2c5d] px-2 py-1"
-                                    : "hover:underline hover:text-blue-500 px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
-                            }
-
-                        >
-                            <Link className="visited:text-white text-base text-white" style={{ textDecoration: "none" }} to="/gallery">Gallery</Link>
+                        <li>
+                            <NavLink style={{ textDecoration: "none" }} to="/gallery">
+                                {({ isActive, isPending }) => (
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Gallery</span>
+                                )}
+                            </NavLink>
                         </li>
 
                     </ul>
@@ -117,17 +94,17 @@ const NavBar = () => {
                 <div className="md:hidden fixed top-[4rem] right-0 bg-white rounded-xl w-[12rem] py-2 mr-5 shadow-md text-gray-800 dark:text-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 border">
                     <ul>
                         <li>
-                            <Link style={{ textDecoration: "none" }} to="/">
+                            <NavLink style={{ textDecoration: "none" }} to="/">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
                                         // setFocus(0);
                                     }}
-                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     Home
                                 </button>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
                             <Link style={{ textDecoration: "none" }} to="/about">
@@ -136,7 +113,7 @@ const NavBar = () => {
                                         setMenu(false);
                                         // setFocus(0);
                                     }}
-                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     About
                                 </button>
@@ -149,7 +126,7 @@ const NavBar = () => {
                                         setMenu(false);
                                         // setFocus(0);
                                     }}
-                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     Events
                                 </button>
@@ -162,7 +139,7 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     Projects
                                 </button>
@@ -175,7 +152,7 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     Gallery
                                 </button>
@@ -188,7 +165,7 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     Team
                                 </button>
@@ -201,7 +178,7 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-blue-300 dark:hover:border-blue-300  border-4 border-white dark:border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
                                     Newsletter
                                 </button>

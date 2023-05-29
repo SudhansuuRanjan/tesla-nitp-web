@@ -91,7 +91,7 @@ const Blog = () => {
         </div>
         : <div>
           <h1 data-aos="fade-up" className='news-topic font-bold text-sky-400'>{news[parseInt(topicSlug)].title}</h1>
-          <div className='flex items-center justify-center flex-col'>
+          <div data-aos="fade-up" className='flex items-center justify-center flex-col'>
             <div className='flex items-center gap-1 text-gray-400 mt-3'>
               <p>{news[parseInt(topicSlug)].tag}</p>
               <BsDot/>
