@@ -7,10 +7,9 @@ import { RiProjector2Fill } from 'react-icons/ri'
 import { AiFillProject } from 'react-icons/ai'
 
 const About = () => {
-
-
   return (
     <div>
+      
       <Heading1 text1={"A community of"} text2={"builders"} />
       <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
         <HighlightCard icon={<BsFillPeopleFill className='text-sky-500' size={30} />} type={"Total members"} data={"100+"} />
@@ -18,12 +17,16 @@ const About = () => {
         <HighlightCard icon={<RiProjector2Fill className='text-sky-500' size={30} />} type={"Workshops Organized"} data={"20+"} />
         <HighlightCard icon={<AiFillProject className='text-sky-500' size={30} />} type={"Ongoing Projects"} data={"10+"} />
       </div>
+
+
       <Heading1 text1={"Deliver an Optimized"} text2={"User Experience"} />
       <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
         <Card1 />
         <Card1 />
         <Card1 />
       </div>
+
+
       <Heading2 text1={"Partnership with"} text2={"world-class companies"} />
       <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
         <Card2 link="https://algorand.com" title="Building Accessible BlockChain" company={"Algorand"} image="https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png" />

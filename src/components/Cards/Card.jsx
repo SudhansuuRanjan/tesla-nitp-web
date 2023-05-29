@@ -86,7 +86,7 @@ const HighlightCard = ({ type, data, icon }) => {
 
 const BlogCard = ({ data }) => {
     return (
-        <Link style={{textDecoration:'none'}} to={`/blog/${data.id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-10  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
+        <Link style={{textDecoration:'none'}} to={`/news/${data.id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-10  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
             <div className='flex items-center gap-1 text-gray-500 text-sm'>
                 <p>{data.tag}</p>
                 <BsDot />
