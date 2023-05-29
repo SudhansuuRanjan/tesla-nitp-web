@@ -1,7 +1,5 @@
 import "./404.scss";
 import error from './error.png';
-
-import Heading from './../../components/Headings/Heading';
 import { NavLink } from "react-router-dom";
 
 const Error = () => {
