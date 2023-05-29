@@ -1,0 +1,137 @@
+.news-container {
+  padding-top: 4rem;
+
+  .news-topic {
+    text-align: center;
+    padding-top: 7rem;
+    font-size: 1.9rem;
+    margin: auto;
+    max-width: 80%;
+  }
+
+  .img-container {
+    margin: auto;
+    max-width: 60%;
+    overflow: hidden;
+    background-size: cover;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-header-img {
+    width: 100%;
+    margin: auto;
+  }
+
+  .paragraph-body {
+    margin: auto;
+    max-width: 65%;
+    text-align: justify;
+    padding: 2rem 0;
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      text-indent: 2rem;
+      margin: 1rem 0;
+    }
+  }
+
+  .credits {
+    margin: auto;
+    text-align: center;
+    max-width: 100%;
+    font-size: 1rem;
+
+    span {
+      color: rgb(255, 213, 0);
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .news-topic {
+      padding-top: 5rem;
+      font-size: 1.8rem;
+    }
+
+    .img-container {
+      max-width: 80%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .paragraph-body {
+      max-width: 80%;
+      padding: 1.5rem 0;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        text-indent: 2rem;
+        margin: 1rem 0;
+      }
+    }
+
+    .credits {
+      margin: auto;
+      text-align: center;
+      max-width: 85%;
+      font-size: 1rem;
+
+      span {
+        color: rgb(255, 213, 0);
+        font-weight: 600;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .news-topic {
+      padding-top: 5rem;
+      font-size: 1.6rem;
+    }
+
+    .img-container {
+      max-width: 90%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .paragraph-body {
+      max-width: 90%;
+      padding: 1rem 0;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        text-indent: 2rem;
+        margin: 1rem 0;
+      }
+    }
+
+    .credits {
+      margin: auto;
+      text-align: center;
+      max-width: 80%;
+      font-size: 1rem;
+
+      span {
+        color: rgb(255, 213, 0);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.loader-container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.share-cont {
+  position: relative;
+}

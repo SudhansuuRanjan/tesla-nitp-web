@@ -53,7 +53,7 @@ function App() {
             <Newsletter />
           </Layout>
         } />
-        <Route path="/news/:newsId" element={
+        <Route path="/news/:topicSlug" element={
           <Layout>
             <Blog/>
           </Layout>
