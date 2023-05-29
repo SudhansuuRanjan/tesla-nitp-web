@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedinIn, FaDiscord } from 'react-icons/fa'
-import { IoLogoWhatsapp } from 'react-icons/io'
+import { FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 const Footer = () => {
   const date = new Date;
   const year = date.getFullYear();
@@ -17,17 +16,14 @@ const Footer = () => {
 
           <p className='max-w-[17rem] py-3 text-base'>Tesla is the most active technical club of NIT Patna.</p>
           <div className='flex gap-3 py-2 '>
-            <a style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://web.whatsapp.com" className='transition ease-in delay-50 text-green-400 visited:text-green-400 hover:text-green-500 hover:scale-[110%]'>
-              <IoLogoWhatsapp size={26} />
-            </a>
             <a style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tesla_nitp/" className='transition ease-in delay-50 text-pink-500 visited:text-pink-500 hover:text-pink-600 hover:scale-[110%]'>
-              <FaInstagram size={26} />
+              <FaInstagram size={30} />
             </a>
             <a style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/tesla-club-nitp/" className='transition ease-in delay-50 text-blue-500 visited:text-blue-500 hover:text-blue-600 hover:scale-[110%]'>
-              <FaLinkedinIn size={26} />
+              <FaLinkedinIn size={30} />
             </a>
             <a style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer" href="https://twitter.com/T_E_S_L_Aclub" className='transition ease-in delay-50 text-sky-500 visited:text-sky-500 hover:text-sky-600 hover:scale-[110%]'>
-              <FaTwitter size={26} />
+              <FaTwitter size={30} />
             </a>
           </div>
         </div>
