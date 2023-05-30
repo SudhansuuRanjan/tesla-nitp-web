@@ -1,28 +1,107 @@
-.project-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 5rem 0;
-    flex-wrap: wrap;
-    gap: 3rem;
-    max-width: 70rem;
-    margin: auto;
+.project_main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5rem 0;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 70rem;
+  margin: auto;
+}
+
+.project_container {
+  color: grey;
+  width: 40%;
+  background-color: rgb(25, 24, 24);
+  border: 1px solid rgb(78, 75, 75);
+  border-radius: 15px;
+  padding: 30px;
+}
+@media  screen and (max-width: 900px)  {
+    .project_main{
+        display: flex;
+        flex-direction: column;
+    }
+    .project_container {
+       width: 90%;
+      }
 }
 
 .project-card {
-    max-width: 17rem;
-    border: 1px solid rgb(20, 20, 20);
-    padding: 1rem;
-    border-radius: 0.8rem;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
 }
 
-.project-card img {
-    width: 17rem;
+.project_container_left {
+  width: 50%;
+  height: 50%;
+}
+.project_image {
+  width: 60%;
+  height: 20%;
+  border-radius: 5px;
+}
+.project_title {
+  margin: 10px 0;
+  color: #0284c7;
+}
+.project_para {
+  margin-bottom: 0;
+}
+.project_container_right {
+  display: flex;
+  flex-direction: column;
+}
+.project_link {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: rgb(58 130 246);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
+  text-decoration: none;
+  color: white;
+  border-radius: 50px;
 }
 
-.project-card h3 {
-    color: blue;
-    font-size: large;
-    font-weight: 700;
-    padding-top: 1rem;
+.project_src {
+  padding: 5px 15px;
+ 
+}
+.project_head {
+  margin: 20px 0;
+  color: #0284c7;
+  font-size: 1em;
+}
+.project_tech {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2em;
+}
+.project_techstack {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(114, 157, 227, 0.6);
+  margin: 10px 0;
+  text-decoration: none;
+  color: rgb(183, 209, 224);
+  border-radius: 50px;
+}
+.project_tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2em;
+}
+.project_tags {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(114, 157, 227, 0.6);
+  margin-top: 10px;
+  text-decoration: none;
+  color: rgb(183, 209, 224);
+  border-radius: 50px;
 }
