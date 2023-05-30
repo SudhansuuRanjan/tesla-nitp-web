@@ -14,7 +14,7 @@ const About = () => {
 
       const visible = [];
       paragraphs.forEach((paragraph) => {
-        var paragraphOffset = 500;
+        var paragraphOffset = 10;
         const shouldShow = window.pageYOffset + windowHeight > paragraphOffset;
 
         if (shouldShow) {
