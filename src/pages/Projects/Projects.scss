@@ -2,106 +2,109 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin: 5rem 0;
+  margin: 5rem auto;
   flex-wrap: wrap;
   gap: 2rem;
   max-width: 70rem;
-  margin: auto;
 }
 
 .project_container {
   color: grey;
   width: 40%;
-  background-color: rgb(25, 24, 24);
-  border: 1px solid rgb(78, 75, 75);
+  background-color: rgb(17, 16, 16);
+  border: 1px solid rgb(49, 48, 48);
   border-radius: 15px;
-  padding: 30px;
+  padding: 2rem;
 }
-@media  screen and (max-width: 900px)  {
-    .project_main{
-        display: flex;
-        flex-direction: column;
-    }
-    .project_container {
-       width: 90%;
-      }
+
+@media screen and (max-width: 900px) {
+  .project_main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project_container {
+    width: 90%;
+  }
 }
 
 .project-card {
   display: flex;
   flex-direction: row;
-
-  justify-content: space-between;
+  gap:1.5rem;
 }
 
 .project_container_left {
   width: 50%;
   height: 50%;
 }
+
 .project_image {
-  width: 60%;
-  height: 20%;
+  width: 100%;
+  height: 7rem;
   border-radius: 5px;
 }
+
 .project_title {
-  margin: 10px 0;
-  color: #0284c7;
+  margin: 1rem 0;
+  color: #00aaff;
+  font-weight: 600;
 }
+
 .project_para {
-  margin-bottom: 0;
+  margin: -0.3rem 0;
+  font-size: 0.9rem;
 }
+
 .project_container_right {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
+
 .project_link {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 0.3rem 0.8rem;
   background-color: rgb(58 130 246);
-  margin-top: 30px;
-  margin-bottom: 30px;
-  
+  font-size: 0.9rem;
   text-decoration: none;
   color: white;
   border-radius: 50px;
 }
 
 .project_src {
-  padding: 5px 15px;
- 
+  color:white;
+  cursor: pointer;
 }
+
 .project_head {
-  margin: 20px 0;
-  color: #0284c7;
+  margin-bottom: 0.5rem;
+  color: #00aaff;
   font-size: 1em;
 }
+
 .project_tech {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 2em;
+  gap: 0.3rem;
 }
+
 .project_techstack {
   display: inline-block;
-  padding: 5px 10px;
-  background-color: rgba(114, 157, 227, 0.6);
-  margin: 10px 0;
+  padding: 0.17rem 0.4rem;
+  background-color: rgba(32, 117, 255, 0.53);
+  margin:0;
   text-decoration: none;
+  font-size: 0.8rem;
   color: rgb(183, 209, 224);
   border-radius: 50px;
+  margin-bottom: 0.5rem;
 }
+
 .project_tag {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 2em;
-}
-.project_tags {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: rgba(114, 157, 227, 0.6);
-  margin-top: 10px;
-  text-decoration: none;
-  color: rgb(183, 209, 224);
-  border-radius: 50px;
+  gap: 0.3rem;
 }
