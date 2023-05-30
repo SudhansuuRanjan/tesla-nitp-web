@@ -1,0 +1,46 @@
+.paragraph-body {
+  max-width: 70%;
+  text-align: justify;
+  padding: 2rem 0;
+  margin: 4rem auto;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    text-indent: 2rem;
+    margin: 1rem 0;
+    font-weight: 300;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .paragraph-body {
+    max-width: 80%;
+    padding: 1.5rem 0;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6rem;
+      text-indent: 2rem;
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .paragraph-body {
+    max-width: 90%;
+    padding: 1rem 0;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6rem;
+      text-indent: 2rem;
+      margin: 1rem 0;
+    }
+  }
+}
