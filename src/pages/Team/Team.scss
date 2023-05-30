@@ -1,56 +1,28 @@
-#Team_main_1{
+#Team_main_1 {
     text-align: center;
     min-width: 210px;
     max-width: 310px;
-    
- }
 
-#Team_img{
-    animation: glow 1.5s linear infinite alternate;
-    margin: auto;
-    
 }
 
-@keyframes glow{
-    to {
-        box-shadow: 0px 0px 5px 5px #535FED;
-    }
-  }
-  #Team_name{
+
+#Team_name {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     margin-top: 20px;
-  }
-  .Team_Position{
-    font-weight: 400;
-  margin: 0;
+}
 
-  color: #535FED;
-  letter-spacing: 1px;
-  }
-  
-  .Team_about{
-    margin:20px 0;
-  }
-  .Team_email{
-    width:60% ;
-    padding: 5px 10px;
-   margin: auto;
-    background-color:#7880db ;
-border-radius: 5px;
-margin-bottom: 30px;
-  }
-  #Team_icon{
-  
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #Team_icon a{
-    color:#535FED;
-  }
-  #Team_icon a:hover{
-    color:white;
-  }
+
+.Team_about {
+    margin: 20px 0;
+}
+
+.Team_email {
+    width: 60%;
+    padding: 0.35rem 1rem;
+    margin: auto;
+    background-color: #4c66aaaf;
+    border-radius: 0.7rem;
+}
