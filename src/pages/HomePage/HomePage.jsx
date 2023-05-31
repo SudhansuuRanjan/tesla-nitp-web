@@ -50,11 +50,13 @@ const HomePage = () => {
   return (
     <div className='pt-16 bg-black'>
       <div className='justify-center flex items-center my-[5rem] lg:gap-1 md:gap-2 gap-6 flex-col text-5xl font-bold'>
-        <h1 className='font-extrabold text-center text-transparent lg:text-8xl md:text-6xl text-5xl mx-8 bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Official Website of</h1>
-        <h1 className='font-bold text-center text-transparent lg:text-4xl md:text-3xl text-3xl mx-5 bg-clip-text bg-gradient-to-b from-gray-300 to-gray-600 my-3'>Technical Electrical Society for Learning & Application</h1>
-        <h1 className='font-extrabold text-center text-transparent lg:text-7xl md:text-5xl text-4xl bg-clip-text bg-gradient-to-r from-blue-400 to-sky-600'>T.E.S.L.A NIT Patna</h1>
+        <h1 data-aos="zoom-in" className='font-extrabold text-center text-transparent lg:text-8xl md:text-6xl text-5xl mx-8 bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Official Website of</h1>
+        <h1 data-aos="zoom-in" className='font-bold text-center text-transparent lg:text-4xl md:text-3xl text-3xl mx-5 bg-clip-text bg-gradient-to-b from-gray-300 to-gray-600 my-3'>Technical Electrical Society for Learning & Application</h1>
+        <h1 data-aos="zoom-in" className='font-extrabold text-center text-transparent lg:text-7xl md:text-5xl text-4xl bg-clip-text bg-gradient-to-r from-blue-400 to-sky-600'>T.E.S.L.A NIT Patna</h1>
+        <div data-aos="fade-up" className='blob absolute'>
+        </div>
 
-        <img src="./images/arc.png" className='h-[12rem] lg:my-16 md:my-10 my-0' alt="electric" />
+        <img data-aos="fade-up" src="./images/arc.png" className='h-[12rem] lg:my-16 md:my-10 my-0' alt="electric" />
       </div>
 
       {/* <div className='h-[110vh] w-[100%] relative items-center flex lg:flex-row md:flex-row flex-col-reverse'>

@@ -3,7 +3,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className="project_container lg:p-8 md-p-8 p-4 transition-all delay-[30ms] ease-in-out hover:scale-[101%]">
+        <div data-aos="zoom-in" className="project_container lg:p-8 md-p-8 p-4 transition-all delay-[30ms] ease-in-out hover:scale-[101%]">
             <div className="project-card lg:flex-row md:flex-row flex-col">
                 <div className="project_container_left lg:w-[50%] md:w-[50%] w-full">
                     <img className="project_image lg:h-[7rem] md:h-[7rem] h-auto" src={project.imgUrl} alt="project" />

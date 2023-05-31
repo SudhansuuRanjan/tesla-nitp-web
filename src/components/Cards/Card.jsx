@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsDot } from 'react-icons/bs'
+import CountUp from 'react-countup';
 
 const Card1 = ({title,description,image}) => {
     return (
-        <div className='w-fit'>
+        <div data-aos="zoom-in" className='w-fit'>
             <div className='border-[1px]  border-gray-800 hover:border-gray-700 rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0 hover:z-10 bg-[#0a0a0a] transition-all delay-[30ms] ease-in-out'>
                 <div className='h-[10rem] rounded flex items-center justify-center overflow-hidden bg-green-500 mb-5'>
                     <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center' src={image} alt="about" />
@@ -24,7 +25,7 @@ const Card1 = ({title,description,image}) => {
 
 const Card2 = ({ link, image, title, company }) => {
     return (
-        <div className='rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0   transition-all delay-[30ms] ease-in-out'>
+        <div data-aos="zoom-in" className='rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0   transition-all delay-[30ms] ease-in-out'>
             <a href={link} target='_blank' className='h-[10rem] flex items-center justify-center overflow-hidden bg-green-500 mb-5 rounded-xl'>
                 <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} />
             </a>
@@ -38,7 +39,7 @@ const Card2 = ({ link, image, title, company }) => {
 
 const EventCard = ({ data }) => {
     return (
-        <div className='w-[20rem] p-4 border-2 hover:border-gray-800 hover:scale-[102%] transition-all delay-75 ease-in border-gray-900 rounded-2xl mt-5'>
+        <div data-aos="zoom-in-up" className='w-[20rem] p-4 border-2 hover:border-gray-800 hover:scale-[102%] transition-all delay-75 ease-in border-gray-900 rounded-2xl mt-5'>
             <div className='flex relative items-center h-44 overflow-hidden w-full rounded-lg border border-gray-900'>
                 <img className='w-full z-0' src={data.image} alt={data.name} />
                 <p className='py-1 absolute bottom-2 right-1 z-[5] px-3 rounded-full mt-2 text-sky-500 text-xs  bg-gray-900 w-fit bg-opacity-90'>{data.tag}</p>
@@ -76,11 +77,13 @@ const EventCard = ({ data }) => {
 
 const HighlightCard = ({ type, data, icon }) => {
     return (
-        <div className='rounded-2xl w-[16rem] p-5 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 bg-[#0c0c0c]'>
+        <div data-aos="fade-up" className='rounded-2xl w-[16rem] p-5 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 bg-[#0c0c0c]'>
             <div>
                 {icon}
             </div>
-            <h3 className='text-3xl font-semibold mt-3'>{data}</h3>
+            <h3 className='text-3xl font-semibold mt-3'>
+                <CountUp end={data} enableScrollSpy={true} />+
+            </h3>
             <p className='text-gray-500 font-medium'>{type}</p>
         </div>
     )
@@ -88,7 +91,7 @@ const HighlightCard = ({ type, data, icon }) => {
 
 const BlogCard = ({ data }) => {
     return (
-        <Link style={{textDecoration:'none'}} to={`/news/${data.id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
+        <Link data-aos="fade-up" style={{textDecoration:'none'}} to={`/news/${data.id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
             <div className='flex items-center gap-1 text-sky-500 text-sm'>
                 <p>{data.tag}</p>
                 <BsDot className='text-gray-500' />

@@ -1,6 +1,8 @@
 import React from 'react'
 import Heading1 from '../Headings/Heading1'
 import { BlogCard } from '../Cards/Card'
+import { Link } from 'react-router-dom'
+import { RxArrowRight } from 'react-icons/rx'
 
 const Blog = () => {
 
@@ -48,6 +50,13 @@ const Blog = () => {
                     <BlogCard key={data.id} data={data} />
                 ))}
             </div>
+
+            <Link data-aos="fade-left" style={{ textDecoration: "none" }} to="/news" className='bg-sky-600 absolute lg:right-32 md:right-16 right-10 hover:bg-sky-500 text-white visited:text-white font-semi-bold py-2.5 px-5 rounded-full flex items-center -mt-10'>
+                <button className="mr-2 text-white text-sm">
+                    View All
+                </button>
+                <RxArrowRight size={18} />
+            </Link>
         </div>
     )
 }

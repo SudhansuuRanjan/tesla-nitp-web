@@ -34,10 +34,10 @@ const About = () => {
     <div>
       <Heading1 details={"Welcome to our community of builders! We are a diverse group of individuals driven by a shared passion for creating and innovating."} text1={"A community of"} text2={"builders"} />
       <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
-        <HighlightCard icon={<BsFillPeopleFill className='text-sky-500' size={30} />} type={"Total members"} data={"100+"} />
-        <HighlightCard icon={<BsFillCalendarEventFill className='text-sky-500' size={30} />} type={"Events Conducted"} data={"10+"} />
-        <HighlightCard icon={<RiProjector2Fill className='text-sky-500' size={30} />} type={"Workshops Organized"} data={"20+"} />
-        <HighlightCard icon={<AiFillProject className='text-sky-500' size={30} />} type={"Ongoing Projects"} data={"10+"} />
+        <HighlightCard icon={<BsFillPeopleFill className='text-sky-500' size={30} />} type={"Total members"} data={100} />
+        <HighlightCard icon={<BsFillCalendarEventFill className='text-sky-500' size={30} />} type={"Events Conducted"} data={10} />
+        <HighlightCard icon={<RiProjector2Fill className='text-sky-500' size={30} />} type={"Workshops Organized"} data={20} />
+        <HighlightCard icon={<AiFillProject className='text-sky-500' size={30} />} type={"Ongoing Projects"} data={10} />
       </div>
 
       <Heading1 details={"Join our dynamic and innovative organization dedicated to fostering excellence in blockchain & Electrical Engg.We offer opportunities for learning, networking, growth and make a positive impact in the world."} text1={"More Info"} text2={"About Us"} />
