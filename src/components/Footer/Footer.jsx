@@ -31,11 +31,11 @@ const Footer = () => {
         <div data-aos="fade-up" className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-2 md:order-2 lg:order-2'>
           <div className='flex items-center justify-start'><h1 className='font-extrabold text-2xl text-blue-700 mr-3'>|</h1><h1 className='text-lg font-semibold'>Useful Links</h1></div>
           <ul className='mt-4 flex flex-col gap-2 text-base'>
-            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/about"><p className='text-gray-400 hover:text-sky-500'>About</p></Link></li>
             <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/news"><p className='text-gray-400 hover:text-sky-500'>News</p></Link></li>
             <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/events"><p className='text-gray-400 hover:text-sky-500'>Events</p></Link></li>
             <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/team"><p className='text-gray-400 hover:text-sky-500'>Team</p></Link></li>
             <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/gallery"><p className='text-gray-400 hover:text-sky-500'>Gallery</p></Link></li>
+            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/admin"><p className='text-gray-400 hover:text-sky-500'>Admin</p></Link></li>
           </ul>
         </div>
 

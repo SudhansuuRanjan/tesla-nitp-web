@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './utils/Layout';
 import { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About, Error } from './pages/index'
+import { LoginAdmin, DashboardAdmin, BlogsAdmin, GalleryAdmin, ProjectsAdmin, EventsAdmin, TeamAdmin } from './admin/pages/index'
 import ScrollToTop from './hooks/useScrollToTop';
 
 function App() {
@@ -63,6 +64,30 @@ function App() {
           <Layout>
             <Error />
           </Layout>
+        } />
+
+
+        {/* Admin Routes */}
+        <Route path="/admin" element={
+          <LoginAdmin />
+        } />
+        <Route path="/admin/dashboard" element={
+          <DashboardAdmin />
+        } />
+        <Route path="/admin/blogs" element={
+          <BlogsAdmin />
+        } />
+        <Route path="/admin/gallery" element={
+          <GalleryAdmin />
+        } />
+        <Route path="/admin/projects" element={
+          <ProjectsAdmin />
+        } />
+        <Route path="/admin/events" element={
+          <EventsAdmin />
+        } />
+        <Route path="/admin/team" element={
+          <TeamAdmin />
         } />
       </Routes>
     </Router>
