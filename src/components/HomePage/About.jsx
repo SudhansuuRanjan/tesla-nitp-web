@@ -53,8 +53,8 @@ const About = () => {
       <Heading2 text1={"Partnership with"} text2={"world-class companies"} />
       <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
         <Card2 link="https://algorand.com" title="Building Accessible BlockChain" company={"Algorand"} image="https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png" />
-        <Card2 link="https://near.com" title="BlockChain for All" company={"Near"} image="https://www.altcoinbuzz.io/wp-content/uploads/2022/01/what-is-near-protocol.jpg" />
-        <Card2 link="https://edudao.com" title="DAO for Students" company={"EduDAO"} image="https://pbs.twimg.com/profile_images/1470977630946181122/rXTRvqJV_400x400.jpg" />
+        <Card2 link="https://near.org/" title="BlockChain for All" company={"Near"} image="https://www.altcoinbuzz.io/wp-content/uploads/2022/01/what-is-near-protocol.jpg" />
+        <Card2 link="https://www.edudao.io/" title="DAO for Students" company={"EduDAO"} image="https://pbs.twimg.com/profile_images/1470977630946181122/rXTRvqJV_400x400.jpg" />
       </div>
     </div>
   )
