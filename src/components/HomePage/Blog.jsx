@@ -51,7 +51,7 @@ const Blog = () => {
                 ))}
             </div>
 
-            <Link data-aos="fade-left" style={{ textDecoration: "none" }} to="/news" className='bg-sky-600 absolute lg:right-32 md:right-16 right-10 hover:bg-sky-500 text-white visited:text-white font-semi-bold py-2.5 px-5 rounded-full flex items-center -mt-10'>
+            <Link data-aos="zoom-in" style={{ textDecoration: "none" }} to="/news" className='bg-sky-600 absolute lg:right-32 md:right-16 right-10 hover:bg-sky-500 text-white visited:text-white font-semi-bold py-2.5 px-5 rounded-full flex items-center -mt-10'>
                 <button className="mr-2 text-white text-sm">
                     View All
                 </button>

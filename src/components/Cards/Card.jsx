@@ -39,7 +39,7 @@ const Card2 = ({ link, image, title, company }) => {
 
 const EventCard = ({ data }) => {
     return (
-        <div data-aos="zoom-in-up" className='w-[20rem] p-4 border-2 hover:border-gray-800 hover:scale-[102%] transition-all delay-75 ease-in border-gray-900 rounded-2xl mt-5'>
+        <div data-aos="zoom-in" className='w-[20rem] p-4 border-2 hover:border-gray-800 hover:scale-[102%] transition-all delay-75 ease-in border-gray-900 rounded-2xl mt-5'>
             <div className='flex relative items-center h-44 overflow-hidden w-full rounded-lg border border-gray-900'>
                 <img className='w-full z-0' src={data.image} alt={data.name} />
                 <p className='py-1 absolute bottom-2 right-1 z-[5] px-3 rounded-full mt-2 text-sky-500 text-xs  bg-gray-900 w-fit bg-opacity-90'>{data.tag}</p>
