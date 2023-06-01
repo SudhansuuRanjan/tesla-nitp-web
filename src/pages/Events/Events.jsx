@@ -26,7 +26,7 @@ const Events = () => {
             date: "2023-01-25",
             time: "10:00 AM",
             venue: "Meghnad Saha Hall",
-            link: "https://www.google.com"
+            link: "/404"
         },
         {
             id: 2,
@@ -37,7 +37,7 @@ const Events = () => {
             date: "2023-05-02",
             time: "05:00 PM",
             venue: "Meghnad Saha Hall",
-            link: "https://www.google.com"
+            link: "/404"
         }]
 
   return (
