@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
+
+/**
+ * ScrollStatus component
+ * @returns {JSX.Element} ScrollStatus component
+ * @constructor null
+ * @component ScrollStatus
+ * @example <caption>Display scroll status.</caption>
+ * return (
+ *  <ScrollStatus />
+ * )
+ */
 const ScrollStatus = () => {
     const [scrollPercent, setScrollPercent] = useState(0);
 
@@ -20,7 +31,7 @@ const ScrollStatus = () => {
 
     return (
         <div className='h-0.5 w-full'>
-            <div className='h-0.5 w-2 bg-sky-500' style={{ width: `${scrollPercent}%` }}></div>
+            <div className='h-0.5 bg-sky-500' style={{ width: `${scrollPercent}%` }}></div>
         </div>
     );
 };
