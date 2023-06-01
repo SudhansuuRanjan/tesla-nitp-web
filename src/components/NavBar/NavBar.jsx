@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FiX } from "react-icons/fi";
+import ScrollStatus from "../scroll/ScrollStatus";
 
 
 const NavBar = () => {
@@ -19,7 +20,8 @@ const NavBar = () => {
     window.addEventListener("scroll", changeNavbarColor);
 
     return (
-        <div className={`fixed z-10 w-[100%] items-center justify-center ${colorChange && "border-b bg-black transition-all delay-100  ease-in-out bg-opacity-20 backdrop-blur-md border-gray-800 shadow-lg"}`}>
+        <div className="fixed top-0 z-10 w-full">
+        <div className={`w-[100%] items-center justify-center ${colorChange && " bg-black transition-all delay-100  ease-in-out bg-opacity-20 backdrop-blur-md border-gray-800 shadow-lg"}`}>
             <div className="flex items-center justify-between lg:w-[65rem] md:w-[100%] px-4 md:px-3 py-5 m-auto text-lg">
                 <div className="flex items-center">
                     <Link style={{ textDecoration: "none" }} to="/">
@@ -188,6 +190,8 @@ const NavBar = () => {
                     </ul>
                 </div>
             )}
+            <ScrollStatus/>
+        </div>
         </div>
     );
 };
