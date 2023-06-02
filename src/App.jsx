@@ -5,7 +5,8 @@ import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './utils/Layout';
 import { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About, Error } from './pages/index'
-import { LoginAdmin, DashboardAdmin, BlogsAdmin, GalleryAdmin, ProjectsAdmin, EventsAdmin, TeamAdmin } from './admin/pages/index'
+import { LoginAdmin, DashboardAdmin, BlogsAdmin, GalleryAdmin, ProjectsAdmin, EventsAdmin, TeamAdmin, Profile } from './admin/pages/index'
+import AdminLayout from './admin/components/AdminLayout';
 import ScrollToTop from './hooks/useScrollToTop';
 
 function App() {
@@ -72,22 +73,39 @@ function App() {
           <LoginAdmin />
         } />
         <Route path="/admin/dashboard" element={
-          <DashboardAdmin />
+          <AdminLayout>
+            <DashboardAdmin />
+          </AdminLayout>
         } />
         <Route path="/admin/blogs" element={
-          <BlogsAdmin />
+          <AdminLayout>
+            <BlogsAdmin />
+          </AdminLayout>
         } />
         <Route path="/admin/gallery" element={
-          <GalleryAdmin />
+          <AdminLayout>
+            <GalleryAdmin />
+          </AdminLayout>
         } />
         <Route path="/admin/projects" element={
-          <ProjectsAdmin />
+          <AdminLayout>
+            <ProjectsAdmin />
+          </AdminLayout>
         } />
         <Route path="/admin/events" element={
-          <EventsAdmin />
+          <AdminLayout>
+            <EventsAdmin />
+          </AdminLayout>
         } />
         <Route path="/admin/team" element={
-          <TeamAdmin />
+          <AdminLayout>
+            <TeamAdmin />
+          </AdminLayout>
+        } />
+        <Route path="/admin/profile" element={
+          <AdminLayout>
+            <Profile />
+          </AdminLayout>
         } />
       </Routes>
     </Router>
