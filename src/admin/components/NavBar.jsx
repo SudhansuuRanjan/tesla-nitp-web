@@ -31,28 +31,28 @@ const NavBar = () => {
                 <div className="flex items-center">
                     <ul className="md:flex gap-8 hidden items-center text-base">
                         <li>
-                            <NavLink style={{ textDecoration: "none" }} to="/about">
+                            <NavLink style={{ textDecoration: "none" }} to="/admin/gallery">
                                 {({ isActive, isPending }) => (
-                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>About</span>
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Gallery</span>
                                 )}
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink style={{ textDecoration: "none" }} to="/events">
+                            <NavLink style={{ textDecoration: "none" }} to="/admin/events">
                                 {({ isActive, isPending }) => (
                                     <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Events</span>
                                 )}
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink style={{ textDecoration: "none" }} to="/news">
+                            <NavLink style={{ textDecoration: "none" }} to="/admin/blogs">
                                 {({ isActive, isPending }) => (
-                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>News</span>
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Blogs</span>
                                 )}
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink style={{ textDecoration: "none" }} to="/projects">
+                            <NavLink style={{ textDecoration: "none" }} to="/admin/projects">
                                 {({ isActive, isPending }) => (
                                     <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Projects</span>
                                 )}
@@ -60,16 +60,16 @@ const NavBar = () => {
                         </li>
 
                         <li>
-                            <NavLink style={{ textDecoration: "none" }} to="/team">
+                            <NavLink style={{ textDecoration: "none" }} to="/admin/team">
                                 {({ isActive, isPending }) => (
                                     <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Team</span>
                                 )}
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink style={{ textDecoration: "none" }} to="/gallery">
+                            <NavLink style={{ textDecoration: "none" }} to="/admin/profile">
                                 {({ isActive, isPending }) => (
-                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Gallery</span>
+                                    <span className={`hover:underline underline-offset-4 decoration-pink-500 ${isActive ? "text-sky-500 font-medium" : "text-white"}`}>Profile</span>
                                 )}
                             </NavLink>
                         </li>
@@ -109,7 +109,7 @@ const NavBar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <Link style={{ textDecoration: "none" }} to="/about">
+                            <Link style={{ textDecoration: "none" }} to="/admin/gallery">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -117,12 +117,12 @@ const NavBar = () => {
                                     }}
                                     className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
-                                    About
+                                    Gallery
                                 </button>
                             </Link>
                         </li>
                         <li>
-                            <Link style={{ textDecoration: "none" }} to="/events">
+                            <Link style={{ textDecoration: "none" }} to="/admin/events">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -135,7 +135,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link style={{ textDecoration: "none" }} to="/projects">
+                            <Link style={{ textDecoration: "none" }} to="/admin/projects">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -148,7 +148,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link style={{ textDecoration: "none" }} to="/gallery">
+                            <Link style={{ textDecoration: "none" }} to="/admin/profile">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -156,12 +156,12 @@ const NavBar = () => {
                                     }}
                                     className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
-                                    Gallery
+                                    Profile
                                 </button>
                             </Link>
                         </li>
                         <li>
-                            <Link style={{ textDecoration: "none" }} to="/team">
+                            <Link style={{ textDecoration: "none" }} to="/admin/team">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -174,7 +174,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link className="visited:text-white text-white" style={{ textDecoration: "none" }} to="/news">
+                            <Link className="visited:text-white text-white" style={{ textDecoration: "none" }} to="/admin/blogs">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
@@ -182,7 +182,7 @@ const NavBar = () => {
                                     }}
                                     className="hover:underline hover:border-blue-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer  hover:bg-gray-700 text-left"
                                 >
-                                    Newsletter
+                                    Blogs
                                 </button>
                             </Link>
                         </li>
