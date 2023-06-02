@@ -3,6 +3,8 @@ import './Login.scss'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
+  document.title = 'Tesla NIT Patna | Admin | Login';
+
   return (
     <div className='flex items-center justify-center h-screen'>
         <div className="login__container rounded-lg p-5 border">

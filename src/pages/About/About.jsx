@@ -2,6 +2,9 @@ import './About.scss'
 import Heading from '../../components/Headings/Heading'
 
 const About = () => {
+
+  document.title = 'Tesla NIT Patna | About';
+
   return (
     <div className='pt-16 min-h-screen'>
       <Heading heading="ABOUT"></Heading>

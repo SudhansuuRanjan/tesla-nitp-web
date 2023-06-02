@@ -5,6 +5,9 @@ import { EventCard } from '../../components/Cards/Card'
 
 const Events = () => {
 
+  document.title = 'Tesla NIT Patna | Events';
+
+
   const events = [
     {
             id: 0,
