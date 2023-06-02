@@ -6,6 +6,8 @@ import Heading from "../../components/Headings/Heading"
 
 const Gallery = () => {
 
+    document.title = 'Tesla NIT Patna | Gallery';
+
     const [currentImg, setCurrentImg] = useState(0);
     const [modal, setModal] = useState(false);
 

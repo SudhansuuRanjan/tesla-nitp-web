@@ -6,6 +6,8 @@ import TeamCard from './TeamCard'
 
 
 const Team = () => {
+  document.title = 'Tesla NIT Patna | Team';
+
 
   const members = [
     {

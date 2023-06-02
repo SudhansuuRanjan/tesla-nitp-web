@@ -4,6 +4,8 @@ import Heading from "../../components/Headings/Heading";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
+  document.title = 'Tesla NIT Patna | Projects';
+
   const data = [
     {
       imgUrl:

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
+  document.title = 'Tesla NIT Patna | Admin Dashboard';
+
   return (
     <div className='pt-16'>
       <h1 className='text-center mt-10 font-bold text-sky-500 text-4xl'>Admin Dashboard</h1>

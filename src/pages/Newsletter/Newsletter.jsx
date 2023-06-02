@@ -5,6 +5,8 @@ import News from './News'
 import { BlogCard } from '../../components/Cards/Card'
 
 const Newsletter = () => {
+  document.title = 'Tesla NIT Patna | News';
+
 
   const blogData = [{
     title: "Getting Started with Blockchain Development",
