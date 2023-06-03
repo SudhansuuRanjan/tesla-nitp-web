@@ -8,6 +8,7 @@ import { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About, Err
 import { LoginAdmin, DashboardAdmin, BlogsAdmin, GalleryAdmin, ProjectsAdmin, EventsAdmin, TeamAdmin, Profile } from './admin/pages/index'
 import AdminLayout from './admin/components/AdminLayout';
 import ScrollToTop from './hooks/useScrollToTop';
+import AboutPartners from './pages/About/About_Partners';
 
 function App() {
 
@@ -38,6 +39,11 @@ function App() {
         <Route path="/about" element={
           <Layout>
             <About />
+          </Layout>
+        } />
+        <Route path="/about_partners" element={
+          <Layout>
+            <AboutPartners />
           </Layout>
         } />
         <Route path="/events" element={

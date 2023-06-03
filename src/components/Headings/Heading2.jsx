@@ -8,7 +8,7 @@ const Heading2 = ({ text1,text2 }) => {
             <p className='text-gray-500 mt-4 max-w-2xl'>
                 We are proud to collaborate with leading global companies, bringing you unparalleled opportunities for internships, projects, and industry exposure.
             </p>
-            <Link to='/about' className='text-white decoration-wavy visited:text-white no-underline decoration-white font-medium'>
+            <Link to='/about_partners' className='text-white decoration-wavy visited:text-white no-underline decoration-white font-medium'>
                 <p className='no-underline mt-4'>Discover our Partner events  &gt;</p>
             </Link>
         </div>
