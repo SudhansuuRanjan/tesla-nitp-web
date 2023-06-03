@@ -6,7 +6,7 @@ const AboutPartners = () => {
 
   return (
     <div className="pt-16 min-h-screen" >
-      <Heading heading="ABOUT OUR PARTNERS"></Heading>
+      <Heading heading="PARTNERS"></Heading>
 
       <div className="paragraph-body w text-white rounded-3xl px-2 bg flex justify-items-center items-center " >
         <div className="m-2 basis-[60%] px-2 hover:scale-95 duration-1000 ">
