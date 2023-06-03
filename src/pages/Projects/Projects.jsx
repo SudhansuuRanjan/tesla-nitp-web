@@ -8,60 +8,26 @@ const Projects = () => {
 
   const data = [
     {
-      imgUrl:
-        "https://cdn.sanity.io/images/58siqeyu/production/bb92a30fe0cc9ffb4caa9b16ed83a6a3dfde3e09-563x372.png",
-      desc: "The self-balancing robot is similar to an upside-down pendulum. Unlike a normal pendulum which keeps on swinging once given a nudge,",
-      title: "SELF BALANCING BOT",
-      link: "https://tesla-nitp.vercel.app/ ",
+      imgUrl: "https://github.com/SudhansuuRanjan/tesla-nitp-web/raw/main/teslaclublive.png",
+      desc: "Official website of Tesla Club using ReactJs, Tailwind and Firebase with animations and dark theme, which also has an admin portal.",
+      title: "T.E.S.L.A Official Website",
+      link: "https://tesla-nitp.vercel.app/",
       source_code: "https://github.com/SudhansuuRanjan/tesla-nitp-web",
-      techstack: ["ReactJs", "Firebase"],
-      tags: ["#alumni", "#nitp"],
+      techstack: ["ReactJs", "Firebase", "aos"],
+      tags: ["#tesla", "#nitp", "#reactjs"],
       id: "p01"
     },
     {
-      imgUrl:
-        "https://cdn.sanity.io/images/58siqeyu/production/bb92a30fe0cc9ffb4caa9b16ed83a6a3dfde3e09-563x372.png",
-      desc: "The self-balancing robot is similar to an upside-down pendulum. Unlike a normal pendulum which keeps on swinging once given a nudge,",
-      title: "SELF BALANCING BOT",
-      link: "https://tesla-nitp.vercel.app/ ",
-      source_code: "https://github.com/SudhansuuRanjan/tesla-nitp-web",
-      techstack: ["ReactJs", "Firebase"],
-      tags: ["#alumni", "#nitp"],
+      imgUrl: "https://i.ibb.co/GtdqMzw/Screenshot-1384.png",
+      desc: "Official Alumni protal of NIT, Patna using ReactJs, Tailwind and Firebase with animations and dark theme, which also has an admin portal.",
+      title: "NITP Alumni Portal",
+      link: "https://alumini-nitp.vercel.app/",
+      source_code: "https://github.com/Rishabh-25-code/alumini-cell-nitp",
+      techstack: ["ReactJs", "Firebase", "aos"],
+      tags: ["#alumni", "#nitp", "#reactjs"],
       id: "p02"
     },
-    {
-      imgUrl:
-        "https://cdn.sanity.io/images/58siqeyu/production/bb92a30fe0cc9ffb4caa9b16ed83a6a3dfde3e09-563x372.png",
-      desc: "The self-balancing robot is similar to an upside-down pendulum. Unlike a normal pendulum which keeps on swinging once given a nudge,",
-      title: "SELF BALANCING BOT",
-      link: "https://tesla-nitp.vercel.app/ ",
-      source_code: "https://github.com/SudhansuuRanjan/tesla-nitp-web",
-      techstack: ["ReactJs", "Firebase"],
-      tags: ["#alumni", "#nitp"],
-      id: "p03"
-    },
-    {
-      imgUrl:
-        "https://cdn.sanity.io/images/58siqeyu/production/bb92a30fe0cc9ffb4caa9b16ed83a6a3dfde3e09-563x372.png",
-      desc: "The self-balancing robot is similar to an upside-down pendulum. Unlike a normal pendulum which keeps on swinging once given a nudge,",
-      title: "SELF BALANCING BOT",
-      link: "https://tesla-nitp.vercel.app/ ",
-      source_code: "https://github.com/SudhansuuRanjan/tesla-nitp-web",
-      techstack: ["ReactJs", "Firebase"],
-      tags: ["#alumni", "#nitp"],
-      id: "p04"
-    },
-    {
-      imgUrl:
-        "https://cdn.sanity.io/images/58siqeyu/production/bb92a30fe0cc9ffb4caa9b16ed83a6a3dfde3e09-563x372.png",
-      desc: "The self-balancing robot is similar to an upside-down pendulum. Unlike a normal pendulum which keeps on swinging once given a nudge,",
-      title: "SELF BALANCING BOT",
-      link: "https://tesla-nitp.vercel.app/ ",
-      source_code: "https://github.com/SudhansuuRanjan/tesla-nitp-web",
-      techstack: ["ReactJs", "Firebase"],
-      tags: ["#alumni", "#nitp"],
-      id: "p05"
-    },
+
   ];
 
   return (
