@@ -1,64 +1,73 @@
 import React, { useState } from "react";
-import "./Login.scss";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  document.title = "Tesla NIT Patna | Admin | Login";
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  document.title = "Tesla NIT Patna | AdminLogin";
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  }
+
+  const Login = (e) => {
+    e.preventDefault();
+    navigate('/admin/dashboard');
+  }
 
   return (
-    <div className="flex items-center justify-center h-screen ">
-      <div className="login__container rounded-lg p-5 border flex flex-col bg-stone-900 space-y-8 sm:w-4/12 md:w-8/12 lg:w-4/12 ">
-        <div className="my-3 p-1 py-0 flex items-center justify-center">
-          <img src="/images/logo.svg" alt="logo" className="h-14 mb-2  md:w-56 lg:w-56" />
+    <div className="flex items-center justify-center h-screen w-full">
+      <div className="rounded-3xl lg:w-fit md:w-fit w-[90%] lg:px-16 md:px-12 px-6 py-7 border border-gray-700 flex flex-col bg-[#131313] space-y-8">
+        <div className="flex items-center justify-center">
+          <img src="/images/logo.svg" alt="logo" className="h-14 mt-1 w-auto" />
         </div>
         <div>
-          <h1 className="text-center text-xl leading-normal">
-            Sign in to your Tesla Account.{" "}
+          <h1 className="text-center text-xl font-semibold leading-normal">
+            Welcome! Tesla Admin.{" "}
           </h1>
-          <p className="text-center leading-normal">
-            Don't have an Account ?{" "}
-            <Link to="/404">
-              <span className="text-violet-600 underline underline-offset-4">
-                Sign up here
-              </span>
-            </Link>{" "}
-          </p>
         </div>
 
         <form onSubmit={Login}>
-          <div className="flex flex-col space-y-4">
-            <label className="text-xl">E-mail *</label>
+          <div className="flex lg:w-[18rem] md:w-[18rem] w-[100%] flex-col space-y-4">
+            <label className="text-lg">E-mail <span className="text-red-500">*</span></label>
             <input
-              className="h-11 px-4"
+              className="h-11 px-4 rounded-xl"
               type="email"
               name="email"
-              placeholder="e.g. abc@tesla.co.in"
+              placeholder="abc@tesla.co.in"
               required
-              value={email}
+              onChange={handleChange}
+              value={formData.email}
             />
-            <label className="text-xl">Password *</label>
+            <label className="text-lg">Password <span className="text-red-500">*</span></label>
             <input
-              className="h-11 px-4"
+              className="h-11 px-4 rounded-xl"
               type="password"
-              name="pass"
-              placeholder="e.g. ********"
+              name="password"
+              placeholder="Enter Password"
               required
               maxLength={16}
-              minLength={6}
-              value={password}
+              minLength={8}
+              onChange={handleChange}
+              value={formData.password}
             />
           </div>
-        </form>
-        <Link to="/admin/dashboard">
-          <button className="px-8 py-2 my-3 bg-violet-500 hover:bg-violet-800 rounded-full w-full  ">
+
+          <button type="submit" className="px-8 py-3 mt-10 mb-5 bg-sky-500 font-medium text-black hover:bg-sky-600 rounded-full w-full">
             Login
           </button>
-        </Link>
-        <p className="text-center pb-5  ">
-        <Link to="/404"> <span className="text-violet-600 underline underline-offset-4">Reset Your password !</span></Link>
-        </p>
+        </form>
       </div>
     </div>
   );

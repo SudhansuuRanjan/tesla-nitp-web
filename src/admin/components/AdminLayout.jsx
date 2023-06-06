@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 const AdminLayout = ({children}) => {
   return (
-    <div>
+    <div className='relative'>
         <NavBar/>
         {children}
         <Footer/>
