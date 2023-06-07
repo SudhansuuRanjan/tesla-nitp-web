@@ -8,24 +8,24 @@ import { AiFillProject } from 'react-icons/ai'
 
 const About = () => {
 
-  const aboutData =[
+  const aboutData = [
     {
-      id:"0",
-      title:"Join the T.E.S.L.A. Club at NIT Patna",
-      description:"Join the vibrant T.E.S.L.A. Club at NIT Patna, focused on electrical engineering and blockchain. Explore new frontiers, collaborate on projects, and make a lasting impact in the world of technology.",
-      image:"https://i0.wp.com/joinhandshake.com/wp-content/uploads/2021/12/HS_21Moments_BlogImage.jpg?resize=795%2C530&ssl=1",
+      id: "0",
+      title: "Join the T.E.S.L.A. Club at NIT Patna",
+      description: "Join the vibrant T.E.S.L.A. Club at NIT Patna, focused on electrical engineering and blockchain. Explore new frontiers, collaborate on projects, and make a lasting impact in the world of technology.",
+      image: "https://i0.wp.com/joinhandshake.com/wp-content/uploads/2021/12/HS_21Moments_BlogImage.jpg?resize=795%2C530&ssl=1",
     },
     {
-      id:"0",
-      title:"Unlock Your Potential with T.E.S.L.A. Club",
-      description:"Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
-      image:"https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      id: "1",
+      title: "Unlock Your Potential with T.E.S.L.A. Club",
+      description: "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
+      image: "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
     },
     {
-      id:"0",
-      title:"Connect and Innovate with T.E.S.L.A. Club",
-      description:"Collaborate, share ideas, and explore emerging technologies with T.E.S.L.A. Club. Shape the future of electrical engineering and blockchain through industry interactions and hackathons.",
-      image:"https://www.eschoolnews.com/files/2021/06/innovative-students-equity.jpeg",
+      id: "2",
+      title: "Connect and Innovate with T.E.S.L.A. Club",
+      description: "Collaborate, share ideas, and explore emerging technologies with T.E.S.L.A. Club. Shape the future of electrical engineering and blockchain through industry interactions and hackathons.",
+      image: "https://www.eschoolnews.com/files/2021/06/innovative-students-equity.jpeg",
     }
   ]
 
@@ -54,7 +54,7 @@ const About = () => {
       <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
         <Card2 link="https://algorand.com" title="Building Accessible BlockChain" company={"Algorand"} image="https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png" />
         <Card2 link="https://near.org/" title="BlockChain for All" company={"Near"} image="https://www.altcoinbuzz.io/wp-content/uploads/2022/01/what-is-near-protocol.jpg" />
-        <Card2 link="https://www.edudao.io/" title="DAO for Students" company={"EduDAO"} image="https://pbs.twimg.com/profile_images/1470977630946181122/rXTRvqJV_400x400.jpg" />
+        <Card2 link="https://www.edudao.io/" title="DAO for Students" company={"EduDAO"} image="./images/edudao.jpg" />
       </div>
     </div>
   )

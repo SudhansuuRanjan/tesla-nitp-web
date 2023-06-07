@@ -31,7 +31,7 @@ const Event = () => {
         {
             id: 2,
             name: "EduDAO Info Session",
-            image: "https://pbs.twimg.com/profile_images/1470977630946181122/rXTRvqJV_400x400.jpg",
+            image: "./images/edudao.jpg",
             tag: "Technology",
             description: "An info session on EduDAO, a DAO for students by students.",
             date: "2023-05-02",

@@ -4,7 +4,7 @@ const Gallery = () => {
   document.title = 'Tesla NIT Patna | Admin | Gallery';
 
   return (
-    <div className='pt-16'>Gallery</div>
+    <div className='pt-20'>Gallery</div>
   )
 }
 

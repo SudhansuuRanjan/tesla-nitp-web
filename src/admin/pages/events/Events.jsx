@@ -4,7 +4,7 @@ const Events = () => {
   document.title = 'Tesla NIT Patna | Admin | Events';
 
   return (
-    <div className='pt-16'>Events</div>
+    <div className='pt-20'>Events</div>
   )
 }
 
