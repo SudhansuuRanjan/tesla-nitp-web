@@ -9,7 +9,7 @@ const Event = () => {
         {
             id: 0,
             name: "Blockchain Technology for Next-Generation Applications",
-            image: "https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png",
+            image: "public/images/algorand.jpg",
             tag: "BlockChain",
             description: 'Faculty Development Program on “Blockchain Technology for Next-Generation Applications”',
             date: "19th-24th June 2023",

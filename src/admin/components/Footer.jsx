@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 
@@ -21,5 +21,3 @@ const Footer = () => {
     </div>
   )
 }
-
-export default Footer
