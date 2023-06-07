@@ -8,10 +8,10 @@ const AboutPartners = () => {
     <div className="pt-16 min-h-screen" >
       <Heading heading="PARTNERS"></Heading>
 
-      <div className="paragraph-body w text-white rounded-3xl px-2 bg flex justify-items-center items-center " >
+      <div className=" m-10 lg:max-w-[80%] md:w-[85%] w-[94%] bg-gray-900 rounded-3xl p-5 py-10 mx-auto flex flex-col md:py-[20]   sm:flex-row  " >
         <div className="m-2 basis-[60%] px-2 hover:scale-95 duration-1000 ">
           <h2 className=" text-4xl px-2 back animate-bounce  ">ALGORAND</h2>
-          <div class="max-w-[33%] mb-5 mt-1 h-1 bg-pink-500 "></div>
+          <div class="w-48 mb-5 mt-1 h-1 bg-pink-500 "></div>
           <p  >
             Welcome to the official website of <span>T.E.S.L.A. Club</span>, the
             premier club for Electrical Engineering enthusiasts and
@@ -32,7 +32,7 @@ const AboutPartners = () => {
         </div>
       </div>
 
-      <div className="paragraph-body w text-white rounded-3xl px-2 bg flex justify-items-center items-center ">
+      <div className=" m-10 lg:max-w-[80%] md:w-[85%] w-[94%] bg-gray-900 rounded-3xl p-5 py-10 mx-auto flex flex-col md:py-[80]   sm:flex-row   ">
       <div className="m-2 basis-[40%] sm:px-5  py-2 px-2 overflow-hidden rounded-xl lg:mb-0 md:mb-0 mb-10  ">
           <img
             src="https://www.altcoinbuzz.io/wp-content/uploads/2022/01/what-is-near-protocol.jpg"
@@ -42,7 +42,7 @@ const AboutPartners = () => {
 
         <div className="m-2 basis-[60%] px-2 hover:scale-95 duration-1000 ">
           <h2 className=" text-4xl px-2 back animate-bounce  ">NEAR</h2>
-          <div class="max-w-[17%] mb-5 mt-1 h-1 bg-pink-500 "></div>
+          <div class="w-24 mb-5 mt-1 h-1 bg-pink-500 "></div>
           <p  >
             Welcome to the official website of <span>T.E.S.L.A. Club</span>, the
             premier club for Electrical Engineering enthusiasts and
@@ -57,10 +57,10 @@ const AboutPartners = () => {
         </div>
       </div>
 
-      <div className="paragraph-body w text-white rounded-3xl px-2 bg flex justify-items-center items-center ">
+      <div className=" m-10 lg:max-w-[80%] md:w-[85%] w-[94%] bg-gray-900 rounded-3xl p-5 py-10 mx-auto flex flex-col md:py-[80]   sm:flex-row  ">
         <div className="m-2 basis-[60%] px-2 hover:scale-95 duration-1000 ">
           <h2 className=" text-4xl px-2 back animate-bounce  ">Edu DAO</h2>
-          <div class="max-w-[25%] mb-5 mt-1 h-1 bg-pink-500 "></div>
+          <div class="w-40 mb-5 mt-1 h-1 bg-pink-500 "></div>
           <p  >
             Welcome to the official website of <span>T.E.S.L.A. Club</span>, the
             premier club for Electrical Engineering enthusiasts and
