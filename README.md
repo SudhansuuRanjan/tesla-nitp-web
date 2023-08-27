@@ -63,6 +63,7 @@ Change the `.env.example` file to `.env` and add the required credentials.
 ```bash
 VITE_APPWRITE_PROJECT_ID=
 VITE_APPWRITE_DATABASE_ID=
+VITE_APPWRITE_BUCKET_ID=
 ```
 
 In order to run the application Type the following command
