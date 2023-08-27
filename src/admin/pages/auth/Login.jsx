@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
-  document.title = "Tesla NIT Patna | AdminLogin";
+  const { handleLogin,user } = useAuth();
   const navigate = useNavigate();
+  document.title = "Tesla NIT Patna | AdminLogin";
 
   const [formData, setFormData] = useState({
     email: "",
@@ -23,7 +25,23 @@ const Login = () => {
 
   const Login = (e) => {
     e.preventDefault();
-    navigate('/admin/dashboard');
+    if (formData.email && formData.password) {
+      try {
+        handleLogin({
+          email: formData.email,
+          password: formData.password,
+        });
+      } catch (error) {
+        console.log(error.message);
+      }
+    } else {
+      alert("Please fill the form");
+    }
+  }
+
+  if (user) {
+    navigate(-1); // Go back to previous route
+    return null; // Render nothing while redirecting
   }
 
   return (
@@ -64,9 +82,16 @@ const Login = () => {
             />
           </div>
 
-          <button type="submit" className="px-8 py-3 mt-10 mb-5 bg-sky-500 font-medium text-black hover:bg-sky-600 rounded-full w-full">
+          <button type="submit" className="px-8 py-2.5 mt-10 mb-5 bg-sky-500 font-medium text-black hover:bg-sky-600 rounded-xl w-full">
             Login
           </button>
+
+          <p className="text-center mb-5">
+            Don't have an account?{" "}
+            <Link to="/admin/register" className="text-sky-500">
+              SignUp
+            </Link>
+          </p>
         </form>
       </div>
     </div>

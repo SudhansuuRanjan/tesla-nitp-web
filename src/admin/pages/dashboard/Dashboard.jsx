@@ -77,9 +77,9 @@ const Dashboard = () => {
               </div>
 
               <div className='flex items-center'>
-                <a className='hover:scale-105 transition-all delay-[20ms] ease-in' >
+                <p className='hover:scale-105 transition-all delay-[20ms] ease-in' >
                   <FaArrowRight size={22} color='grey' />
-                </a>
+                </p>
               </div>
             </div>
           </Link>))}

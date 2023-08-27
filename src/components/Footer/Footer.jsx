@@ -35,7 +35,7 @@ const Footer = () => {
             <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/events"><p className='text-gray-400 hover:text-sky-500'>Events</p></Link></li>
             <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/team"><p className='text-gray-400 hover:text-sky-500'>Team</p></Link></li>
             <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/gallery"><p className='text-gray-400 hover:text-sky-500'>Gallery</p></Link></li>
-            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/admin"><p className='text-gray-400 hover:text-sky-500'>Admin</p></Link></li>
+            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/admin/dashboard"><p className='text-gray-400 hover:text-sky-500'>Admin</p></Link></li>
           </ul>
         </div>
 

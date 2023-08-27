@@ -11,8 +11,10 @@
   "dependencies": {
     "@react-three/drei": "^9.60.0",
     "@react-three/fiber": "^8.12.0",
+    "@tanstack/react-query": "^4.33.0",
     "@types/three": "^0.150.0",
     "aos": "^2.3.4",
+    "appwrite": "^11.0.1",
     "gsap": "^3.11.5",
     "gsap-trial": "^3.11.5",
     "react": "^18.2.0",
@@ -24,6 +26,7 @@
     "three": "^0.151.2"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^4.33.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
