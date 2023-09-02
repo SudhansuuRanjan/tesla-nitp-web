@@ -11,15 +11,22 @@ import ScrollToTop from './hooks/useScrollToTop';
 import AboutPartners from './pages/About/About_Partners';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateComponent';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 function App() {
-
+  
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, [])
 
   return (
+    <QueryClientProvider client={queryClient}>
     <Router>
       <AuthProvider>
         <ScrollToTop />
@@ -126,6 +133,7 @@ function App() {
         </Routes>
       </AuthProvider>
     </Router>
+    </QueryClientProvider>
   )
 }
 

@@ -1,27 +1,27 @@
 import React from 'react'
 import './Profile.scss'
+import useAuth from '../../../hooks/useAuth';
 
 const Profile = () => {
   document.title = 'Tesla NIT Patna | Admin | Profile';
-
-
+  const { user, handleLogout } = useAuth();
 
   return (
     <>
-      <form>
+      <div>
         <div className="form">
           <div className="details">
             <div className='pt-16 title'>My Profile</div>
-            <label for="email" >Email:</label><br></br>
-            <input className='input' type="email" id="email" name="email" value="John"></input> <br></br>
-            <label for="name">Name:</label><br></br>
-            <input className='input' type="text" id="name" name="name" value="John"></input> <br></br>
-            </div>
-            <div className="button">
-            <button className="btn">Logout</button>
-            </div>
+            <label htmlFor="email" >Email:</label><br></br>
+            <input className='input' type="email" id="email" readOnly name="email" value={user.email}></input> <br></br>
+            <label htmlFor="name">Name:</label><br></br>
+            <input className='input' type="text" id="name" readOnly name="name" value={user.name}></input> <br></br>
+          </div>
+          <div className="button">
+            <button onClick={handleLogout} className="btn">Logout</button>
+          </div>
         </div>
-      </form>
+      </div>
     </>
 
 

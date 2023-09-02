@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { createDocument } from '../../../services/document';
+import { uploadFile } from '../../../services/file';
 
 const Team = () => {
   const [createMember, setCreateMember] = useState(false);
@@ -109,30 +111,39 @@ const Team = () => {
 export default Team;
 
 
-const TeamForm = ({setCreateMember}) => {
+const TeamForm = ({ setCreateMember }) => {
   const [formData, setFormData] = useState({
     name: '',
     priority: 0,
     email: '',
     role: '',
     about: '',
-    image: '',
-    social: {
-      instagram: "",
-      linkedin: "",
-      twitter: "",
-      github: "",
-      discord: "",
-    }
+    image: null,
+    instagram: "",
+    linkedin: "",
+    twitter: "",
+    github: "",
+    discord: "",
   })
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    if (!formData.image) return;
+    try {
+      console.log(formData);
+      const res = await uploadFile(formData.image);
+      console.log(res);
+      let data = JSON.parse(JSON.stringify(formData));
+      data.image = res.url;
+      const doc = await createDocument("members", data);
+      console.log(doc);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -211,10 +222,15 @@ const TeamForm = ({setCreateMember}) => {
               className="py-2 px-4 rounded-xl"
               type="file"
               name="image"
-              placeholder="Enter Image"
+              placeholder="Select Image"
               required
-              onChange={handleChange}
-              value={formData.image}
+              accept="image/*"
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  image: e.target.files[0]
+                });
+              }}
             />
           </div>
 
@@ -226,7 +242,7 @@ const TeamForm = ({setCreateMember}) => {
               name="instagram"
               placeholder="Enter Instagram"
               onChange={handleChange}
-              value={formData.social.instagram}
+              value={formData.instagram}
             />
           </div>
 
@@ -238,7 +254,7 @@ const TeamForm = ({setCreateMember}) => {
               name="linkedin"
               placeholder="Enter Linkedin"
               onChange={handleChange}
-              value={formData.social.linkedin}
+              value={formData.linkedin}
             />
           </div>
 
@@ -250,7 +266,7 @@ const TeamForm = ({setCreateMember}) => {
               name="twitter"
               placeholder="Enter Twitter"
               onChange={handleChange}
-              value={formData.social.twitter}
+              value={formData.twitter}
             />
           </div>
 
@@ -262,7 +278,7 @@ const TeamForm = ({setCreateMember}) => {
               name="github"
               placeholder="Enter Github"
               onChange={handleChange}
-              value={formData.social.github}
+              value={formData.github}
             />
           </div>
 
@@ -274,12 +290,12 @@ const TeamForm = ({setCreateMember}) => {
               name="discord"
               placeholder="Enter Discord"
               onChange={handleChange}
-              value={formData.social.discord}
+              value={formData.discord}
             />
           </div>
         </div>
         <div className='py-5 flex items-center'>
-          <button onClick={()=>setCreateMember(false)} className='m-auto bg-gray-600 text-white py-2 px-12 rounded-xl'>Cancel</button>
+          <button onClick={() => setCreateMember(false)} className='m-auto bg-gray-600 text-white py-2 px-12 rounded-xl'>Cancel</button>
           <button className='m-auto bg-sky-600 text-white py-2 px-12 rounded-xl' type="submit">Submit</button>
         </div>
       </form>

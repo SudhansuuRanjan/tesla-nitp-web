@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
         await account.deleteSession("current");
         setUser(null);
         setLoading(false);
+        navigate("/admin/login");
     }
 
     const checkUser = async () => {
@@ -30,7 +31,7 @@ const AuthProvider = ({ children }) => {
             const res = await account.get();
             setUser(res);
             setLoading(false);
-            navigate("/admin/dashboard");
+            navigate("/");
         } catch (error) {
             console.log(error.message);
             setUser(null);
