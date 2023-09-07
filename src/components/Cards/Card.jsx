@@ -103,7 +103,7 @@ const BlogCard = ({ data }) => {
             <div>
                 <h3 className='text-base font-semibold text-white'>{data.title}</h3>
                 <p className='text-gray-500 text-xs font-medium leading-5 mt-1'>
-                    {data.description.substring(0, 100) + "..."}
+                    {data.body.substring(0, 100) + "..."}
                 </p>
             </div>
             <div className='flex items-center gap-2 mt-2'>

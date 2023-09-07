@@ -9,21 +9,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^9.60.0",
-    "@react-three/fiber": "^8.12.0",
     "@tanstack/react-query": "^4.33.0",
-    "@types/three": "^0.150.0",
     "aos": "^2.3.4",
     "appwrite": "^11.0.1",
-    "gsap": "^3.11.5",
-    "gsap-trial": "^3.11.5",
     "react": "^18.2.0",
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-markdown": "^8.0.7",
     "react-router-dom": "^6.9.0",
-    "sass": "^1.60.0",
-    "three": "^0.151.2"
+    "react-syntax-highlighter": "^15.5.0",
+    "react-tag-input-component": "^2.0.2",
+    "rehype-raw": "^7.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.2",
+    "remark-rehype": "^10.1.0",
+    "sass": "^1.60.0"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^4.33.0",

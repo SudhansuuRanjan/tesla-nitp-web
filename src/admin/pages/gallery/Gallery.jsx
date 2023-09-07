@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { createDocument, getDocuments } from '../../../services/document';
-import { uploadFile } from '../../../services/file';
+import { createDocument, getDocuments, deleteDocument } from '../../../services/document';
+import { uploadFile, deleteFile } from '../../../services/file';
 import { useMutation, useQuery } from '@tanstack/react-query';
-
+import { FaTrash } from "react-icons/fa"
 
 
 const Gallery = () => {
@@ -12,8 +12,8 @@ const Gallery = () => {
     queryKey: ['gallery'],
     queryFn: () => getDocuments("gallery"),
     onSuccess: (data) => {
-      console.log(data.documents);
-    }
+      // console.log(data);
+    },
   })
 
   useEffect(() => {
@@ -32,11 +32,24 @@ const Gallery = () => {
             <button onClick={() => setUploadImage(!uploadImage)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>Upload Photo</button>
           </div>
 
-          <div className="image-container">
+          <div className="image-container mt-20">
             {
-              isLoading ? <div>loading...</div> : isError ? <div>Something went wrong.</div> : data.documents.map((img, index) => {
+              isLoading ? <div>loading...</div> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img, index) => {
                 return (
-                  <img data-aos="fade-up" key={index} src={img.url} alt="gallery-photo" />
+                  <div key={index} className='relative' data-aos="fade-up">
+                    <div className='absolute z-10 right-5 top-5'>
+                      <button onClick={async () => {
+                        try {
+                          await Promise.all([deleteDocument('gallery', img.$id), deleteFile(img.imageId)]);
+                          await refetch();
+                          console.log("Document deleted successfully!");
+                        } catch (error) {
+                          console.log("Something went wrong!")
+                        }
+                      }} className='text-rose-500 p-2'><FaTrash size={20} /></button>
+                    </div>
+                    <img  src={img.url + "&quality=40"} alt="gallery-photo" />
+                  </div>
                 )
               })
             }
@@ -64,13 +77,13 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
   }
 
   const mutation = useMutation({
-    mutationFn: (e) => {
+    mutationFn: async (e) => {
       e.preventDefault();
       handleSubmit()
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       refetch();
-    },
+    }
   })
 
   const handleSubmit = async (e) => {
@@ -79,14 +92,16 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
       const res = await uploadFile(formData.image);
       let data = {
         url: res.url,
-        priority: formData.priority
+        priority: formData.priority,
+        imageId: res.$id
       };
-      await createDocument("gallery", data);
+      const response = await createDocument("gallery", data);
       setFormData({
         priority: 5,
         image: null
       });
       setUploadImage(false);
+      return response;
     } catch (error) {
       console.log(error);
     }

@@ -1,57 +1,19 @@
 import { useState, useEffect } from 'react'
-import { createDocument } from '../../../services/document';
-import { uploadFile } from '../../../services/file';
+import { createDocument, getDocuments, deleteDocument } from '../../../services/document';
+import { uploadFile, deleteFile } from '../../../services/file';
+import { useQuery } from '@tanstack/react-query';
+import { FaEdit, FaTrash } from "react-icons/fa"
 
 const Team = () => {
   const [createMember, setCreateMember] = useState(false);
 
-  const users = [
-    {
-      name: 'Rahul Kumar',
-      priority: 1,
-      email: 'rahul@gmail.com',
-      role: 'Web Coordinator',
-      about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: "https://cloud.appwrite.io/v1/avatars/initials?name=Sudhanshu+Ranjan&width=64&height=64&project=console",
-      social: {
-        instagram: "",
-        linkedin: "",
-        twitter: "",
-        github: "",
-        discord: "",
-      }
+  const { data, refetch, isLoading, isError } = useQuery({
+    queryKey: ['members'],
+    queryFn: () => getDocuments("members"),
+    onSuccess: (data) => {
+      console.log(data);
     },
-    {
-      name: 'Rahul Kumar',
-      priority: 2,
-      email: 'rahul@gmail.com',
-      role: 'Web Coordinator',
-      about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: "https://cloud.appwrite.io/v1/avatars/initials?name=Sudhanshu+Ranjan&width=64&height=64&project=console",
-      social: {
-        instagram: "",
-        linkedin: "",
-        twitter: "",
-        github: "",
-        discord: "",
-      }
-    },
-    {
-      name: 'Rahul Kumar',
-      priority: 3,
-      email: 'rahul@gmail.com',
-      role: 'Web Coordinator',
-      about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: "https://cloud.appwrite.io/v1/avatars/initials?name=Sudhanshu+Ranjan&width=64&height=64&project=console",
-      social: {
-        instagram: "",
-        linkedin: "",
-        twitter: "",
-        github: "",
-        discord: "",
-      }
-    }
-  ]
+  })
 
   useEffect(() => {
     document.title = 'Tesla NIT Patna | Admin | Team';
@@ -77,14 +39,15 @@ const Team = () => {
                   <th className='py-5 px-4'>Priority</th>
                   <th className='py-5 px-4'>Email</th>
                   <th className='py-5 px-4'>Role</th>
+                  <th className='py-5 px-4'>Actions</th>
                 </tr>
               </thead>
               <tbody className='text-white '>
-                {users.map((user, index) => (
+                {isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((user, index) => (
                   <tr key={index} className='border-b border-gray-800'>
                     <td className='py-2.5 px-4'>
                       <div className='flex items-center'>
-                        <img className='w-10 h-10 rounded-full mr-4' src={user.image} alt='Avatar of Jonathan Reinink' />
+                        <img className='w-10 h-10 rounded-full mr-4' src={user.image + "&quality=40"} alt='Avatar of Jonathan Reinink' />
                         <div className=''>
                           <p className='text-gray-400 font-medium text-base leading-none'>{user.name}</p>
                           <p className='text-gray-600 text-sm'>{user.about.substring(0, 30) + "..."}</p>
@@ -94,6 +57,18 @@ const Team = () => {
                     <td className='py-2.5 px-4'>{user.priority}</td>
                     <td className='py-2.5 px-4'>{user.email}</td>
                     <td className='py-2.5 px-4'>{user.role}</td>
+                    <td className='py-2.5 px-4 flex gap-2 items-center'>
+                      <button className='text-blue-500 p-2'><FaEdit size={20} /></button>
+                      <button onClick={async () => {
+                        try {
+                          await Promise.all([deleteDocument('members', user.$id), deleteFile(user.imageId)]);
+                          await refetch();
+                          console.log("Document deleted successfully!");
+                        } catch (error) {
+                          
+                        }
+                      }} className='text-rose-500 p-2'><FaTrash size={18} /></button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -103,7 +78,7 @@ const Team = () => {
 
         </div>
       </div>
-      {createMember && <TeamForm setCreateMember={setCreateMember} />}
+      {createMember && <TeamForm refetch={refetch} setCreateMember={setCreateMember} />}
     </div>
   )
 }
@@ -111,7 +86,7 @@ const Team = () => {
 export default Team;
 
 
-const TeamForm = ({ setCreateMember }) => {
+const TeamForm = ({ setCreateMember, refetch }) => {
   const [formData, setFormData] = useState({
     name: '',
     priority: 0,
@@ -139,8 +114,23 @@ const TeamForm = ({ setCreateMember }) => {
       console.log(res);
       let data = JSON.parse(JSON.stringify(formData));
       data.image = res.url;
+      data.imageId = res.$id;
       const doc = await createDocument("members", data);
       console.log(doc);
+      setFormData({
+        name: '',
+        priority: 0,
+        email: '',
+        role: '',
+        about: '',
+        image: null,
+        instagram: "",
+        linkedin: "",
+        twitter: "",
+        github: "",
+        discord: "",
+      })
+      refetch();
     } catch (error) {
       console.log(error);
     }

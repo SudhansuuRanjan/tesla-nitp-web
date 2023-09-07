@@ -31,7 +31,6 @@ const AuthProvider = ({ children }) => {
             const res = await account.get();
             setUser(res);
             setLoading(false);
-            navigate("/");
         } catch (error) {
             console.log(error.message);
             setUser(null);

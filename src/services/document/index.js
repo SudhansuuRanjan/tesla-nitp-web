@@ -13,8 +13,17 @@ export const createDocument = async (COLLECTION_ID, data) => {
 export const getDocuments = async (COLLECTION_ID) => {
     try {
         const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
-        return res;
+        return res.documents;
     } catch (err) {
+        throw new Error(err.message);
+    }
+}
+
+export const deleteDocument = async (COLLECTION_ID, ID) => {
+    try {
+        const res = await databases.deleteDocument(DATABASE_ID, COLLECTION_ID, ID);
+        return res;
+    } catch (error) {
         throw new Error(err.message);
     }
 }
