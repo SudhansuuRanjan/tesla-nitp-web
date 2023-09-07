@@ -4,9 +4,8 @@ import Newsletter from "./Newsletter/Newsletter";
 import Gallery from "./Gallery/Gallery";
 import Events from "./Events/Events";
 import Projects from "./Projects/Projects";
-import News from "./Newsletter/News";
 import Blog from "./Newsletter/Blog";
 import About from "./About/About";
 import Error from "./Error/404";
 
-export { Team, HomePage, Newsletter, Gallery, Events, Projects, News, Blog, About, Error };
+export { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About, Error };

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Newsletter.scss'
 import Heading from '../../components/Headings/Heading'
-import News from './News'
 import { BlogCard } from '../../components/Cards/Card'
 import { useQuery } from '@tanstack/react-query';
 import { getDocuments } from '../../services/document';
