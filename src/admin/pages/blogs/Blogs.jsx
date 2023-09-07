@@ -21,7 +21,7 @@ const Blogs = () => {
     queryKey: ['news'],
     queryFn: () => getDocuments("news"),
     onSuccess: (data) => {
-      console.log(data);
+      // console.log(data);
     }
   })
 
@@ -41,13 +41,13 @@ const Blogs = () => {
             <button onClick={() => setCreateBlog(!createBlog)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>New Blog</button>
           </div>
 
-          {createBlog && <BlogForm editorState={editorState} setEditorState={setEditorState} setCreateBlog={setCreateBlog} />}
+          {createBlog && <BlogForm editorState={editorState} setEditorState={setEditorState} setCreateBlog={setCreateBlog} refetch={refetch} />}
 
           <h3 className='text-3xl fort-bold'>All Blog Posts</h3>
 
           <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
             {isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((data) => (
-              <BlogCard key={data.$id} data={data} />
+              <BlogCard key={data.$id} data={data} isAdmin={true} refetch={refetch} />
             ))}
           </div>
         </div>
@@ -59,15 +59,8 @@ const Blogs = () => {
 
 export default Blogs;
 
-const MarkComponent = ({ value, language }) => {
-  return (
-    <SyntaxHighlighter language={language ?? null} style={docco}>
-      {value ?? ''}
-    </SyntaxHighlighter>
-  )
-}
 
-const BlogForm = ({ editorState, setEditorState }) => {
+const BlogForm = ({ editorState, setEditorState,refetch }) => {
   const [active, setActive] = useState("write");
   const [formData, setFormData] = useState({
     title: "",
@@ -101,6 +94,7 @@ const BlogForm = ({ editorState, setEditorState }) => {
       data.authorImgId = authorRes.$id;
 
       const res = await createDocument("news", data);
+      refetch();
       setFormData({
         title: "",
         tag: "",

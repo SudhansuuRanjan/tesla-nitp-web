@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsDot } from 'react-icons/bs'
 import CountUp from 'react-countup';
+import { deleteDocument } from '../../services/document';
+import { deleteFile } from '../../services/file';
+import { FaEdit, FaTrash } from "react-icons/fa"
 
-const Card1 = ({title,description,image}) => {
+const Card1 = ({ title, description, image }) => {
     return (
         <div data-aos="zoom-in" className='w-fit'>
             <div className='border-[1px]  border-gray-800 hover:border-gray-700 rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0 hover:z-10 bg-[#0a0a0a] transition-all delay-[30ms] ease-in-out'>
@@ -89,9 +92,22 @@ const HighlightCard = ({ type, data, icon }) => {
     )
 }
 
-const BlogCard = ({ data }) => {
+const BlogCard = ({ data, isAdmin, refetch }) => {
     return (
-        <Link data-aos="fade-up" style={{textDecoration:'none'}} to={`/news/${data.id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
+        <Link data-aos="fade-up" style={{ textDecoration: 'none' }} to={isAdmin ? "/admin/blogs" :`/news/${data.$id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
+            {isAdmin && <div className='absolute z-10 right-5 top-1'>
+                <button className='text-blue-500 p-2'><FaEdit size={23} /></button>
+                <button onClick={async () => {
+                    try {
+                        await Promise.all([deleteDocument('news', data.$id), deleteFile(data.imgId), deleteFile(data.authorImgId)]);
+                        await refetch();
+                        console.log("Document deleted successfully!");
+                    } catch (error) {
+                        console.log("Something went wrong!",error)
+                    }
+                }} className='text-rose-500 p-2'><FaTrash size={20} /></button>
+            </div>}
+
             <div className='flex items-center gap-1 text-sky-500 text-sm'>
                 <p>{data.tag}</p>
                 <BsDot className='text-gray-500' />

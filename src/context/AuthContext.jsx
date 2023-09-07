@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { account } from "../appwrite.config";
 import { useNavigate } from "react-router-dom";
 import { ID } from "appwrite";
+import Loader from "../components/Loader";
 
 const AuthContext = createContext({});
 
@@ -60,7 +61,9 @@ const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={contextData}>
-            {loading ? <div>Loading...</div> : children}
+            {loading ? <div className="flex items-center justify-center h-screen">
+                <Loader/>
+            </div> : children}
         </AuthContext.Provider>
     )
 };
