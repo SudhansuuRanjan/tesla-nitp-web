@@ -5,7 +5,7 @@ Tesla Club is the official club of electrical engineering department of NIT, Pat
 # T.E.S.L.A. NITP Website
 Official website of Tesla Club NIT Patna
 
-![plot](teslaclublive.png )
+![plot](https://github.com/SudhansuuRanjan/tesla-nitp-web/raw/main/teslaclublive.png)
 
 Project has following functionalities
 
