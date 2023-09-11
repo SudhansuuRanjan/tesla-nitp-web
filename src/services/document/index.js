@@ -28,6 +28,15 @@ export const getDocument = async (COLLECTION_ID, DOCUMENT_ID) => {
     }
 }
 
+export const updateDocument = async (COLLECTION_ID, DOCUMENT_ID, data) => {
+    try {
+        const res = await databases.updateDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID, data);
+        return res;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
 export const deleteDocument = async (COLLECTION_ID, ID) => {
     try {
         const res = await databases.deleteDocument(DATABASE_ID, COLLECTION_ID, ID);

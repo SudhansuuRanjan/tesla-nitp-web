@@ -3,6 +3,7 @@ import { createDocument, getDocuments, deleteDocument } from '../../../services/
 import { uploadFile, deleteFile } from '../../../services/file';
 import { useQuery } from '@tanstack/react-query';
 import { FaEdit, FaTrash } from "react-icons/fa"
+import { Link } from 'react-router-dom';
 
 const Team = () => {
   const [createMember, setCreateMember] = useState(false);
@@ -48,9 +49,9 @@ const Team = () => {
                     <td className='py-2.5 px-4'>
                       <div className='flex items-center'>
                         <img className='w-10 h-10 rounded-full mr-4' src={user.image + "&quality=40"} alt='Avatar of Jonathan Reinink' />
-                        <div className=''>
-                          <p className='text-gray-400 font-medium text-base leading-none'>{user.name}</p>
-                          <p className='text-gray-600 text-sm'>{user.about.substring(0, 30) + "..."}</p>
+                        <div className='flex flex-col'>
+                          <span className='text-gray-300 font-medium text-base leading-none'>{user.name}</span>
+                          <span className='text-gray-500 text-sm'>{user.about.substring(0, 30) + "..."}</span>
                         </div>
                       </div>
                     </td>
@@ -58,14 +59,14 @@ const Team = () => {
                     <td className='py-2.5 px-4'>{user.email}</td>
                     <td className='py-2.5 px-4'>{user.role}</td>
                     <td className='py-2.5 px-4 flex gap-2 items-center'>
-                      <button className='text-blue-500 p-2'><FaEdit size={20} /></button>
+                      <Link to={`/edit/team/${user.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
                       <button onClick={async () => {
                         try {
                           await Promise.all([deleteDocument('members', user.$id), deleteFile(user.imageId)]);
                           await refetch();
                           console.log("Document deleted successfully!");
                         } catch (error) {
-                          
+
                         }
                       }} className='text-rose-500 p-2'><FaTrash size={18} /></button>
                     </td>
@@ -131,6 +132,7 @@ const TeamForm = ({ setCreateMember, refetch }) => {
         discord: "",
       })
       refetch();
+      setCreateMember(false);
     } catch (error) {
       console.log(error);
     }

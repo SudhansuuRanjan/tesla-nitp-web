@@ -1,42 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Projects.scss";
 import Heading from "../../components/Headings/Heading";
 import ProjectCard from "./ProjectCard";
+import { useQuery } from "@tanstack/react-query";
+import Loader from "../../components/Loader";
+import { getDocuments } from "../../services/document";
 
 const Projects = () => {
-  document.title = 'Tesla NIT Patna | Projects';
 
-  const data = [
-    {
-      imgUrl: "https://github.com/SudhansuuRanjan/tesla-nitp-web/raw/main/teslaclublive.png",
-      desc: "Official website of Tesla Club using ReactJs, Tailwind and Firebase with animations and dark theme, which also has an admin portal.",
-      title: "T.E.S.L.A Official Website",
-      link: "https://tesla-nitp.vercel.app/",
-      source_code: "https://github.com/SudhansuuRanjan/tesla-nitp-web",
-      techstack: ["ReactJs", "Firebase", "aos"],
-      tags: ["#tesla", "#nitp", "#reactjs"],
-      id: "p01"
-    },
-    {
-      imgUrl: "https://i.ibb.co/GtdqMzw/Screenshot-1384.png",
-      desc: "Official Alumni protal of NIT, Patna using ReactJs, Tailwind and Firebase with animations and dark theme, which also has an admin portal.",
-      title: "NITP Alumni Portal",
-      link: "https://alumini-nitp.vercel.app/",
-      source_code: "https://github.com/Rishabh-25-code/alumini-cell-nitp",
-      techstack: ["ReactJs", "Firebase", "aos"],
-      tags: ["#alumni", "#nitp", "#reactjs"],
-      id: "p02"
-    },
+  useEffect(() => {
+    document.title = 'Tesla NIT Patna | Projects';
+  }, [])
 
-  ];
+  const { data, refetch, isLoading, isError } = useQuery({
+    queryKey: ['projects'],
+    queryFn: () => getDocuments("projects"),
+    onSuccess: (data) => {
+      console.log(data.documents);
+    },
+    staleTime:Infinity
+  })
 
   return (
     <div className="pt-16">
       <Heading heading="PROJECTS"></Heading>
       <div className="project_main">
-        {data.map((project) => (
+        {isLoading ? <Loader></Loader> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((project) => (
           <ProjectCard
-            key={project.id}
+            key={project.$id}
             project={project}
           />
         ))}

@@ -94,7 +94,7 @@ const HighlightCard = ({ type, data, icon }) => {
 
 const BlogCard = ({ data, isAdmin, refetch }) => {
     return (
-        <Link data-aos="fade-up" style={{ textDecoration: 'none' }} to={isAdmin ? "/admin/blogs" :`/news/${data.$id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
+        <Link data-aos="fade-up" style={{ textDecoration: 'none' }} to={isAdmin ? "/admin/blogs" : `/news/${data.$id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
             {isAdmin && <div className='absolute z-10 right-5 top-1'>
                 <button className='text-blue-500 p-2'><FaEdit size={23} /></button>
                 <button onClick={async () => {
@@ -103,7 +103,7 @@ const BlogCard = ({ data, isAdmin, refetch }) => {
                         await refetch();
                         console.log("Document deleted successfully!");
                     } catch (error) {
-                        console.log("Something went wrong!",error)
+                        console.log("Something went wrong!", error)
                     }
                 }} className='text-rose-500 p-2'><FaTrash size={20} /></button>
             </div>}
@@ -113,7 +113,7 @@ const BlogCard = ({ data, isAdmin, refetch }) => {
                 <BsDot className='text-gray-500' />
                 <p className='text-gray-500'>{data.minutes} min read</p>
             </div>
-            <div className='h-[9rem] rounded flex items-center justify-center overflow-hidden bg-green-500 my-2'>
+            <div className='h-[9rem] rounded flex items-center justify-center overflow-hidden bg-sky-500 my-2'>
                 <img loading='lazy' className='w-auto rounded h-[12rem] bg-cover bg-center' src={data.image} alt="about" />
             </div>
             <div>

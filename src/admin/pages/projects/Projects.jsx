@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { TagsInput } from "react-tag-input-component";
 import ProjectCard from '../../../pages/Projects/ProjectCard';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import Loader from '../../../components/Loader';
 
 const Projects = () => {
   const [createProject, setCreateProject] = useState(false);
@@ -34,25 +35,13 @@ const Projects = () => {
           </div>
 
           <div className="flex justify-evenly items-center my-10">
-            {isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((project, id) => (
-              // <div data-aos="zoom-in" className='relative' key={id}>
-              //   <div className='z-10 right-5 top-10'>
-              //     <button className='text-blue-500 p-2'><FaEdit size={23} /></button>
-              //     <button onClick={async () => {
-              //       try {
-              //         await Promise.all([deleteDocument('projects', project.$id), deleteFile(project.imageId)]);
-              //         await refetch();
-              //         console.log("Document deleted successfully!");
-              //       } catch (error) {
-              //         console.log("Something went wrong!")
-              //       }
-              //     }} className='text-rose-500 p-2'><FaTrash size={20} /></button>
-              //   </div>
+            {isLoading ? <Loader></Loader>: isError ? <p>Something went wrong.</p> : data.slice().reverse().map((project, id) => (
                 <ProjectCard
-                  key={project.id}
+                  key={project.$id}
                   project={project}
+                  isAdmin={true}
+                  refetch={refetch}
                 />
-              // </div>
             ))}
           </div>
 
@@ -102,8 +91,8 @@ const ProjectForm = ({ setCreateProject, refetch }) => {
         source_code: "",
         techstack: [],
       });
-      refetch();
       setCreateProject(false);
+      refetch();
     } catch (error) {
       console.log(error);
     }

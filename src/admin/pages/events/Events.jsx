@@ -4,6 +4,7 @@ import { uploadFile, deleteFile } from '../../../services/file';
 import { useQuery } from '@tanstack/react-query';
 import { EventCard } from '../../../components/Cards/Card';
 import { FaEdit, FaTrash } from "react-icons/fa"
+import Loader from '../../../components/Loader';
 
 const Events = () => {
   const [createEvent, setCreateEvent] = useState(false);
@@ -33,7 +34,7 @@ const Events = () => {
           </div>
 
           <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
-            {isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((event, id) => (
+            {isLoading ? <Loader/> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((event, id) => (
               <div key={id} data-aos="zoom-in" className='relative'>
                 <div className='absolute z-10 right-5 top-10'>
                   <button className='text-blue-500 p-2'><FaEdit size={23} /></button>

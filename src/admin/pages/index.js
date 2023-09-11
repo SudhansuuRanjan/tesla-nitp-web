@@ -7,5 +7,6 @@ import EventsAdmin from "./events/Events";
 import TeamAdmin from "./team/Team";
 import Profile from "./profile/Profile";
 import Register from "./auth/Register"
+import EditData from "./EditData";
 
-export { LoginAdmin, DashboardAdmin, BlogsAdmin, GalleryAdmin, ProjectsAdmin, EventsAdmin, TeamAdmin, Profile,Register };
+export { LoginAdmin, DashboardAdmin, BlogsAdmin, GalleryAdmin, ProjectsAdmin, EventsAdmin, TeamAdmin, Profile,Register , EditData};

@@ -43,7 +43,7 @@ const Blogs = () => {
 
           {createBlog && <BlogForm editorState={editorState} setEditorState={setEditorState} setCreateBlog={setCreateBlog} refetch={refetch} />}
 
-          <h3 className='text-3xl fort-bold'>All Blog Posts</h3>
+          <h3 className='text-3xl font-bold mt-10'>All Blog Posts</h3>
 
           <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
             {isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((data) => (
@@ -60,7 +60,7 @@ const Blogs = () => {
 export default Blogs;
 
 
-const BlogForm = ({ editorState, setEditorState,refetch }) => {
+const BlogForm = ({ editorState, setEditorState, refetch }) => {
   const [active, setActive] = useState("write");
   const [formData, setFormData] = useState({
     title: "",
@@ -120,7 +120,6 @@ const BlogForm = ({ editorState, setEditorState,refetch }) => {
   return (
     <div className='my-10'>
       <h2 className='text-xl font-bold'>Write Blog</h2>
-
       <form onSubmit={handleSubmit}>
         <div className="w-full border-2 border-gray-800 my-3 rounded-2xl">
           <div className='p-2.5'>

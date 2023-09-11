@@ -3,6 +3,7 @@ import { createDocument, getDocuments, deleteDocument } from '../../../services/
 import { uploadFile, deleteFile } from '../../../services/file';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { FaTrash } from "react-icons/fa"
+import Loader from '../../../components/Loader';
 
 
 const Gallery = () => {
@@ -34,7 +35,7 @@ const Gallery = () => {
 
           <div className="image-container mt-20">
             {
-              isLoading ? <div>loading...</div> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img, index) => {
+              isLoading ? <Loader /> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img, index) => {
                 return (
                   <div key={index} className='relative' data-aos="fade-up">
                     <div className='absolute z-10 right-5 top-5'>
@@ -48,7 +49,7 @@ const Gallery = () => {
                         }
                       }} className='text-rose-500 p-2'><FaTrash size={20} /></button>
                     </div>
-                    <img  src={img.url + "&quality=40"} alt="gallery-photo" />
+                    <img src={img.url + "&quality=40"} alt="gallery-photo" />
                   </div>
                 )
               })

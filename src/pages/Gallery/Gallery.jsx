@@ -4,6 +4,7 @@ import { MdClose, MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/
 import Heading from "../../components/Headings/Heading"
 import { useQuery } from "@tanstack/react-query"
 import { getDocuments } from "../../services/document"
+import Loader from "../../components/Loader"
 
 
 const Gallery = () => {
@@ -34,10 +35,9 @@ const Gallery = () => {
             <Heading heading="PHOTOS" desc="— Our Photo Gallery" />
             <div className="photo-gallery-cont">
                 <div className="photo-gallery">
-
-                    <div className="image-container">
+                    {isLoading ? <div className="flex justify-center items-center h-[10rem] w-full"><Loader/></div> : isError ? <p>Something went wrong.</p> : <div className="image-container">
                         {
-                            isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.map((img, index) => {
+                             data.map((img, index) => {
                                 return (
                                     <img data-aos="fade-up" key={index} src={img.url} alt="gallery-photo" onClick={() => {
                                         setCurrentImg(index);
@@ -46,9 +46,7 @@ const Gallery = () => {
                                 )
                             })
                         }
-                    </div>
-
-
+                    </div>}
                 </div>
             </div>
 
@@ -56,7 +54,7 @@ const Gallery = () => {
                 modal && <div className="slideshow-container transition">
                     <div className="slide">
                         <div className="img-display">
-                            <img src={data[currentImg].url} alt="dhgjjhgd" />
+                            <img src={data[currentImg].url} alt="Slide image" />
                         </div>
 
                         <div className="controls">

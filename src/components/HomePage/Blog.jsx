@@ -22,7 +22,7 @@ const Blog = () => {
         <div className='my-16'>
             <Heading1 text1={"Our latest"} text2={"Blogs"} details={"T.E.S.L.A members actively contribute by writing frequent technical blogs and the best of them is published."} />
             <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
-                {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.map((data) => (
+                {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.slice(0,3).reverse().map((data) => (
                     <BlogCard key={data.$id} data={data} />
                 ))}
             </div>

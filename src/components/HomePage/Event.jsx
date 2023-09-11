@@ -3,49 +3,27 @@ import Heading1 from '../Headings/Heading1';
 import { EventCard } from '../Cards/Card';
 import { Link } from 'react-router-dom';
 import { RxArrowRight } from 'react-icons/rx';
+import Loader from '../Loader';
+import { useQuery } from '@tanstack/react-query';
+import { getDocuments } from '../../services/document';
 
 const Event = () => {
-    const events = [
-        {
-            id: 0,
-            name: "Blockchain Technology for Next-Generation Applications",
-            image: "https://algorand.com/static/algorand-og-image-98d634bc4a6f00c455b35830674ae96b.png",
-            tag: "BlockChain",
-            description: 'Faculty Development Program on “Blockchain Technology for Next-Generation Applications”',
-            date: "19th-24th June 2023",
-            time: "10:00 AM",
-            venue: "Vishwesharaiya Hall",
-            link: "https://forms.gle/G29EKJovMpqAr4ei6"
+
+    const { data, refetch, isLoading, isError } = useQuery({
+        queryKey: ['events'],
+        queryFn: () => getDocuments("events"),
+        onSuccess: (data) => {
+            // console.log(data);
         },
-        {
-            id: 1,
-            name: "Algo Camp",
-            image: "https://miro.medium.com/max/700/1*BFpFCJepifaREIg7qLSLag.jpeg",
-            tag: "BlockChain",
-            description: "A 3-day workshop on Blockchain Technology by Algorand Foundation.",
-            date: "2023-01-25",
-            time: "10:00 AM",
-            venue: "Meghnad Saha Hall",
-            link: "/404"
-        },
-        {
-            id: 2,
-            name: "EduDAO Info Session",
-            image: "./images/edudao.jpg",
-            tag: "Technology",
-            description: "An info session on EduDAO, a DAO for students by students.",
-            date: "2023-05-02",
-            time: "05:00 PM",
-            venue: "Meghnad Saha Hall",
-            link: "/404"
-        }]
+        staleTime: Infinity
+    })
 
 
     return (
         <div>
             <Heading1 details={"Experience our exclusive events, workshops, expert sessions, and valuable networking opportunities. Stay tuned for updates on upcoming events!"} text1={"Our Exclusive"} text2={"Events"} />
             <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
-                {events.map((event, id) => (
+                {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.slice(0,3).reverse().map((event, id) => (
                     <EventCard data={event} key={id} />
                 ))}
             </div>
