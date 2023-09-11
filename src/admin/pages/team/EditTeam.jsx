@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { getDocument } from '../../../services/document';
 import { useQuery } from '@tanstack/react-query';
 import { uploadFile, deleteFile } from '../../../services/file';
+import { useNavigate, Link } from 'react-router-dom';
 
 const EditTeam = ({ handleUpdate, id }) => {
-
-  const { data } = useQuery({
+  const navigate = useNavigate();
+  useQuery({
     queryKey: ['members', id],
     queryFn: () => getDocument('members', id),
     onSuccess: (data) => {
@@ -49,6 +50,7 @@ const EditTeam = ({ handleUpdate, id }) => {
             data.imageId = res[0].$id;
           }
           await handleUpdate("members", data);
+          navigate('/admin/team');
         } catch (error) {
           console.log(error);
         }
@@ -196,6 +198,9 @@ const EditTeam = ({ handleUpdate, id }) => {
           </div>
         </div>
         <div className='py-5 flex items-center'>
+          <Link className='m-auto bg-rose-600 text-white py-2 px-12 rounded-xl' to='/admin/team'>
+            <button type="button">Cancel</button>
+          </Link>
           <button className='m-auto bg-sky-600 text-white py-2.5 my-5 px-24 rounded-xl' type="submit">Submit</button>
         </div>
       </form>

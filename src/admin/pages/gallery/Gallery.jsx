@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { createDocument, getDocuments, deleteDocument } from '../../../services/document';
 import { uploadFile, deleteFile } from '../../../services/file';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { FaTrash } from "react-icons/fa"
+import { FaTrash, FaEdit } from "react-icons/fa"
 import Loader from '../../../components/Loader';
+import { Link } from 'react-router-dom';
 
 
 const Gallery = () => {
@@ -28,8 +29,8 @@ const Gallery = () => {
           <span className='text-sky-500'>T.E.S.L.A.</span> Gallery
         </h1>
         <div className='border-t-[1px] border-t-gray-800 py-8'>
-          <div className='flex justify-between'>
-            <input className='py-2.5 px-4 rounded-md border w-[24rem] border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' />
+          <div className='flex justify-end'>
+            {/* <input className='py-2.5 px-4 rounded-md border w-[24rem] border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' /> */}
             <button onClick={() => setUploadImage(!uploadImage)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>Upload Photo</button>
           </div>
 
@@ -39,6 +40,7 @@ const Gallery = () => {
                 return (
                   <div key={index} className='relative' data-aos="fade-up">
                     <div className='absolute z-10 right-5 top-5'>
+                      <Link to={`/edit/gallery/${img.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
                       <button onClick={async () => {
                         try {
                           await Promise.all([deleteDocument('gallery', img.$id), deleteFile(img.imageId)]);
@@ -147,7 +149,10 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
           </div>
         </div>
         <div className='py-5 flex items-center'>
-          <button onClick={() => setUploadImage(false)} className='m-auto bg-gray-600 text-white py-2 px-12 rounded-xl'>Cancel</button>
+          <button onClick={(e) => {
+            e.preventDefault()
+            setUploadImage(false)
+          }} className='m-auto bg-gray-600 text-white py-2 px-12 rounded-xl'>Cancel</button>
           <button className='m-auto bg-sky-600 text-white py-2 px-12 rounded-xl' type="submit">Submit</button>
         </div>
       </form>

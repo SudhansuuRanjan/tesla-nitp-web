@@ -2,16 +2,17 @@ import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { deleteDocument } from "../../services/document";
 import { deleteFile } from "../../services/file";
-import { FaEdit,FaTrash } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project, isAdmin, refetch }) => {
     return (
         <div data-aos="zoom-in" className="project_container lg:p-8 md-p-8 p-4 transition-all delay-[30ms] ease-in-out hover:scale-[101%]">
             {isAdmin && <div className='absolute z-10 right-5 top-1'>
-                <button className='text-blue-500 p-2'><FaEdit size={23} /></button>
+                <Link to={`/edit/project/${project.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
                 <button onClick={async () => {
                     try {
-                        await Promise.all([deleteDocument('news', data.$id), deleteFile(data.imgId), deleteFile(data.authorImgId)]);
+                        await Promise.all([deleteDocument('projects', project.$id), deleteFile(project.imageId)]);
                         await refetch();
                         console.log("Document deleted successfully!");
                     } catch (error) {

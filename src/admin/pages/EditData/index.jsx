@@ -44,7 +44,7 @@ const EditData = () => {
         <div className='pt-20 relative min-h-[70vh]'>
             <div className='m-auto max-w-[80%]'>
                 <h1 className='text-5xl leading-normal font-bold my-5'>
-                    <span className='text-sky-500'>EDIT</span> {type} data of {id}
+                    <span className='text-sky-500'>EDIT</span> {type} data of <span className='text-sky-500'>{id}</span>
                 </h1>
                 <div className='border-t-[1px] border-t-gray-800 py-8'>
                     <CurrentView handleUpdate={handleUpdate} id={id} />

@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { EventCard } from '../../../components/Cards/Card';
 import { FaEdit, FaTrash } from "react-icons/fa"
 import Loader from '../../../components/Loader';
+import { Link } from 'react-router-dom';
 
 const Events = () => {
   const [createEvent, setCreateEvent] = useState(false);
@@ -37,7 +38,7 @@ const Events = () => {
             {isLoading ? <Loader/> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((event, id) => (
               <div key={id} data-aos="zoom-in" className='relative'>
                 <div className='absolute z-10 right-5 top-10'>
-                  <button className='text-blue-500 p-2'><FaEdit size={23} /></button>
+                  <Link to={`/edit/event/${event.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
                   <button onClick={async () => {
                     try {
                       await Promise.all([deleteDocument('events', event.$id), deleteFile(event.imageId)]);

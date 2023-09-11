@@ -34,7 +34,7 @@ const Projects = () => {
             <button onClick={() => setCreateProject(!createProject)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>New Project</button>
           </div>
 
-          <div className="flex justify-evenly items-center my-10">
+          <div className="flex justify-evenly items-center my-20">
             {isLoading ? <Loader></Loader>: isError ? <p>Something went wrong.</p> : data.slice().reverse().map((project, id) => (
                 <ProjectCard
                   key={project.$id}
