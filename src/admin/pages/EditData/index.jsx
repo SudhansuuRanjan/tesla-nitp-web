@@ -7,6 +7,7 @@ import Project from "../projects/EditProjects"
 import Team from "../team/EditTeam"
 import Gallery from "../gallery/EditGallery"
 import Loader from '../../../components/Loader';
+import { toast } from 'react-toastify';
 
 const CurrentComponent = {
     team: Team,
@@ -18,7 +19,6 @@ const CurrentComponent = {
 
 const EditData = () => {
     const { type, id } = useParams("");
-    const [data, setData] = useState({});
     const [updating, setUpdating] = useState(false);
 
     useEffect(() => {
@@ -30,11 +30,13 @@ const EditData = () => {
         // console.log(type, id, data);
         try {
             const res = await updateDocument(type, id, data);
-            console.log(res);
+            // console.log(res);
             setUpdating(false);
+            toast(`${type.charAt(0).toUpperCase() + type.slice(1)} updated successfully!`);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             setUpdating(false);
+            toast.error("Something went wrong!");
         }
     }
 

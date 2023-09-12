@@ -52,7 +52,8 @@ const EditTeam = ({ handleUpdate, id }) => {
           await handleUpdate("members", data);
           navigate('/admin/team');
         } catch (error) {
-          console.log(error);
+          // console.log(error);
+          toast.error("Something went wrong!");
         }
       }} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>

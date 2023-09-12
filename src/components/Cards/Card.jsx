@@ -94,7 +94,7 @@ const HighlightCard = ({ type, data, icon }) => {
 
 const BlogCard = ({ data, isAdmin, refetch }) => {
     return (
-        <Link data-aos="fade-up" style={{ textDecoration: 'none' }} to={isAdmin ? "/admin/blogs" : `/news/${data.$id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
+        <Link data-aos="fade-up" style={{ textDecoration: 'none' }} to={isAdmin ? "" : `/news/${data.$id}`} className='rounded-2xl w-[20rem] p-4 hover:scale-[102%] z-0 hover:z-[5]  transition-all delay-[30ms] ease-in-out border border-gray-900 hover:border-gray-800 bg-[#0c0c0c]'>
             {isAdmin && <div className='absolute z-10 right-5 top-1'>
                 <Link to={`/edit/news/${data.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
                 <button onClick={async () => {

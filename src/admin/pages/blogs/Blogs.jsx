@@ -12,6 +12,7 @@ import rehypeStringify from 'rehype-stringify'
 import "./unreset.scss"
 import { calculateMinuteRead } from '../../../utils';
 import { BlogCard } from '../../../components/Cards/Card';
+import { toast } from 'react-toastify';
 
 const Blogs = () => {
   const [createBlog, setCreateBlog] = useState(false);
@@ -95,6 +96,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
 
       const res = await createDocument("news", data);
       refetch();
+      toast("Blog created successfully!");
       setFormData({
         title: "",
         tag: "",
@@ -110,10 +112,8 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
       setEditorState("");
       console.log(res);
     } catch (error) {
-      console.log({
-        message: "Something went wrong",
-        error
-      })
+
+      toast.error("Something went wrong!");
     }
   }
 
@@ -164,14 +164,17 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
             hover:file:text-amber-700' />
             </div>
           </div>
+
           <div className='p-2.5 flex gap-5 text-base items-center'>
             <label htmlFor='tag' className='text-base'>Tag</label>
             <input required type="text" name="tag" value={formData.tag} onChange={handleChange} placeholder='Tag for eg. Electrical Engg. or Blockchain' className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />
           </div>
+
           <div className='p-2.5 flex gap-5 text-base items-center'>
             <label htmlFor='author' className='text-base'>Author</label>
             <input required type="text" name='author' value={formData.author} onChange={handleChange} placeholder='Author Name' className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />
           </div>
+          
           <div className='p-2.5 flex gap-5 text-base items-center'>
             <label htmlFor='date' className='text-base'>Date</label>
             <input required type="date" placeholder='Date' value={formData.date} name='date' onChange={handleChange} className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />

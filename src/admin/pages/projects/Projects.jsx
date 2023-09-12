@@ -6,6 +6,7 @@ import { TagsInput } from "react-tag-input-component";
 import ProjectCard from '../../../pages/Projects/ProjectCard';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import Loader from '../../../components/Loader';
+import { toast } from 'react-toastify';
 
 const Projects = () => {
   const [createProject, setCreateProject] = useState(false);
@@ -35,13 +36,13 @@ const Projects = () => {
           </div>
 
           <div className="flex justify-evenly items-center my-20">
-            {isLoading ? <Loader></Loader>: isError ? <p>Something went wrong.</p> : data.slice().reverse().map((project, id) => (
-                <ProjectCard
-                  key={project.$id}
-                  project={project}
-                  isAdmin={true}
-                  refetch={refetch}
-                />
+            {isLoading ? <Loader></Loader> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((project, id) => (
+              <ProjectCard
+                key={project.$id}
+                project={project}
+                isAdmin={true}
+                refetch={refetch}
+              />
             ))}
           </div>
 
@@ -82,6 +83,7 @@ const ProjectForm = ({ setCreateProject, refetch }) => {
       data.imageId = res.$id;
       const doc = await createDocument("projects", data);
       // console.log(doc);
+      toast("Project created successfully!");
       setFormData({
         title: '',
         image: null,
@@ -94,7 +96,8 @@ const ProjectForm = ({ setCreateProject, refetch }) => {
       setCreateProject(false);
       refetch();
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error("Something went wrong!");
     }
   }
 

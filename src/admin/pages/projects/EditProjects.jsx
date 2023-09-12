@@ -57,7 +57,8 @@ const EditProjects = ({ handleUpdate, id }) => {
       await handleUpdate("projects", data);
       navigate('/admin/projects');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error("Something went wrong!");
     }
   }
 

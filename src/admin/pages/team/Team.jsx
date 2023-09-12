@@ -4,6 +4,7 @@ import { uploadFile, deleteFile } from '../../../services/file';
 import { useQuery } from '@tanstack/react-query';
 import { FaEdit, FaTrash } from "react-icons/fa"
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Team = () => {
   const [createMember, setCreateMember] = useState(false);
@@ -110,14 +111,15 @@ const TeamForm = ({ setCreateMember, refetch }) => {
     e.preventDefault();
     if (!formData.image) return;
     try {
-      console.log(formData);
+      // console.log(formData);
       const res = await uploadFile(formData.image);
-      console.log(res);
+      // console.log(res);
       let data = JSON.parse(JSON.stringify(formData));
       data.image = res.url;
       data.imageId = res.$id;
       const doc = await createDocument("members", data);
-      console.log(doc);
+      // console.log(doc);
+      toast("Member created successfully!");
       setFormData({
         name: '',
         priority: 0,
@@ -134,7 +136,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
       refetch();
       setCreateMember(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error("Something went wrong!");
     }
   }
 

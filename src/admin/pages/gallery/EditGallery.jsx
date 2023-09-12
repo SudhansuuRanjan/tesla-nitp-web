@@ -3,6 +3,7 @@ import { getDocument } from '../../../services/document';
 import { useQuery } from '@tanstack/react-query';
 import { uploadFile, deleteFile } from '../../../services/file';
 import { useNavigate, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const EditGallery = ({ handleUpdate, id }) => {
   const navigate = useNavigate();
@@ -41,7 +42,8 @@ const EditGallery = ({ handleUpdate, id }) => {
       await handleUpdate("gallery", data);
       navigate('/admin/gallery');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error("Something went wrong!");
     }
   }
 

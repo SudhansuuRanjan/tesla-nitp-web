@@ -6,6 +6,7 @@ import { EventCard } from '../../../components/Cards/Card';
 import { FaEdit, FaTrash } from "react-icons/fa"
 import Loader from '../../../components/Loader';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Events = () => {
   const [createEvent, setCreateEvent] = useState(false);
@@ -83,14 +84,15 @@ const GalleryForm = ({ refetch, setCreateEvent }) => {
     e.preventDefault();
     if (!formData.image) return;
     try {
-      console.log(formData);
+      // console.log(formData);
       const res = await uploadFile(formData.image);
-      console.log(res);
+      // console.log(res);
       let data = JSON.parse(JSON.stringify(formData));
       data.image = res.url;
       data.imageId = res.$id;
-      const doc = await createDocument("events", data);
-      console.log(doc);
+      await createDocument("events", data);
+      // console.log(doc);
+      toast("Event created successfully!");
       setFormData({
         name: '',
         image: null,
@@ -104,7 +106,8 @@ const GalleryForm = ({ refetch, setCreateEvent }) => {
       refetch();
       setCreateEvent(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error("Something went wrong!");
     }
   }
 

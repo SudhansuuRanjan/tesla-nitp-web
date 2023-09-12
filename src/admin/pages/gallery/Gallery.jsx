@@ -5,6 +5,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { FaTrash, FaEdit } from "react-icons/fa"
 import Loader from '../../../components/Loader';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const Gallery = () => {
@@ -99,6 +100,8 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
         imageId: res.$id
       };
       const response = await createDocument("gallery", data);
+      refetch();
+      toast("Image uploaded successfully!");
       setFormData({
         priority: 5,
         image: null
@@ -106,7 +109,8 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
       setUploadImage(false);
       return response;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error("Something went wrong!");
     }
   }
 
