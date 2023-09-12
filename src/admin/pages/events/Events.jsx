@@ -4,7 +4,7 @@ import { uploadFile, deleteFile } from '../../../services/file';
 import { useQuery } from '@tanstack/react-query';
 import { EventCard } from '../../../components/Cards/Card';
 import { FaEdit, FaTrash } from "react-icons/fa"
-import Loader from '../../../components/Loader';
+import Loader, { Loading } from '../../../components/Loader';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -36,7 +36,7 @@ const Events = () => {
           </div>
 
           <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
-            {isLoading ? <Loader/> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((event, id) => (
+            {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((event, id) => (
               <div key={id} data-aos="zoom-in" className='relative'>
                 <div className='absolute z-10 right-5 top-10'>
                   <Link to={`/edit/event/${event.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
@@ -74,7 +74,8 @@ const GalleryForm = ({ refetch, setCreateEvent }) => {
     venue: "",
     time: "",
     date: ""
-  })
+  });
+  const [creating, setCreating] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -83,6 +84,7 @@ const GalleryForm = ({ refetch, setCreateEvent }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.image) return;
+    setCreating(true);
     try {
       // console.log(formData);
       const res = await uploadFile(formData.image);
@@ -104,15 +106,18 @@ const GalleryForm = ({ refetch, setCreateEvent }) => {
         date: ""
       });
       refetch();
+      setCreating(false);
       setCreateEvent(false);
     } catch (error) {
       // console.log(error);
+      setCreating(false);
       toast.error("Something went wrong!");
     }
   }
 
   return (
     <div className='fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-md h-screen w-full flex items-center justify-center'>
+      {creating && <Loading message="Creating..." />}
       <form onSubmit={handleSubmit} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
           <h1 className='text-3xl font-bold text-center mb-5'>Create New Event</h1>

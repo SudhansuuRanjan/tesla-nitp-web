@@ -13,7 +13,7 @@ const Blog = () => {
         queryKey: ['news'],
         queryFn: () => getDocuments("news"),
         onSuccess: (data) => {
-            console.log(data);
+            // console.log(data);
         },
         staleTime: Infinity
     })

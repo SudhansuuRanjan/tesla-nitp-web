@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { FaEdit, FaTrash } from "react-icons/fa"
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Loader, { Loading } from '../../../components/Loader';
 
 const Team = () => {
   const [createMember, setCreateMember] = useState(false);
@@ -13,7 +14,7 @@ const Team = () => {
     queryKey: ['members'],
     queryFn: () => getDocuments("members"),
     onSuccess: (data) => {
-      console.log(data);
+      // console.log(data);
     },
   })
 
@@ -45,7 +46,9 @@ const Team = () => {
                 </tr>
               </thead>
               <tbody className='text-white '>
-                {isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((user, index) => (
+                {isLoading ? <div className='flex justify-center items-center w-full h-20'>
+                  <Loader />
+                </div> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((user, index) => (
                   <tr key={index} className='border-b border-gray-800'>
                     <td className='py-2.5 px-4'>
                       <div className='flex items-center'>
@@ -101,7 +104,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
     twitter: "",
     github: "",
     discord: "",
-  })
+  });
+  const [creating, setCreating] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -110,15 +114,13 @@ const TeamForm = ({ setCreateMember, refetch }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.image) return;
+    setCreating(true);
     try {
-      // console.log(formData);
       const res = await uploadFile(formData.image);
-      // console.log(res);
       let data = JSON.parse(JSON.stringify(formData));
       data.image = res.url;
       data.imageId = res.$id;
       const doc = await createDocument("members", data);
-      // console.log(doc);
       toast("Member created successfully!");
       setFormData({
         name: '',
@@ -134,15 +136,17 @@ const TeamForm = ({ setCreateMember, refetch }) => {
         discord: "",
       })
       refetch();
+      setCreating(false);
       setCreateMember(false);
     } catch (error) {
-      // console.log(error);
+      setCreating(false);
       toast.error("Something went wrong!");
     }
   }
 
   return (
     <div className='fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-md h-screen w-full flex items-center justify-center'>
+      {creating && <Loading message={"Creating..."} />}
       <form onSubmit={handleSubmit} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
           <h1 className='text-3xl font-bold text-center mb-5'>Create Member</h1>

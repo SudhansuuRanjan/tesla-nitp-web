@@ -17,15 +17,21 @@ import {
 } from '@tanstack/react-query'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UpdateCounter } from './services/counter';
 
 const queryClient = new QueryClient()
 
 function App() {
 
+  const counter = async () =>{
+    await UpdateCounter();
+  }
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-  }, [])
+    counter();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

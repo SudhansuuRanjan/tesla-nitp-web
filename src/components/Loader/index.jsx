@@ -13,3 +13,12 @@ const Loader = () => {
 }
 
 export default Loader
+
+export const Loading = ({ message }) => {
+    return (
+        <div className="fixed z-50 inset-0 w-full flex flex-col items-center justify-center h-screen bg-black bg-opacity-80">
+            <Loader />
+            <p className="text-xl mt-5">{message}</p>
+        </div>
+    )
+}

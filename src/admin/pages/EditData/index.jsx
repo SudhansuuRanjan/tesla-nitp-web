@@ -6,7 +6,7 @@ import Blog from "../blogs/EditBlog"
 import Project from "../projects/EditProjects"
 import Team from "../team/EditTeam"
 import Gallery from "../gallery/EditGallery"
-import Loader from '../../../components/Loader';
+import {Loading} from '../../../components/Loader';
 import { toast } from 'react-toastify';
 
 const CurrentComponent = {
@@ -44,6 +44,7 @@ const EditData = () => {
 
     return (
         <div className='pt-20 relative min-h-[70vh]'>
+            {updating && <Loading message="Updating..." />}
             <div className='m-auto max-w-[80%]'>
                 <h1 className='text-5xl leading-normal font-bold my-5'>
                     <span className='text-sky-500'>EDIT</span> {type} data of <span className='text-sky-500'>{id}</span>

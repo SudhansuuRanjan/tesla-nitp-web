@@ -35,6 +35,19 @@ const NavBar = () => {
           <div className="flex items-center">
             <ul className="md:flex gap-8 hidden items-center text-base">
               <li>
+                <NavLink style={{ textDecoration: "none" }} to="/admin/dashboard">
+                  {({ isActive, isPending }) => (
+                    <span
+                      className={`hover:underline underline-offset-4 decoration-pink-500 ${
+                        isActive ? "text-sky-500 font-medium" : "text-white"
+                      }`}
+                    >
+                      Dashboard
+                    </span>
+                  )}
+                </NavLink>
+              </li>
+              <li>
                 <NavLink style={{ textDecoration: "none" }} to="/admin/gallery">
                   {({ isActive, isPending }) => (
                     <span

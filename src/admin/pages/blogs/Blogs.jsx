@@ -13,6 +13,7 @@ import "./unreset.scss"
 import { calculateMinuteRead } from '../../../utils';
 import { BlogCard } from '../../../components/Cards/Card';
 import { toast } from 'react-toastify';
+import Loader, { Loading } from '../../../components/Loader';
 
 const Blogs = () => {
   const [createBlog, setCreateBlog] = useState(false);
@@ -47,7 +48,9 @@ const Blogs = () => {
           <h3 className='text-3xl font-bold mt-10'>All Blog Posts</h3>
 
           <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
-            {isLoading ? <p>loading...</p> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((data) => (
+            {isLoading ? <div className='h-32 w-full flex items-center justify-center'>
+              <Loader />
+            </div> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((data) => (
               <BlogCard key={data.$id} data={data} isAdmin={true} refetch={refetch} />
             ))}
           </div>
@@ -75,6 +78,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
     body: "",
     author: ""
   });
+  const [creating, setCreating] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -87,6 +91,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
     e.preventDefault();
     try {
       // console.log(formData);
+      setCreating(true);
       const [posterRes, authorRes] = await Promise.all([uploadFile(formData.image), uploadFile(formData.authorImage)]);
       const data = JSON.parse(JSON.stringify(formData));
       data.image = posterRes.url;
@@ -96,6 +101,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
 
       const res = await createDocument("news", data);
       refetch();
+      setCreating(false);
       toast("Blog created successfully!");
       setFormData({
         title: "",
@@ -110,15 +116,16 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
         author: ""
       });
       setEditorState("");
-      console.log(res);
+      // console.log(res);
     } catch (error) {
-
+      setCreating(false);
       toast.error("Something went wrong!");
     }
   }
 
   return (
     <div className='my-10'>
+      {creating && <Loading message="Creating..." />}
       <h2 className='text-xl font-bold'>Write Blog</h2>
       <form onSubmit={handleSubmit}>
         <div className="w-full border-2 border-gray-800 my-3 rounded-2xl">
@@ -174,7 +181,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
             <label htmlFor='author' className='text-base'>Author</label>
             <input required type="text" name='author' value={formData.author} onChange={handleChange} placeholder='Author Name' className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />
           </div>
-          
+
           <div className='p-2.5 flex gap-5 text-base items-center'>
             <label htmlFor='date' className='text-base'>Date</label>
             <input required type="date" placeholder='Date' value={formData.date} name='date' onChange={handleChange} className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />

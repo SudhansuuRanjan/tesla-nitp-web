@@ -45,3 +45,12 @@ export const deleteDocument = async (COLLECTION_ID, ID) => {
         throw new Error(err.message);
     }
 }
+
+export const getDocumentsCount = async (COLLECTION_ID) => {
+    try {
+        const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+        return res.sum;
+    } catch (error) {
+        throw new Error(err.message);
+    }
+}

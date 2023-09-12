@@ -4,8 +4,7 @@ import { uploadFile, deleteFile } from '../../../services/file';
 import { useQuery } from '@tanstack/react-query';
 import { TagsInput } from "react-tag-input-component";
 import ProjectCard from '../../../pages/Projects/ProjectCard';
-import { FaEdit, FaTrash } from 'react-icons/fa';
-import Loader from '../../../components/Loader';
+import Loader, { Loading } from '../../../components/Loader';
 import { toast } from 'react-toastify';
 
 const Projects = () => {
@@ -15,7 +14,7 @@ const Projects = () => {
     queryKey: ['projects'],
     queryFn: () => getDocuments("projects"),
     onSuccess: (data) => {
-      console.log(data.documents);
+      // console.log(data.documents);
     }
   })
 
@@ -64,7 +63,9 @@ const ProjectForm = ({ setCreateProject, refetch }) => {
     link: '',
     source_code: "",
     techstack: [],
-  })
+  });
+
+  const [creating, setCreating] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -73,6 +74,7 @@ const ProjectForm = ({ setCreateProject, refetch }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.image) return;
+    setCreating(true);
     try {
       // console.log(formData);
       const res = await uploadFile(formData.image);
@@ -94,15 +96,18 @@ const ProjectForm = ({ setCreateProject, refetch }) => {
         techstack: [],
       });
       setCreateProject(false);
+      setCreating(false);
       refetch();
     } catch (error) {
       // console.log(error);
+      setCreating(false);
       toast.error("Something went wrong!");
     }
   }
 
   return (
     <div className='fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-md h-screen w-full flex items-center justify-center'>
+      {creating && <Loading message="Creating..." />}
       <form onSubmit={handleSubmit} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
           <h1 className='text-3xl font-bold text-center mb-5'>Create New Project</h1>

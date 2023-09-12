@@ -66,7 +66,7 @@ const Footer = () => {
           © {year} T.E.S.L.A NITP. All Rights Reserved.
         </p>
         <p>
-          Designed & Developed by <a style={{ textDecoration: "none" }} className="font-medium text-blue-500" href="#">
+          Designed & Developed by <a style={{ textDecoration: "none" }} className="font-medium text-blue-500" href="https://sudhanshur.vercel.app" target='_blank'>
             <span className='text-sky-500'>Sudhanshu Ranjan</span>
           </a>.
         </p>

@@ -3,7 +3,7 @@ import { createDocument, getDocuments, deleteDocument } from '../../../services/
 import { uploadFile, deleteFile } from '../../../services/file';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { FaTrash, FaEdit } from "react-icons/fa"
-import Loader from '../../../components/Loader';
+import Loader, { Loading } from '../../../components/Loader';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -31,13 +31,12 @@ const Gallery = () => {
         </h1>
         <div className='border-t-[1px] border-t-gray-800 py-8'>
           <div className='flex justify-end'>
-            {/* <input className='py-2.5 px-4 rounded-md border w-[24rem] border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' /> */}
             <button onClick={() => setUploadImage(!uploadImage)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>Upload Photo</button>
           </div>
 
           <div className="image-container mt-20">
             {
-              isLoading ? <Loader /> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img, index) => {
+              isLoading ? <div className='h-32 flex justify-center items-center w-full'><Loader /></div> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img, index) => {
                 return (
                   <div key={index} className='relative' data-aos="fade-up">
                     <div className='absolute z-10 right-5 top-5'>
@@ -74,7 +73,9 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
   const [formData, setFormData] = useState({
     priority: 5,
     image: null,
-  })
+  });
+
+  const [uploading, setUploading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -92,6 +93,7 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
 
   const handleSubmit = async (e) => {
     if (!formData.image) return;
+    setUploading(true);
     try {
       const res = await uploadFile(formData.image);
       let data = {
@@ -107,15 +109,18 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
         image: null
       });
       setUploadImage(false);
+      setUploading(false);
       return response;
     } catch (error) {
       // console.log(error);
+      setUploading(false);
       toast.error("Something went wrong!");
     }
   }
 
   return (
     <div className='fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-md h-screen w-full flex items-center justify-center'>
+      {uploading && <Loading message="Uploading..." />}
       <form onSubmit={mutation.mutate} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
           <h1 className='text-3xl font-bold text-center mb-5'>Create Member</h1>
