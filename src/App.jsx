@@ -97,9 +97,9 @@ function App() {
             <Route path="/admin/login" element={
               <LoginAdmin />
             } />
-            <Route path="/admin/register" element={
+            {/* <Route path="/admin/register" element={
               <Register />
-            } />
+            } /> */}
 
             <Route path="/admin/dashboard" element={<PrivateRoute />} >
               <Route path="/admin/dashboard" element={

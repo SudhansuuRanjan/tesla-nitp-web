@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import { toast } from "react-toastify"
 
 const Login = () => {
-  const { handleLogin,user } = useAuth();
+  const { handleLogin, user } = useAuth();
   const navigate = useNavigate();
   document.title = "Tesla NIT Patna | AdminLogin";
 
@@ -31,7 +32,10 @@ const Login = () => {
           email: formData.email,
           password: formData.password,
         });
+        toast.success("Logged in successfully");
+        navigate("/admin/dashboard");
       } catch (error) {
+        toast.error("Invalid credentials");
         console.log(error.message);
       }
     } else {
@@ -86,12 +90,12 @@ const Login = () => {
             Login
           </button>
 
-          <p className="text-center mb-5">
+          {/* <p className="text-center mb-5">
             Don't have an account?{" "}
             <Link to="/admin/register" className="text-sky-500">
               SignUp
             </Link>
-          </p>
+          </p> */}
         </form>
       </div>
     </div>

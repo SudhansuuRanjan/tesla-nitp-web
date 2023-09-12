@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const { handleSignUp, user } = useAuth();
@@ -25,8 +26,10 @@ const Login = () => {
                 password,
                 name,
             });
+            toast.success("Registered successfully");
         } catch (error) {
-            console.log(error.message);
+            // console.log(error.message);
+            toast.error("Error registering");
         }
     };
 
@@ -34,8 +37,6 @@ const Login = () => {
         navigate(-1); // Go back to previous route
         return null; // Render nothing while redirecting
     }
-
-
 
     return (
         <div className="flex justify-center items-center min-h-screen">
