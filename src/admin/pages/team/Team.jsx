@@ -23,18 +23,18 @@ const Team = () => {
   }, []);
 
   return (
-    <div className='pt-20 relative'>
-      <div className='m-auto max-w-[80%]'>
-        <h1 className='text-5xl leading-normal font-bold my-5'>
+    <div className='pt-20 relative min-h-screen'>
+      <div className='m-auto lg:mx-32 md:mx-10 mx-5'>
+        <h1 className='lg:text-5xl md:text-4xl text-3xl leading-normal font-bold my-5'>
           <span className='text-sky-500'>T.E.S.L.A.</span> Team
         </h1>
         <div className='border-t-[1px] border-t-gray-800 py-8'>
           <div className='flex justify-between'>
-            <input className='py-2.5 px-4 rounded-md border w-[24rem] border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' />
-            <button onClick={() => setCreateMember(!createMember)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>Creater User</button>
+            <input className='py-2.5 px-4 rounded-md border lg:w-[24rem] md:w-[14rem] w-auto border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' />
+            <button onClick={() => setCreateMember(!createMember)} className='bg-sky-600 text-white rounded-lg lg:px-8 md:px-6 px-4 py-2.5'>Creater User</button>
           </div>
 
-          <div className='border border-gray-800 mt-8 rounded-xl'>
+          <div className='border border-gray-800 mt-8 rounded-xl lg:w-[82vw] md:w-[82vw] w-[90vw] overflow-x-scroll'>
             <table className='w-full'>
               <thead className='text-left border-b border-gray-800'>
                 <tr className='text-gray-400'>
@@ -59,7 +59,7 @@ const Team = () => {
                         </div>
                       </div>
                     </td>
-                    <td className='py-2.5 px-4'>{user.priority}</td>
+                    <td className='py-2.5 px-4 pl-10'>{user.priority}</td>
                     <td className='py-2.5 px-4'>{user.email}</td>
                     <td className='py-2.5 px-4'>{user.role}</td>
                     <td className='py-2.5 px-4 flex gap-2 items-center'>
@@ -94,7 +94,7 @@ export default Team;
 const TeamForm = ({ setCreateMember, refetch }) => {
   const [formData, setFormData] = useState({
     name: '',
-    priority: 0,
+    priority: 5,
     email: '',
     role: '',
     about: '',
@@ -147,13 +147,13 @@ const TeamForm = ({ setCreateMember, refetch }) => {
   return (
     <div className='fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-md h-screen w-full flex items-center justify-center'>
       {creating && <Loading message={"Creating..."} />}
-      <form onSubmit={handleSubmit} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
+      <form onSubmit={handleSubmit} className='bg-gray-900 border lg:px-10 md:px-10 px-3 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
-          <h1 className='text-3xl font-bold text-center mb-5'>Create Member</h1>
+          <h1 className='lg:text-3xl md:text-3xl text-2xl font-bold text-center mb-3'>Create Member</h1>
         </div>
-        <div className="lg:w-[28rem] md:w-[18rem] h-[70vh] overflow-y-scroll space-y-4 pr-5">
-          <div className='flex gap-5'>
-            <label className="text-lg">Name <span className="text-red-500">*</span></label>
+        <div className="lg:w-[28rem] md:w-[18rem] w-[88vw] lg:h-[70vh] md:h-[70vh] overflow-y-scroll space-y-4 lg:pr-5 md:pr-5 max-h-[60vh]">
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Name <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="text"
@@ -164,8 +164,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
               value={formData.name}
             />
           </div>
-          <div className='flex gap-5'>
-            <label className="text-lg">Priority <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Priority <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="number"
@@ -177,8 +177,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
               value={formData.priority}
             />
           </div>
-          <div className='flex gap-5'>
-            <label className="text-lg">Email <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Email <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="email"
@@ -189,10 +189,10 @@ const TeamForm = ({ setCreateMember, refetch }) => {
               value={formData.email}
             />
           </div>
-          <div className='flex gap-5'>
-            <label className="text-lg">Role <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Role <span className="text-red-500">*</span></label>
             <input
-              className="py-2 px-4 rounded-xl"
+              className="py-2 px-4 rounded-xl flex-1"
               type="text"
               name="role"
               placeholder="Enter Role"
@@ -202,10 +202,10 @@ const TeamForm = ({ setCreateMember, refetch }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">About <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">About <span className="text-red-500">*</span></label>
             <textarea
-              className="py-2 px-4 rounded-xl"
+              className="py-2 px-4 rounded-xl flex-1 h-20"
               type="text"
               name="about"
               placeholder="Enter About"
@@ -215,10 +215,17 @@ const TeamForm = ({ setCreateMember, refetch }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Image <span className="text-red-500">*</span></label>
+          <div className='flex flex-col justify-center items-center gap-4 py-3'>
+            <label className="text-lg font-medium text-sky-500">Image <span className="text-red-500">*</span></label>
+            <img src={formData.image ? URL.createObjectURL(formData.image) : "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"} className='lg:w-[10rem] md:w-[10rem] w-[8rem]' alt="placeholder" />
             <input
-              className="py-2 px-4 rounded-xl"
+              className="mt-2 text-sm text-grey-500
+            file:mr-5 file:py-1 file:px-3
+            file:rounded-full file:border-0
+            file:text-sm file:font-medium
+            file:bg-blue-50 file:text-blue-700
+            hover:file:cursor-pointer hover:file:bg-amber-50
+            hover:file:text-amber-700"
               type="file"
               name="image"
               placeholder="Select Image"
@@ -233,8 +240,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Instagram <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Instagram <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl"
               type="text"
@@ -245,8 +252,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Linkedin <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Linkedin <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl"
               type="text"
@@ -257,8 +264,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Twitter <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Twitter <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl"
               type="text"
@@ -269,8 +276,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Github <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Github <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl"
               type="text"
@@ -281,8 +288,8 @@ const TeamForm = ({ setCreateMember, refetch }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Discord <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Discord <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl"
               type="text"

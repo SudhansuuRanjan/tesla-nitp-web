@@ -25,13 +25,13 @@ const Gallery = () => {
 
   return (
     <div className='pt-20 relative'>
-      <div className='m-auto max-w-[80%]'>
-        <h1 className='text-5xl leading-normal font-bold my-5'>
+      <div className='m-auto lg:mx-32 md:mx-10 mx-5'>
+        <h1 className='lg:text-5xl md:text-4xl text-3xl leading-normal font-bold my-5'>
           <span className='text-sky-500'>T.E.S.L.A.</span> Gallery
         </h1>
         <div className='border-t-[1px] border-t-gray-800 py-8'>
           <div className='flex justify-end'>
-            <button onClick={() => setUploadImage(!uploadImage)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>Upload Photo</button>
+            <button onClick={() => setUploadImage(!uploadImage)} className='bg-sky-600 text-white rounded-md lg:px-8 md:px-6 px-5 py-2.5'>Upload Photo</button>
           </div>
 
           <div className="image-container mt-20">
@@ -40,7 +40,7 @@ const Gallery = () => {
                 return (
                   <div key={index} className='relative' data-aos="fade-up">
                     <div className='absolute z-10 right-5 top-5'>
-                      <Link to={`/edit/gallery/${img.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
+                      <Link to={`/edit/gallery/${img.$id}`} > <button className='text-sky-500 p-2'><FaEdit className='shadow-xl' size={24} /></button></Link>
                       <button onClick={async () => {
                         try {
                           await Promise.all([deleteDocument('gallery', img.$id), deleteFile(img.imageId)]);
@@ -49,9 +49,9 @@ const Gallery = () => {
                         } catch (error) {
                           console.log("Something went wrong!")
                         }
-                      }} className='text-rose-500 p-2'><FaTrash size={20} /></button>
+                      }} className='text-rose-500 p-2'><FaTrash className='shadow-xl' size={24} /></button>
                     </div>
-                    <img src={img.url + "&quality=40"} alt="gallery-photo" />
+                    <img className='min-h-[7rem]' src={img.url + "&quality=40"} alt="gallery-photo" />
                   </div>
                 )
               })
@@ -121,11 +121,11 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
   return (
     <div className='fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-md h-screen w-full flex items-center justify-center'>
       {uploading && <Loading message="Uploading..." />}
-      <form onSubmit={mutation.mutate} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
+      <form onSubmit={mutation.mutate} className='bg-gray-900 border lg:px-10 md:px-10 px-3 border-gray-800 rounded-3xl py-5'>
         <div className='pt-5 pb-3'>
-          <h1 className='text-3xl font-bold text-center mb-5'>Create Member</h1>
+          <h1 className='lg:text-3xl md:text-3xl text-2xl font-bold text-center mb-5'>Upload Photo</h1>
         </div>
-        <div className="lg:w-[28rem] md:w-[18rem] h-[16rem] space-y-4 pr-5">
+        <div className="lg:w-[28rem] md:w-[18rem] w-[88vw] space-y-4 lg:pr-5 md:pr-5">
           <div className='flex gap-5'>
             <label className="text-lg">Priority <span className="text-red-500">*</span></label>
             <input
@@ -139,10 +139,17 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
               value={formData.priority}
             />
           </div>
-          <div className='flex gap-5'>
-            <label className="text-lg">Image <span className="text-red-500">*</span></label>
+          <div className='flex flex-col justify-center items-center gap-5 py-5'>
+            <label className="text-lg text-left">Image <span className="text-red-500">*</span></label>
+            <img src={formData.image ? URL.createObjectURL(formData.image) : "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"} className='w-[10rem]' alt="placeholder" />
             <input
-              className="py-2 px-4 rounded-xl"
+              className="mt-2 text-sm text-grey-500
+            file:mr-5 file:py-1 file:px-3
+            file:rounded-full file:border-0
+            file:text-sm file:font-medium
+            file:bg-blue-50 file:text-blue-700
+            hover:file:cursor-pointer hover:file:bg-amber-50
+            hover:file:text-amber-700"
               type="file"
               name="image"
               placeholder="Select Image"

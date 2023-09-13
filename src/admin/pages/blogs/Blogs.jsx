@@ -21,10 +21,7 @@ const Blogs = () => {
 
   const { data, refetch, isLoading, isError } = useQuery({
     queryKey: ['news'],
-    queryFn: () => getDocuments("news"),
-    onSuccess: (data) => {
-      // console.log(data);
-    }
+    queryFn: () => getDocuments("news")
   })
 
   useEffect(() => {
@@ -33,19 +30,19 @@ const Blogs = () => {
 
   return (
     <div className='pt-20 relative'>
-      <div className='m-auto max-w-[80%]'>
-        <h1 className='text-5xl leading-normal font-bold my-5'>
+      <div className='m-auto lg:mx-32 md:mx-10 mx-5'>
+        <h1 className='lg:text-5xl md:text-4xl text-3xl leading-normal font-bold my-5'>
           <span className='text-sky-500'>T.E.S.L.A.</span> Blogs
         </h1>
         <div className='border-t-[1px] border-t-gray-800 py-8'>
           <div className='flex justify-between'>
-            <input className='py-2.5 px-4 rounded-md border w-[24rem] border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' />
-            <button onClick={() => setCreateBlog(!createBlog)} className='bg-sky-600 text-white rounded-md px-8 py-2.5'>New Blog</button>
+            <input className='py-2.5 px-4 rounded-md border lg:w-[24rem] md:w-[14rem] w-auto border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' />
+            <button onClick={() => setCreateBlog(!createBlog)} className='bg-sky-600 text-white rounded-md lg:px-8 md:px-6 px-5 py-2.5'>New Blog</button>
           </div>
 
           {createBlog && <BlogForm editorState={editorState} setEditorState={setEditorState} setCreateBlog={setCreateBlog} refetch={refetch} />}
 
-          <h3 className='text-3xl font-bold mt-10'>All Blog Posts</h3>
+          <h3 className='lg:text-3xl md:text-3xl text-2xl font-bold mt-10'>All Blog Posts</h3>
 
           <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
             {isLoading ? <div className='h-32 w-full flex items-center justify-center'>
@@ -132,7 +129,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
           <div className='p-2.5'>
             <input required type="text" value={formData.title} placeholder='Title' name='title' onChange={handleChange} className='px-3 py-2 rounded-lg border-2 border-sky-800 bg-gray-900 w-full' />
           </div>
-          <div className='p-2.5 py-4 flex items-center justify-evenly'>
+          <div className='p-2.5 py-4 flex lg:flex-row md:flex-row flex-col items-center justify-evenly gap-5'>
             <div className='flex justify-center items-center flex-col'>
               <div>
                 <img src={formData.image ? URL.createObjectURL(formData.image) : "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"} className='h-[5rem]' alt="placeholder" />
@@ -145,7 +142,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
                 })
               }}
                 type="file" accept="image/*" className='mt-2 text-sm text-grey-500
-            file:mr-5 file:py-1.5 file:px-4
+            file:mr-5 file:py-1 file:px-3
             file:rounded-full file:border-0
             file:text-sm file:font-medium
             file:bg-blue-50 file:text-blue-700
@@ -163,7 +160,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
                   authorImage: e.target.files[0]
                 })
               }} className='mt-2 text-sm text-grey-500
-            file:mr-5 file:py-1.5 file:px-4
+            file:mr-5 file:py-1 file:px-3
             file:rounded-full file:border-0
             file:text-sm file:font-medium
             file:bg-blue-50 file:text-blue-700
@@ -211,7 +208,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
           <div className='p-2.5 pb-0 border-t border-gray-800'>
             {active === "write" ?
 
-              <textarea required className='w-full border border-gray-800 rounded-lg min-h-[25rem] outline-none p-2 bg-gray-900' value={editorState} onChange={(e) => {
+              <textarea required className='w-full border border-gray-800 rounded-lg lg:min-h-[35rem] md:min-h-[35rem] min-h-[40rem] outline-none p-2 bg-gray-900' value={editorState} onChange={(e) => {
                 setEditorState(e.target.value)
                 setFormData({
                   ...formData,

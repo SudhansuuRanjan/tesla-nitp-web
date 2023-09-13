@@ -63,14 +63,14 @@ const EditEvents = ({ handleUpdate, id }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
+    <div className='w-full'>
+      <form onSubmit={handleSubmit} className='bg-gray-900 border lg:px-10 md:px-8 px-5 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
-          <h1 className='text-3xl font-bold text-center mb-5'>Update Event</h1>
+          <h1 className='lg:text-3xl md:text-3xl text-2xl font-bold text-center mb-5'>Update Event</h1>
         </div>
-        <div className="space-y-4 pr-5">
-          <div className='flex gap-5'>
-            <label className="text-lg">Name <span className="text-red-500">*</span></label>
+        <div className="space-y-4 lg:pr-5 md:pr-5">
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Name <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="text"
@@ -81,10 +81,10 @@ const EditEvents = ({ handleUpdate, id }) => {
               value={formData.name}
             />
           </div>
-          <div className='flex gap-5'>
-            <label className="text-lg">Description <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Desc.<span className="text-red-500">*</span></label>
             <textarea
-              className="py-2 px-4 rounded-xl flex-1"
+              className="py-2 px-4 h-24 rounded-xl flex-1"
               name="description"
               placeholder="Enter event description"
               required
@@ -92,8 +92,8 @@ const EditEvents = ({ handleUpdate, id }) => {
               value={formData.description}
             />
           </div>
-          <div className='flex gap-5'>
-            <label className="text-lg">Tag <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Tag <span className="text-red-500">*</span></label>
             <select
               className="py-2 px-4 rounded-xl"
               type="text"
@@ -112,8 +112,8 @@ const EditEvents = ({ handleUpdate, id }) => {
             </select>
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Event/Reg. Link <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Reg. Link <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="text"
@@ -125,11 +125,17 @@ const EditEvents = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex flex-col justify-center gap-5'>
+          <div className='flex flex-col justify-center lg:gap-5 md:gap-5 gap-3'>
             {imgFile ? <img src={URL.createObjectURL(imgFile)} className='w-[8rem]' alt="placeholder" /> : <img src={formData.image ?? "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"} className='w-[8rem]' alt="placeholder" />}
-            <label className="text-lg">Poster <span className="text-red-500">*</span></label>
+            <label className="text-lg font-medium text-sky-500">Poster <span className="text-red-500">*</span></label>
             <input
-              className="py-2 px-4 rounded-xl"
+              className="mt-2 text-sm text-grey-500
+            file:mr-5 file:py-1 file:px-3
+            file:rounded-full file:border-0
+            file:text-sm file:font-medium
+            file:bg-blue-50 file:text-blue-700
+            hover:file:cursor-pointer hover:file:bg-amber-50
+            hover:file:text-amber-700"
               type="file"
               name="image"
               placeholder="Select Image"
@@ -138,10 +144,10 @@ const EditEvents = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Venue <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Venue <span className="text-red-500">*</span></label>
             <input
-              className="py-2 px-4 rounded-xl"
+              className="py-2 px-4 rounded-xl flex-1"
               type="text"
               name="venue"
               placeholder="Enter Venue"
@@ -150,8 +156,8 @@ const EditEvents = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Date <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Date <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl"
               type="date"
@@ -162,8 +168,8 @@ const EditEvents = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Time <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Time <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl"
               type="time"

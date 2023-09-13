@@ -63,15 +63,15 @@ const EditProjects = ({ handleUpdate, id }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className='bg-gray-900 border px-10 border-gray-800 rounded-3xl'>
+    <div className='w-full'>
+      <form onSubmit={handleSubmit} className='bg-gray-900 border lg:px-10 md:px-8 px-5 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
-          <h1 className='text-3xl font-bold text-center mb-5'>Update Project</h1>
+          <h1 className='lg:text-3xl md:text-3xl text-2xl font-bold text-center mb-5'>Update Project</h1>
         </div>
 
-        <div className="space-y-4 pr-5">
-          <div className='flex gap-5'>
-            <label className="text-lg">Title <span className="text-red-500">*</span></label>
+        <div className="space-y-4 lg:pr-5 md:pr-5">
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Title <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="text"
@@ -82,8 +82,8 @@ const EditProjects = ({ handleUpdate, id }) => {
               value={formData.title}
             />
           </div>
-          <div className='flex gap-5'>
-            <label className="text-lg">Description <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium h-36 text-sky-500">Desc. <span className="text-red-500">*</span></label>
             <textarea
               className="py-2 px-4 rounded-xl flex-1"
               name="desc"
@@ -94,8 +94,8 @@ const EditProjects = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Tags <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Tags <span className="text-red-500">*</span></label>
             <TagsInput
               value={formData.tags}
               onChange={(data) => setFormData({
@@ -108,8 +108,8 @@ const EditProjects = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">TechStack <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">TechStack <span className="text-red-500">*</span></label>
             <TagsInput
               value={formData.techstack}
               onChange={(data) => setFormData({
@@ -122,8 +122,8 @@ const EditProjects = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Project Link <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Link <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="text"
@@ -135,11 +135,17 @@ const EditProjects = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5 my-5 py-5'>
+          <div className='flex lg:gap-5 lg:flex-row md:flex-row flex-col md:gap-5 gap-3 my-5 py-5'>
             {imgFile ? <img src={URL.createObjectURL(imgFile)} className='w-[10rem]' alt="placeholder" /> : <img src={formData.imgUrl ?? "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"} className='w-[8rem]' alt="placeholder" />}
-            <label className="text-lg">Poster <span className="text-red-500">*</span></label>
+            <label className="text-lg font-medium text-sky-500">Poster <span className="text-red-500">*</span></label>
             <input
-              className="py-2 px-4 rounded-xl"
+              className="mt-2 text-sm text-grey-500
+            file:mr-5 file:py-1 file:px-3
+            file:rounded-full file:border-0
+            file:text-sm file:font-medium
+            file:bg-blue-50 file:text-blue-700
+            hover:file:cursor-pointer hover:file:bg-amber-50
+            hover:file:text-amber-700"
               type="file"
               name="image"
               placeholder="Select Image"
@@ -148,8 +154,8 @@ const EditProjects = ({ handleUpdate, id }) => {
             />
           </div>
 
-          <div className='flex gap-5'>
-            <label className="text-lg">Source Code <span className="text-red-500">*</span></label>
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Src. Code <span className="text-red-500">*</span></label>
             <input
               className="py-2 px-4 rounded-xl flex-1"
               type="text"

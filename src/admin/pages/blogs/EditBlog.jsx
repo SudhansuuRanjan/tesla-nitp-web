@@ -85,12 +85,12 @@ const EditBlog = ({ handleUpdate, id }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className='bg-black border px-10 border-gray-800 rounded-3xl'>
+      <form onSubmit={handleSubmit} className='bg-black border lg:px-10 md:px-10 px-3 border-gray-800 rounded-3xl'>
         <div className='pt-5 pb-3'>
           <h1 className='text-3xl font-bold text-center mb-5'>Update News(Blog)</h1>
         </div>
-        <div className="space-y-4 pr-5">
-          <div className='p-2.5 py-4 flex items-center justify-evenly'>
+        <div className="space-y-4 lg:pr-5 md:pr-5">
+          <div className='p-2.5 py-4 flex lg:flex-row md:flex-row flex-col lg:gap-5 md:gap-5 gap-3 items-center justify-evenly'>
             <div className='flex justify-center items-center flex-col'>
               <div>
                 {imgFile ? <img src={URL.createObjectURL(imgFile)} className='w-[8rem]' alt="placeholder" /> : <img src={formData.image ?? "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"} className='w-[8rem]' alt="placeholder" />}
@@ -121,17 +121,17 @@ const EditBlog = ({ handleUpdate, id }) => {
             </div>
           </div>
 
-          <div className='p-2.5 flex gap-5 text-base items-center'>
+          <div className='p-2.5 flex lg:gap-5 md:gap-5 gap-3 text-base items-center'>
             <label htmlFor='tag' className='text-base'>Tag</label>
             <input required type="text" name="tag" value={formData.tag} onChange={handleChange} placeholder='Tag for eg. Electrical Engg. or Blockchain' className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />
           </div>
 
-          <div className='p-2.5 flex gap-5 text-base items-center'>
+          <div className='p-2.5 flex lg:gap-5 md:gap-5 gap-3 text-base items-center'>
             <label htmlFor='author' className='text-base'>Author</label>
             <input required type="text" name='author' value={formData.author} onChange={handleChange} placeholder='Author Name' className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />
           </div>
 
-          <div className='p-2.5 flex gap-5 text-base items-center'>
+          <div className='p-2.5 flex lg:gap-5 md:gap-5 gap-3 text-base items-center'>
             <label htmlFor='date' className='text-base'>Date</label>
             <input required type="date" placeholder='Date' value={formData.date} name='date' onChange={handleChange} className='px-3 py-2 rounded-lg border border-gray-800 bg-gray-900 w-full' />
           </div>
@@ -158,7 +158,7 @@ const EditBlog = ({ handleUpdate, id }) => {
             <div className='p-2.5 pb-0 border-t border-gray-800'>
               {active === "write" ?
 
-                <textarea required className='w-full border border-gray-800 rounded-lg min-h-[25rem] outline-none p-2 bg-gray-900' value={formData.body} onChange={(e) => {
+                <textarea required className='w-full border border-gray-800 rounded-lg lg:min-h-[30rem] md:min-h-[30rem] min-h-[35rem] outline-none p-2 bg-gray-900' value={formData.body} onChange={(e) => {
                   setEditorState(e.target.value);
                   setFormData({
                     ...formData,

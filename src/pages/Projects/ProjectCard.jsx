@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project, isAdmin, refetch }) => {
     return (
-        <div data-aos="zoom-in" className="project_container lg:p-8 md-p-8 p-4 transition-all delay-[30ms] ease-in-out hover:scale-[101%]">
-            {isAdmin && <div className='absolute z-10 right-5 top-1'>
-                <Link to={`/edit/project/${project.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={20} /></button></Link>
+        <div data-aos="zoom-in" className="project_container lg:p-8 md-p-8 p-5 transition-all delay-[30ms] ease-in-out hover:scale-[101%]">
+            {isAdmin && <div className='absolute z-10 right-5 top-2'>
+                <Link to={`/edit/project/${project.$id}`} > <button className='text-blue-500 p-2'><FaEdit size={24} /></button></Link>
                 <button onClick={async () => {
                     try {
                         await Promise.all([deleteDocument('projects', project.$id), deleteFile(project.imageId)]);
@@ -18,7 +18,7 @@ const ProjectCard = ({ project, isAdmin, refetch }) => {
                     } catch (error) {
                         console.log("Something went wrong!", error)
                     }
-                }} className='text-rose-500 p-2'><FaTrash size={20} /></button>
+                }} className='text-rose-500 p-2'><FaTrash size={22} /></button>
             </div>}
             <div className="project-card lg:flex-row md:flex-row flex-col">
                 <div className="project_container_left lg:w-[50%] md:w-[50%] w-full">

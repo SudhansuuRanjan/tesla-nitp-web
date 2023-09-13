@@ -45,9 +45,9 @@ const EditData = () => {
     return (
         <div className='pt-20 relative min-h-[70vh]'>
             {updating && <Loading message="Updating..." />}
-            <div className='m-auto max-w-[80%]'>
-                <h1 className='text-5xl leading-normal font-bold my-5'>
-                    <span className='text-sky-500'>EDIT</span> {type} data of <span className='text-sky-500'>{id}</span>
+            <div className='m-auto lg:mx-32 md:mx-10 mx-5'>
+                <h1 className='lg:text-5xl md:text-4xl text-3xl leading-normal font-bold my-5'>
+                    <span className='text-sky-500'>EDIT</span> {type} data of <span className='text-sky-500'>{id.substring(0,4) + "..." + id.substring(15)}</span>
                 </h1>
                 <div className='border-t-[1px] border-t-gray-800 py-8'>
                     <CurrentView handleUpdate={handleUpdate} id={id} />
