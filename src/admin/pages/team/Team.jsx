@@ -46,20 +46,20 @@ const Team = () => {
                 </tr>
               </thead>
               <tbody className='text-white '>
-                {isLoading ? <div className='flex justify-center items-center w-full h-20'>
+                {isLoading ? <span className='flex justify-center items-center w-full h-20'>
                   <Loader />
-                </div> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((user, index) => (
+                </span> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((user, index) => (
                   <tr key={index} className='border-b border-gray-800'>
                     <td className='py-2.5 px-4'>
-                      <div className='flex items-center'>
+                      <span className='flex items-center'>
                         <img className='w-10 h-10 rounded-full mr-4' src={user.image + "&quality=40"} alt='Avatar of Jonathan Reinink' />
-                        <div className='flex flex-col'>
+                        <span className='flex flex-col'>
                           <span className='text-gray-300 font-medium text-base leading-none'>{user.name}</span>
                           <span className='text-gray-500 text-sm'>{user.about.substring(0, 30) + "..."}</span>
-                        </div>
-                      </div>
+                        </span>
+                      </span>
                     </td>
-                    <td className='py-2.5 px-4 pl-10'>{user.priority}</td>
+                    <td className='py-2.5 px-4 pl-6'>{user.priority}</td>
                     <td className='py-2.5 px-4'>{user.email}</td>
                     <td className='py-2.5 px-4'>{user.role}</td>
                     <td className='py-2.5 px-4 flex gap-2 items-center'>
@@ -140,7 +140,7 @@ const TeamForm = ({ setCreateMember, refetch }) => {
       setCreateMember(false);
     } catch (error) {
       setCreating(false);
-      toast.error("Something went wrong!");
+      toast.error("Something went wrong!" + error.message);
     }
   }
 
@@ -151,7 +151,7 @@ const TeamForm = ({ setCreateMember, refetch }) => {
         <div className='pt-5 pb-3'>
           <h1 className='lg:text-3xl md:text-3xl text-2xl font-bold text-center mb-3'>Create Member</h1>
         </div>
-        <div className="lg:w-[28rem] md:w-[18rem] w-[88vw] lg:h-[70vh] md:h-[70vh] overflow-y-scroll space-y-4 lg:pr-5 md:pr-5 max-h-[60vh]">
+        <div className="lg:w-[28rem] md:w-[26rem] w-[88vw] lg:h-[70vh] md:h-[70vh] overflow-y-scroll space-y-4 lg:pr-5 md:pr-5 max-h-[60vh]">
           <div className='flex lg:gap-5 md:gap-5 gap-3'>
             <label className="text-lg font-medium text-sky-500">Name <span className="text-red-500">*</span></label>
             <input

@@ -12,7 +12,8 @@ const EditTeam = ({ handleUpdate, id }) => {
     onSuccess: (data) => {
       // console.log(data);
       setFormData(data);
-    }
+    },
+    staleTime: Infinity
   })
 
   const [formData, setFormData] = useState({

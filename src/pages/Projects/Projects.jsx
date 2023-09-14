@@ -15,9 +15,6 @@ const Projects = () => {
   const { data, refetch, isLoading, isError } = useQuery({
     queryKey: ['projects'],
     queryFn: () => getDocuments("projects"),
-    onSuccess: (data) => {
-      console.log(data.documents);
-    },
     staleTime:Infinity
   })
 

@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import './Team.scss'
 import Heading from '../../components/Headings/Heading'
 import TeamCard from './TeamCard'
-
+import { useQuery } from "@tanstack/react-query";
+import Loader from "../../components/Loader";
+import { getDocuments } from "../../services/document";
 
 
 const Team = () => {
-  document.title = 'Tesla NIT Patna | Team';
+
+  useEffect(() => {
+    document.title = 'Tesla NIT Patna | Team';
+  }, [])
+
+  const { data, refetch, isLoading, isError } = useQuery({
+    queryKey: ['members'],
+    queryFn: () => getDocuments("members"),
+    onSuccess: (data) => {
+      console.log(data);
+    },
+    staleTime: Infinity
+  })
 
 
   const members = [
@@ -107,7 +121,7 @@ const Team = () => {
     <div className='pt-16'>
       <Heading heading="Team"></Heading>
       <div className='my-20 mx-5 flex flex-wrap gap-10 items-center justify-center' id='Team_main'>
-        {members.map((member, id) => (
+        {isLoading ? <Loader></Loader> : isError ? <p>Something went wrong.</p> : data.map((member, id) => (
           <TeamCard member={member} key={id} />
         ))}
       </div>
