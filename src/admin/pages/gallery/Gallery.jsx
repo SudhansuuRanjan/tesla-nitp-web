@@ -15,7 +15,7 @@ const Gallery = () => {
     queryKey: ['gallery'],
     queryFn: () => getDocuments("gallery"),
     onSuccess: (data) => {
-      // console.log(data);
+      console.log(data);
     },
   })
 
@@ -36,9 +36,9 @@ const Gallery = () => {
 
           <div className="image-container mt-20">
             {
-              isLoading ? <div className='h-32 flex justify-center items-center w-full'><Loader /></div> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img, index) => {
+              isLoading ? <div className='h-32 flex justify-center items-center w-full'><Loader /></div> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img) => {
                 return (
-                  <div key={index} className='relative' data-aos="fade-up">
+                  <div key={img.$id} className='relative' data-aos="fade-up">
                     <div className='absolute z-10 right-5 top-5'>
                       <Link to={`/edit/gallery/${img.$id}`} > <button className='text-sky-500 p-2'><FaEdit className='shadow-xl' size={24} /></button></Link>
                       <button onClick={async () => {
@@ -51,7 +51,7 @@ const Gallery = () => {
                         }
                       }} className='text-rose-500 p-2'><FaTrash className='shadow-xl' size={24} /></button>
                     </div>
-                    <img className='min-h-[7rem]' src={img.url + "&quality=40"} alt="gallery-photo" />
+                    <img loading='lazy' className='min-h-[7rem]' src={img.url + "&quality=40"} alt="gallery-photo" />
                   </div>
                 )
               })
@@ -95,11 +95,15 @@ const GalleryForm = ({ setUploadImage, refetch }) => {
     if (!formData.image) return;
     setUploading(true);
     try {
+      // const hashData = await encodeImageToBlurhash(URL.createObjectURL(formData.image));
       const res = await uploadFile(formData.image);
       let data = {
         url: res.url,
         priority: formData.priority,
-        imageId: res.$id
+        imageId: res.$id,
+        // hash: hashData.hash,
+        // width: hashData.width,
+        // height: hashData.height
       };
       const response = await createDocument("gallery", data);
       refetch();

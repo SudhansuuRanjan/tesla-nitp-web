@@ -35,14 +35,16 @@ const Gallery = () => {
             <Heading heading="PHOTOS" desc="— Our Photo Gallery" />
             <div className="photo-gallery-cont">
                 <div className="photo-gallery">
-                    {isLoading ? <div className="flex justify-center items-center h-[10rem] w-full"><Loader/></div> : isError ? <p>Something went wrong.</p> : <div className="image-container">
+                    {isLoading ? <div className="flex justify-center items-center h-[10rem] w-full"><Loader /></div> : isError ? <p>Something went wrong.</p> : <div className="image-container">
                         {
-                             data.map((img, index) => {
+                            data.map((img, index) => {
                                 return (
-                                    <img data-aos="fade-up" key={index} src={img.url} alt="gallery-photo" onClick={() => {
-                                        setCurrentImg(index);
-                                        setModal(true);
-                                    }} />
+                                    <div data-aos="fade-up" className="bg-gray-900 bg-opacity-40 rounded-[1rem]">
+                                        <img height={1080} width={1920} loading="lazy" key={index} src={img.url} alt="gallery-photo" onClick={() => {
+                                            setCurrentImg(index);
+                                            setModal(true);
+                                        }} />
+                                    </div>
                                 )
                             })
                         }
@@ -54,7 +56,7 @@ const Gallery = () => {
                 modal && <div className="slideshow-container transition">
                     <div className="slide">
                         <div className="img-display">
-                            <img src={data[currentImg].url} alt="Slide image" />
+                            <img loading="lazy" src={data[currentImg].url} alt="Slide image" />
                         </div>
 
                         <div className="controls">

@@ -22,7 +22,7 @@
 
 .photo-item img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 1rem;
   height: 100%;
   object-fit: cover;
 }
@@ -125,20 +125,24 @@
 
 
 .image-container {
-  columns: 3 10rem;
+  columns: 4 10rem;
   gap: 1.5rem;
 
   @media screen and (max-width:1000px) {
-    columns: 2 10rem;
+    columns: 3 10rem;
   }
 
   @media screen and (max-width:750px) {
+    columns: 2 10rem;
+  }
+
+  @media screen and (max-width:600px) {
     columns: 1 10rem;
   }
 
   img {
     margin-bottom: 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     width: 100%;
     cursor: pointer;
     filter: brightness(0.9);

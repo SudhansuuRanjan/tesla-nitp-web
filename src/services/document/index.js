@@ -1,5 +1,5 @@
 import { databases, DATABASE_ID } from "../../appwrite.config";
-import { ID } from "appwrite";
+import { ID, Query } from "appwrite";
 
 export const createDocument = async (COLLECTION_ID, data) => {
     try {
@@ -10,9 +10,11 @@ export const createDocument = async (COLLECTION_ID, data) => {
     }
 }
 
-export const getDocuments = async (COLLECTION_ID) => {
+export const getDocuments = async (COLLECTION_ID, limit) => {
     try {
-        const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+        const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
+            Query.limit(limit ?? 100),
+        ]);
         return res.documents;
     } catch (err) {
         throw new Error(err.message);

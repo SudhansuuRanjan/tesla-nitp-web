@@ -15,32 +15,32 @@ const Dashboard = () => {
   const results = useQueries({
     queries: [
       {
-        queryKey: 'news',
+        queryKey: ['news'],
         queryFn: () => getDocuments('news'),
         staleTime: Infinity
       },
       {
-        queryKey: 'events',
+        queryKey: ['events'],
         queryFn: () => getDocuments('events'),
         staleTime: Infinity
       },
       {
-        queryKey: 'projects',
+        queryKey: ['projects'],
         queryFn: () => getDocuments('projects'),
         staleTime: Infinity
       },
       {
-        queryKey: 'members',
+        queryKey: ['members'],
         queryFn: () => getDocuments('members'),
         staleTime: Infinity
       },
       {
-        queryKey: 'gallery',
+        queryKey: ['gallery'],
         queryFn: () => getDocuments('gallery'),
         staleTime: Infinity
       },
       {
-        queryKey: 'counter',
+        queryKey: ['counter'],
         queryFn: () => getCounter(),
         staleTime: Infinity
       },
@@ -67,7 +67,7 @@ const Dashboard = () => {
       <div className='max-w-[60rem] grid lg:grid-cols-[minmax(100px,_1fr),minmax(100px,_1fr)] md:grid-cols-[minmax(100px,_1fr),minmax(100px,_1fr)] grid-cols-[minmax(100px,_1fr)] gap-10 lg:px-10 md:px-10 px-8 m-auto my-16'>
         {
           results.slice(0, 5).map((response, idx) => {
-            return <DashboardItem response={response} idx={idx} />
+            return <DashboardItem key={idx} response={response} idx={idx} />
           })
         }
       </div>
