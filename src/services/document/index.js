@@ -10,10 +10,11 @@ export const createDocument = async (COLLECTION_ID, data) => {
     }
 }
 
-export const getDocuments = async (COLLECTION_ID, limit) => {
+export const getDocuments = async (COLLECTION_ID, limit = 100, offset = 0) => {
     try {
         const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
-            Query.limit(limit ?? 100),
+            Query.limit(limit),
+            Query.offset(offset)
         ]);
         return res.documents;
     } catch (err) {

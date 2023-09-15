@@ -34,12 +34,12 @@ const Gallery = () => {
         <div className="gallery_container">
             <Heading heading="PHOTOS" desc="— Our Photo Gallery" />
             <div className="photo-gallery-cont">
-                <div className="photo-gallery">
+                <div className="photo-gallery gap-5">
                     {isLoading ? <div className="flex justify-center items-center h-[10rem] w-full"><Loader /></div> : isError ? <p>Something went wrong.</p> : <div className="image-container">
                         {
                             data.map((img, index) => {
                                 return (
-                                    <div key={index} data-aos="zoom-in" className="bg-gray-900 bg-opacity-40 rounded-[1rem]">
+                                    <div key={index} className="bg-gray-900 bg-opacity-40 rounded-[1rem]  my-5">
                                         <img height={1080} width={1920} loading="lazy" src={img.url} alt="gallery-photo" onClick={() => {
                                             setCurrentImg(index);
                                             setModal(true);

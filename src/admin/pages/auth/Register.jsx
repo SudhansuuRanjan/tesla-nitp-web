@@ -3,7 +3,7 @@ import useAuth from "../../../hooks/useAuth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const Login = () => {
+const Register = () => {
     const { handleSignUp, user } = useAuth();
     const navigate = useNavigate();
 
@@ -110,4 +110,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

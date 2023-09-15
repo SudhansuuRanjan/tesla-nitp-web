@@ -39,17 +39,12 @@
   cursor: pointer;
 }
 
-
-
 .gallery_popup {
   position: fixed;
   height: 100vh;
   top: 0;
   z-index: 1;
 }
-
-
-
 
 .slideshow-container {
   height: 100vh;
@@ -141,7 +136,6 @@
   }
 
   img {
-    margin-bottom: 1.5rem;
     border-radius: 1rem;
     width: 100%;
     cursor: pointer;
