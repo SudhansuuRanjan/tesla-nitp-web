@@ -7,5 +7,6 @@ import Projects from "./Projects/Projects";
 import Blog from "./Newsletter/Blog";
 import About from "./About/About";
 import Error from "./Error/404";
+import Resources from "./Resources";
 
-export { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About, Error };
+export { Team, HomePage, Newsletter, Gallery, Events, Projects, Blog, About, Error, Resources};

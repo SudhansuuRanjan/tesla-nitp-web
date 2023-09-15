@@ -105,7 +105,7 @@ const DashboardItem = ({ response, idx }) => {
     <Link className='' to={data[idx].link}>
       <div className="py-7 px-5 flex justify-between text-center border text-white-500  border-[#0f0e0e] bg-[#0f0e0e] hover:border-gray-800  hover:bg-[#141313]  font-medium delay-[30ms] hover:scale-[101%] ease-in transition-all rounded-2xl text-lg">
         <div className='flex gap-4 items-center  hover:white'>
-          {response.isLoading ? <Loader /> : response.isError ? <div className='lg:text-5xl text-4xl'>NA</div> : <div className='lg:text-5xl text-4xl mr-3'>
+          {response.isLoading ? <Loader /> : response.isError ? <div className='text-5xl'>NA</div> : <div className='lg:text-5xl text-4xl mr-3'>
             {response.data.length}
           </div>}
           <div className='flex flex-col items-start'>

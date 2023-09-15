@@ -39,8 +39,8 @@ const Gallery = () => {
                         {
                             data.map((img, index) => {
                                 return (
-                                    <div data-aos="fade-up" className="bg-gray-900 bg-opacity-40 rounded-[1rem]">
-                                        <img height={1080} width={1920} loading="lazy" key={index} src={img.url} alt="gallery-photo" onClick={() => {
+                                    <div key={index} data-aos="zoom-in" className="bg-gray-900 bg-opacity-40 rounded-[1rem]">
+                                        <img height={1080} width={1920} loading="lazy" src={img.url} alt="gallery-photo" onClick={() => {
                                             setCurrentImg(index);
                                             setModal(true);
                                         }} />

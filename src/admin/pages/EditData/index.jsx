@@ -6,7 +6,7 @@ import Blog from "../blogs/EditBlog"
 import Project from "../projects/EditProjects"
 import Team from "../team/EditTeam"
 import Gallery from "../gallery/EditGallery"
-import {Loading} from '../../../components/Loader';
+import { Loading } from '../../../components/Loader';
 import { toast } from 'react-toastify';
 
 const CurrentComponent = {
@@ -40,14 +40,16 @@ const EditData = () => {
         }
     }
 
-    const CurrentView = CurrentComponent[type] ?? <div>DefaultView</div>;
+    const CurrentView = CurrentComponent[type] ?? <div>
+        That didn't work. Try again or contact the developer.
+    </div>;
 
     return (
         <div className='pt-20 relative min-h-[70vh]'>
             {updating && <Loading message="Updating..." />}
             <div className='m-auto lg:mx-32 md:mx-10 mx-5'>
                 <h1 className='lg:text-5xl md:text-4xl text-3xl leading-normal font-bold my-5'>
-                    <span className='text-sky-500'>EDIT</span> {type} data of <span className='text-sky-500'>{id.substring(0,4) + "..." + id.substring(15)}</span>
+                    <span className='text-sky-500'>EDIT</span> {type} data of <span className='text-sky-500'>{id.substring(0, 4) + "..." + id.substring(15)}</span>
                 </h1>
                 <div className='border-t-[1px] border-t-gray-800 py-8'>
                     <CurrentView handleUpdate={handleUpdate} id={id} />

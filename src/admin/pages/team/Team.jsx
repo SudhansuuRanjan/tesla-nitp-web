@@ -29,8 +29,8 @@ const Team = () => {
           <span className='text-sky-500'>T.E.S.L.A.</span> Team
         </h1>
         <div className='border-t-[1px] border-t-gray-800 py-8'>
-          <div className='flex justify-between'>
-            <input className='py-2.5 px-4 rounded-md border lg:w-[24rem] md:w-[14rem] w-auto border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' />
+          <div className='flex justify-end'>
+            {/* <input className='py-2.5 px-4 rounded-md border lg:w-[24rem] md:w-[14rem] w-auto border-gray-700 bg-gray-800' type="search" name="name" id="name" placeholder='Search by name' /> */}
             <button onClick={() => setCreateMember(!createMember)} className='bg-sky-600 text-white rounded-lg lg:px-8 md:px-6 px-4 py-2.5'>Creater User</button>
           </div>
 

@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
 import { FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+
+
 const Footer = () => {
+
   const date = new Date;
   const year = date.getFullYear();
+
+
   return (
     <div className="bg-[#0b0b0b] text-sm w-[100%] mt-[10rem]">
 
@@ -42,12 +47,12 @@ const Footer = () => {
         <div data-aos="fade-up" className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-2 md:order-2 lg:order-2'>
           <div className='flex items-center justify-start'><h1 className='font-extrabold text-2xl text-blue-700 mr-3'>|</h1><h1 className='text-lg font-semibold'>Must Check</h1></div>
           <ul className='mt-4 flex flex-col gap-2 text-base'>
-            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/">
+            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/resources/web3">
               <p className='text-gray-400 hover:text-sky-500'>Web3</p></Link></li>
-            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Web Dev</p></Link></li>
-            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Free Courses</p></Link></li>
-            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Notes</p></Link></li>
-            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/"><p className='text-gray-400 hover:text-sky-500'>Opportunities</p></Link></li>
+            <li className='hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/resources/webdev"><p className='text-gray-400 hover:text-sky-500'>Web Dev</p></Link></li>
+            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/resources/courses"><p className='text-gray-400 hover:text-sky-500'>Free Courses</p></Link></li>
+            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/resources/notes"><p className='text-gray-400 hover:text-sky-500'>Notes</p></Link></li>
+            <li className=' hover:text-blue-600'><Link style={{ textDecoration: "none" }} to="/resources/opportunities"><p className='text-gray-400 hover:text-sky-500'>Opportunities</p></Link></li>
           </ul>
         </div>
 
@@ -61,7 +66,10 @@ const Footer = () => {
       </div>
 
       <div className="w-[90%] m-[auto] bg-gray-800 h-[1px]"></div>
-      <div className="m-[auto] pb-8 pt-5 text-gray-600 font-medium text-sm flex flex-col md:flex-row lg:flex-row justify-between items-center w-[90%]">
+      <div>
+
+      </div>
+      <div className="m-[auto] py-7 text-gray-500 font-medium text-sm flex flex-col md:flex-row lg:flex-row justify-between items-center w-[90%]">
         <p>
           © {year} T.E.S.L.A NITP. All Rights Reserved.
         </p>

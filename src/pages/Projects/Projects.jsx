@@ -12,7 +12,7 @@ const Projects = () => {
     document.title = 'Tesla NIT Patna | Projects';
   }, [])
 
-  const { data, refetch, isLoading, isError } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ['projects'],
     queryFn: () => getDocuments("projects"),
     staleTime:Infinity
