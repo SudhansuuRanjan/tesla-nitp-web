@@ -35,12 +35,12 @@ const Gallery = () => {
             <Heading heading="PHOTOS" desc="— Our Photo Gallery" />
             <div className="photo-gallery-cont">
                 <div className="photo-gallery gap-5">
-                    {isLoading ? <div className="flex justify-center items-center h-[10rem] w-full"><Loader /></div> : isError ? <p>Something went wrong.</p> : <div className="image-container">
+                    {isLoading ? <div className="flex justify-center items-center h-[10rem] w-full"><Loader /></div> : isError ? <p>Something went wrong.</p> : <div className="grid w-full text-center lg:grid-cols-[minmax(100px,_1fr),minmax(100px,_1fr),minmax(100px,_1fr),minmax(100px,_1fr)] md:grid-cols-[minmax(100px,_1fr),minmax(100px,_1fr),minmax(100px,_1fr)] grid-cols-[minmax(100px,_1fr)] gap-6">
                         {
                             data.map((img, index) => {
                                 return (
-                                    <div key={index} className="bg-gray-900 bg-opacity-40 rounded-[1rem]  my-5">
-                                        <img height={1080} width={1920} loading="lazy" src={img.url} alt="gallery-photo" onClick={() => {
+                                    <div key={index} className="bg-gray-900 bg-opacity-40 rounded-[1rem] cursor-pointer">
+                                        <img data-aos="zoom-in" className="rounded-[1rem]" height={1080} width={1920} loading="lazy" src={img.url} alt="gallery-photo" onClick={() => {
                                             setCurrentImg(index);
                                             setModal(true);
                                         }} />

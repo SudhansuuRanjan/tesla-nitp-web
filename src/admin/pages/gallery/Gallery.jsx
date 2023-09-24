@@ -34,27 +34,32 @@ const Gallery = () => {
             <button onClick={() => setUploadImage(!uploadImage)} className='bg-sky-600 text-white rounded-md lg:px-8 md:px-6 px-5 py-2.5'>Upload Photo</button>
           </div>
 
-          <div className="image-container mt-20">
+          <div className="mt-20">
             {
-              isLoading ? <div className='h-32 flex justify-center items-center w-full'><Loader /></div> : isError ? <div>Something went wrong.</div> : data.slice().reverse().map((img) => {
-                return (
-                  <div key={img.$id} className='relative' data-aos="fade-up">
-                    <div className='absolute z-10 right-5 top-5'>
-                      <Link to={`/edit/gallery/${img.$id}`} > <button className='text-sky-500 p-2'><FaEdit className='shadow-xl' size={24} /></button></Link>
-                      <button onClick={async () => {
-                        try {
-                          await Promise.all([deleteDocument('gallery', img.$id), deleteFile(img.imageId)]);
-                          await refetch();
-                          console.log("Document deleted successfully!");
-                        } catch (error) {
-                          console.log("Something went wrong!")
-                        }
-                      }} className='text-rose-500 p-2'><FaTrash className='shadow-xl' size={24} /></button>
-                    </div>
-                    <img loading='lazy' className='min-h-[7rem]' src={img.url + "&quality=40"} alt="gallery-photo" />
-                  </div>
-                )
-              })
+              isLoading ? <div className='h-32 flex justify-center items-center w-full'><Loader /></div> : isError ? <div>Something went wrong.</div> :
+                <div className="grid w-full text-center lg:grid-cols-[minmax(100px,_1fr),minmax(100px,_1fr),minmax(100px,_1fr),minmax(100px,_1fr)] md:grid-cols-[minmax(100px,_1fr),minmax(100px,_1fr),minmax(100px,_1fr)] grid-cols-[minmax(100px,_1fr)] gap-6">
+                  {
+                    data.slice().reverse().map((img) => {
+                      return (
+                        <div key={img.$id} className="bg-gray-900 relative bg-opacity-40 rounded-[1rem] cursor-pointer" data-aos="fade-up">
+                          <div className='absolute z-10 right-5 top-5'>
+                            <Link to={`/edit/gallery/${img.$id}`} > <button className='text-sky-500 p-2'><FaEdit className='shadow-xl' size={24} /></button></Link>
+                            <button onClick={async () => {
+                              try {
+                                await Promise.all([deleteDocument('gallery', img.$id), deleteFile(img.imageId)]);
+                                await refetch();
+                                console.log("Document deleted successfully!");
+                              } catch (error) {
+                                console.log("Something went wrong!")
+                              }
+                            }} className='text-rose-500 p-2'><FaTrash className='shadow-xl' size={24} /></button>
+                          </div>
+                          <img data-aos="zoom-in" className="rounded-[1rem]" height={1080} width={1920} loading="lazy" src={img.url} alt="gallery-photo" />
+                        </div>
+                      )
+                    })
+                  }
+                </div>
             }
           </div>
 

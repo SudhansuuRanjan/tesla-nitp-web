@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom'
 import { FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { useQuery } from '@tanstack/react-query';
+import { getCounter } from '../../services/counter';
+import CountUp from 'react-countup';
 
 
 const Footer = () => {
-
   const date = new Date;
   const year = date.getFullYear();
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['counter'],
+    queryFn: () => getCounter(),
+    staleTime: Infinity
+  })
 
 
   return (
@@ -66,14 +74,23 @@ const Footer = () => {
       </div>
 
       <div className="w-[90%] m-[auto] bg-gray-800 h-[1px]"></div>
-      <div>
-
-      </div>
-      <div className="m-[auto] py-7 text-gray-500 font-medium text-sm flex flex-col md:flex-row lg:flex-row justify-between items-center w-[90%]">
-        <p>
+      <div className="m-[auto] py-7 text-gray-500 font-medium text-sm gap-4 flex flex-col md:flex-row lg:flex-row justify-between items-center w-[90%]">
+        <p className='lg:order-1 md:order-1 order-2'>
           © {year} T.E.S.L.A NITP. All Rights Reserved.
         </p>
-        <p>
+        {
+          isLoading ? <div className='bg-[#091218] border-gray-800 border px-4 py-1.5 rounded-xl lg:order-2 md:order-2 order-1'>
+            <div className='flex items-center gap-2'><span className='text-gray-400'>Total Visitors : </span> <div className='w-14'>...</div></div>
+            <div className='flex items-center gap-2'><span className='text-gray-400'>Unique Visitors : </span> <div className='w-14'>...</div></div>
+          </div> :
+            isError ? <></>
+              :
+              <div className='bg-[#091218] border-gray-800 border px-4 pr-2 py-1.5 rounded-xl lg:order-2 md:order-2 order-1'>
+                <div className='flex items-center gap-2'><span className='text-gray-400'>Total Visitors : </span> <div className='w-10 text-sky-600'><CountUp end={data[0].total} enableScrollSpy={true} /></div></div>
+                <div className='flex items-center gap-2'><span className='text-gray-400'>Unique Visitors : </span> <div className='w-10 text-sky-600'><CountUp end={data[0].unique} enableScrollSpy={true} /></div></div>
+              </div>
+        }
+        <p className='lg:order-3 md:order-3 order-3'>
           Designed & Developed by <a style={{ textDecoration: "none" }} className="font-medium text-blue-500" href="https://sudhanshur.vercel.app" target='_blank'>
             <span className='text-sky-500'>Sudhanshu Ranjan</span>
           </a>.
