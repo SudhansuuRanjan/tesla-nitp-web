@@ -4,6 +4,7 @@ import Event from '../../components/HomePage/Event';
 import Team from '../../components/HomePage/Team';
 import Blog from '../../components/HomePage/Blog';
 import Faq from '../../components/HomePage/Faq';
+import PI from '../../components/PI/PI';
 
 const HomePage = () => {
   document.title = 'Tesla NIT Patna | Home';
@@ -23,6 +24,7 @@ const HomePage = () => {
         <Event />
         <Team />
         <Blog />
+        <PI/>
         <Faq />
       </div>
     </div>
