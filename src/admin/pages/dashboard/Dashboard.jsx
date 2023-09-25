@@ -85,16 +85,16 @@ const DashboardItem = ({ response, idx }) => {
       link: '/admin/blogs'
     },
     {
-      title: 'Team Members',
-      link: '/admin/team'
-    },
-    {
       title: 'Events',
       link: '/admin/events'
     },
     {
       title: 'Projects',
       link: '/admin/projects'
+    },
+    {
+      title: 'Team Members',
+      link: '/admin/team'
     },
     {
       title: 'Photos',

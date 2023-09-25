@@ -18,7 +18,7 @@ const EditTeam = ({ handleUpdate, id }) => {
 
   const [formData, setFormData] = useState({
     name: '',
-    priority: '',
+    priority: 5,
     email: '',
     role: '',
     about: '',
@@ -29,6 +29,7 @@ const EditTeam = ({ handleUpdate, id }) => {
     github: '',
     discord: '',
     imageId: "",
+    Year: "",
   });
 
   const [imgFile, setImgFile] = useState(null);
@@ -40,8 +41,8 @@ const EditTeam = ({ handleUpdate, id }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { about, discord, email, github, image, imageId, instagram, linkedin, name, priority, role, twitter } = formData;
-      let data = { about, discord, email, github, image, imageId, instagram, linkedin, name, priority, role, twitter }
+      const { about, discord, email, github, image, imageId, instagram, linkedin, name, priority, role, twitter, Year } = formData;
+      let data = { about, discord, email, github, image, imageId, instagram, linkedin, name, priority, role, twitter, Year }
       if (imgFile) {
         const res = await Promise.all([uploadFile(imgFile), deleteFile(data.imageId)]);
         // console.log(res);
@@ -145,6 +146,16 @@ const EditTeam = ({ handleUpdate, id }) => {
                 setImgFile(e.target.files[0]);
               }}
             />
+          </div>
+
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Year <span className="text-red-500">*</span></label>
+            <select required name="Year" id="Year" className="py-2 px-4 rounded-xl" onChange={handleChange} value={formData.Year}>
+              <option value="2020-24">2020-24</option>
+              <option value="2021-25">2021-25</option>
+              <option value="2022-26">2022-26</option>
+              <option value="2019-23">2019-23</option>
+            </select>
           </div>
 
           <div className='flex lg:gap-5 md:gap-5 gap-3'>

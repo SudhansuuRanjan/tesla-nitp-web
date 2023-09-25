@@ -22,6 +22,19 @@ export const getDocuments = async (COLLECTION_ID, limit = 100, offset = 0) => {
     }
 }
 
+export const getTeamMembers = async (COLLECTION_ID, limit = 100, offset = 0, query_key, query_value) => {
+    try {
+        const res = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
+            Query.limit(limit),
+            Query.offset(offset),
+            Query.equal(query_key, [query_value])
+        ]);
+        return res.documents;
+    } catch (err) {
+        throw new Error(err.message);
+    }
+}
+
 export const getDocument = async (COLLECTION_ID, DOCUMENT_ID) => {
     try {
         const res = await databases.getDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID);

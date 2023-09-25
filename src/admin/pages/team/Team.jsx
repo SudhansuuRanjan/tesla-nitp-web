@@ -104,6 +104,7 @@ const TeamForm = ({ setCreateMember, refetch }) => {
     twitter: "",
     github: "",
     discord: "",
+    Year: "",
   });
   const [creating, setCreating] = useState(false);
 
@@ -134,6 +135,7 @@ const TeamForm = ({ setCreateMember, refetch }) => {
         twitter: "",
         github: "",
         discord: "",
+        Year: "",
       })
       refetch();
       setCreating(false);
@@ -238,6 +240,16 @@ const TeamForm = ({ setCreateMember, refetch }) => {
                 });
               }}
             />
+          </div>
+
+          <div className='flex lg:gap-5 md:gap-5 gap-3'>
+            <label className="text-lg font-medium text-sky-500">Year <span className="text-red-500">*</span></label>
+            <select required name="Year" id="Year" className="py-2 px-4 rounded-xl" onChange={handleChange} value={formData.Year}>
+              <option value="2020-24">2020-24</option>
+              <option value="2021-25">2021-25</option>
+              <option value="2022-26">2022-26</option>
+              <option value="2019-23">2019-23</option>
+            </select>
           </div>
 
           <div className='flex lg:gap-5 md:gap-5 gap-3'>
