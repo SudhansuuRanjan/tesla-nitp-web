@@ -23,7 +23,7 @@ const Event = () => {
         <div>
             <Heading1 details={"Experience our exclusive events, workshops, expert sessions, and valuable networking opportunities. Stay tuned for updates on upcoming events!"} text1={"Our Exclusive"} text2={"Events"} />
             <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
-                {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.slice(0,3).reverse().map((event, id) => (
+                {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.slice().reverse().slice(0, 3).map((event, id) => (
                     <EventCard data={event} key={id} />
                 ))}
             </div>

@@ -3,7 +3,7 @@ import React from 'react'
 const PI = () => {
     return (
         <div data-aos="zoom-in" className='flex items-center justify-center py-16'>
-            <div className='bg-gray-900 bg-opacity-50 backdrop-blur-md lg:p-10 md:p-8 p-6 rounded-3xl'>
+            <div className='bg-gray-900 bg-opacity-50 backdrop-blur-md pb-20 lg:p-10 md:p-8 p-6 rounded-3xl'>
                 <h1 className='lg:text-3xl md:text-3xl text-2xl font-bold text-sky-500 text-center pb-8'>Message from our PI</h1>
                 <div className='flex lg:flex-row md:flex-row flex-col items-center lg:gap-10 md:gap-6 gap-6'>
                     <div>

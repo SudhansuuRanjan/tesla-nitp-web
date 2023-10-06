@@ -10,11 +10,11 @@ const Card1 = ({ title, description, image }) => {
     return (
         <div data-aos="zoom-in" className='w-fit'>
             <div className='border-[1px]  border-gray-800 hover:border-gray-700 rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0 hover:z-10 bg-[#0a0a0a] transition-all delay-[30ms] ease-in-out'>
-                <div className='h-[10rem] rounded flex items-center justify-center overflow-hidden bg-green-500 mb-5'>
-                    <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center' src={image} alt="about" />
+                <div className='h-[10rem] rounded flex items-center justify-center overflow-hidden bg-sky-500 mb-5'>
+                    <img height={200} width={360} loading='lazy' className='w-auto h-[13rem] bg-cover bg-center' src={image} alt="about" />
                 </div>
                 <div>
-                    <h3 className='text-base font-semibold'>{title}</h3>
+                    <h4 className='text-base font-semibold'>{title}</h4>
                     <p className='text-gray-500 text-sm font-medium leading-5 mt-1'>
                         {
                             description
@@ -29,7 +29,7 @@ const Card1 = ({ title, description, image }) => {
 const Card2 = ({ link, image, title, company }) => {
     return (
         <div data-aos="zoom-in" className='rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0   transition-all delay-[30ms] ease-in-out'>
-            <a href={link} target='_blank' className='h-[10rem] flex items-center justify-center overflow-hidden bg-green-500 mb-5 rounded-xl'>
+            <a href={link} target='_blank' className='h-[10rem] flex items-center justify-center overflow-hidden bg-sky-500 mb-5 rounded-xl'>
                 <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} />
             </a>
             <div className='text-center -mt-1'>
@@ -42,13 +42,13 @@ const Card2 = ({ link, image, title, company }) => {
 
 const EventCard = ({ data }) => {
     return (
-        <div data-aos="zoom-in" className='w-[20rem] p-4 border-2 hover:border-gray-800 hover:scale-[102%] transition-all delay-75 ease-in border-gray-900 rounded-2xl mt-5'>
-            <div className='flex relative items-center h-44 overflow-hidden w-full rounded-lg border border-gray-900'>
-                <img className='w-full z-0' src={data.image} alt={data.name} />
+        <div data-aos="zoom-in" className='lg:w-[21rem] md:w-[21rem] w-[20.5rem] p-4 border-2 hover:border-gray-800 hover:scale-[102%] transition-all delay-75 ease-in border-gray-900 rounded-2xl mt-5'>
+            <div className='flex relative items-center h- overflow-hidden w-full rounded-lg border border-gray-900'>
+                <img height={250} width={350} className='w-full z-0 transition-all delay-75 ease-out hover:scale-105' src={data.image} alt={data.name} />
                 <p className='py-1 absolute bottom-2 right-1 z-[5] px-3 rounded-full mt-2 text-sky-500 text-xs  bg-gray-900 w-fit bg-opacity-90'>{data.tag}</p>
             </div>
             <h3 className='text-xl font-semibold pl-2 mt-2'>{data.name}</h3>
-            <p className='text-gray-500 text-sm pt-1 pl-2'>{data.description.length > 100 ? data.description.substring(0, 90) + "..." : data.description}</p>
+            <p className='text-gray-500 text-sm pt-1 pl-2'>{data.description.length > 140 ? data.description.substring(0, 140) + "..." : data.description}</p>
             <div className='bg-gray-800 rounded-lg p-2 flex justify-between mt-2 flex-col'>
                 <div className='flex justify-between text-xs'>
                     <div>

@@ -50,10 +50,10 @@ const FaqCard = ({ data }) => {
     return (
         <div data-aos="fade-up" className='flex lg:w-[70%] md:w-[80%] w-[95%] transition-all delay-[15ms] ease-in-out  bg-[#0a0a0a] border-gray-800 hover:border-gray-700 border lg:p-5 md:p-5 p-3 rounded-2xl gap-0 flex-col'>
             <div onClick={()=>setShow((show)=>!show)} className='flex justify-between items-center cursor-pointer'>
-                <h3 className='font-semibold lg:text-lg md:text-lg text-base pr-5'>
+                <h5 className='font-semibold lg:text-lg md:text-lg text-base pr-5'>
                     {data.question}
-                </h3>
-                <button className={`transition-all delay-75 ease-in-out ${show && '-rotate-180'}`}>
+                </h5>
+                <button name='expandfaq' className={`transition-all delay-75 ease-in-out ${show && '-rotate-180'}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 hover:text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                     </svg>

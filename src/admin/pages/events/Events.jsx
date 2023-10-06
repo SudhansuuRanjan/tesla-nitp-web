@@ -156,11 +156,13 @@ const EventForm = ({ refetch, setCreateEvent }) => {
               name="tag"
               placeholder="Enter Tag Like Blockchain"
               required
+              value={formData.tag}
               onChange={handleChange}
             >
               <option value="electrical">--Select--</option>
               <option value="electrical">Electrical</option>
               <option value="blockchain">Blockchain</option>
+              <option value="software">Software</option>
               <option value="technical">Technical</option>
               <option value="web">Web Dev</option>
               <option value="cultural">Cultural</option>

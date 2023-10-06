@@ -101,10 +101,12 @@ const EditEvents = ({ handleUpdate, id }) => {
               placeholder="Enter Tag Like Blockchain"
               required
               onChange={handleChange}
+              value={formData.tag}
             >
               <option value="electrical">--Select--</option>
               <option value="electrical">Electrical</option>
               <option value="blockchain">Blockchain</option>
+              <option value="software">Software</option>
               <option value="technical">Technical</option>
               <option value="web">Web Dev</option>
               <option value="cultural">Cultural</option>

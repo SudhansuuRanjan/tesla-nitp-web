@@ -24,7 +24,7 @@ const Events = () => {
   return (
     <div className='pt-16'>
       <Heading heading="EVENTS"></Heading>
-      <div className='my-20 flex flex-wrap gap-10 items-center justify-evenly'>
+      <div className='my-20 lg:mx-20 md:mx-16 mx-6 flex flex-wrap gap-10 items-center justify-evenly'>
         {isLoading ? <Loader/> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((event, id) => (
           <EventCard data={event} key={id} />
         ))}

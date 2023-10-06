@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://tesla-nitp.vercel.app/sitemap.xml
