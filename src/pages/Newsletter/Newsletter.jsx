@@ -22,7 +22,7 @@ const Newsletter = () => {
     <div className='pt-16'>
       <Heading heading="NEWS" />
       <div className='my-20 lg:px-16 flex flex-wrap gap-10 items-center justify-evenly'>
-        {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.map((data) => (
+        {isLoading ? <Loader /> : isError ? <p>Something went wrong.</p> : data.slice().reverse().map((data) => (
           <BlogCard key={data.$id} data={data} />
         ))}
       </div>
