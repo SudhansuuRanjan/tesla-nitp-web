@@ -79,7 +79,7 @@ const EditBlog = ({ handleUpdate, id }) => {
       navigate('/admin/blogs');
     } catch (error) {
       // console.log(error);
-      toast.error("Something went wrong!");
+      toast.error(error.message);
     }
   }
 

@@ -116,7 +116,7 @@ const BlogForm = ({ editorState, setEditorState, refetch }) => {
       // console.log(res);
     } catch (error) {
       setCreating(false);
-      toast.error("Something went wrong!");
+      toast.error(error.message);
     }
   }
 
