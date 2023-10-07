@@ -92,7 +92,7 @@ Please refer to the project's style and contribution guidelines for submitting p
 
 
 
-### 🚀 Please abide by  **Contributing Guidelines** and **Code of Conduct**.
+### 🚀 Please abide by  [**Contributing Guidelines**](https://github.com/SudhansuuRanjan/tesla-nitp-web/blob/main/CONTRIBUTING.md) and [**Code of Conduct**](https://github.com/SudhansuuRanjan/tesla-nitp-web/blob/main/CODE_OF_CONDUCT.md).
 
 
 ## Contributors ✨
