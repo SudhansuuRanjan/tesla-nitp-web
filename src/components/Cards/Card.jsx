@@ -30,7 +30,7 @@ const Card2 = ({ link, image, title, company }) => {
     return (
         <div data-aos="zoom-in" className='rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0   transition-all delay-[30ms] ease-in-out'>
             <a href={link} target='_blank' className='h-[10rem] flex items-center justify-center overflow-hidden bg-sky-500 mb-5 rounded-xl'>
-                <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} />
+                <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} width={295} height={210}/>
             </a>
             <div className='text-center -mt-1'>
                 <h3 className='text-lg font-semibold'>{title}</h3>

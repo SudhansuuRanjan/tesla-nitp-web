@@ -24,7 +24,7 @@ const Footer = () => {
         <div data-aos="fade-up" className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-1 md:order-1 lg:order-1'>
 
           <Link to="/">
-            <img src="/images/logo.svg" alt="logo" className='h-14 mb-2 w-auto' />
+            <img src="/images/logo.svg" alt="logo" className='h-14 mb-2 w-auto' height={55} width={150}/>
           </Link>
 
           <p className='max-w-[17rem] py-3 text-base'>Tesla is the most active technical club of NIT Patna.</p>

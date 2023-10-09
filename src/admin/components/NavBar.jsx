@@ -29,7 +29,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between lg:w-[65rem] md:w-[100%] px-4 md:px-3 py-5 m-auto text-lg">
           <div className="flex items-center">
             <Link style={{ textDecoration: "none" }} to="/">
-              <img src="/images/logo.svg" alt="logo" className="h-10" />
+              <img src="/images/logo.svg" alt="logo" className="h-10" height={40} width={100}/>
             </Link>
           </div>
           <div className="flex items-center">

@@ -52,7 +52,7 @@ const Login = () => {
     <div className="flex items-center justify-center h-screen w-full">
       <div className="rounded-3xl lg:w-fit md:w-fit w-[90%] lg:px-16 md:px-12 px-6 py-7 border border-gray-700 flex flex-col bg-[#131313] space-y-8">
         <div className="flex items-center justify-center">
-          <img src="/images/logo.svg" alt="logo" className="h-14 mt-1 w-auto" />
+          <img src="/images/logo.svg" alt="logo" className="h-14 mt-1 w-auto" height={40} width={150}/>
         </div>
         <div>
           <h1 className="text-center text-xl font-semibold leading-normal">

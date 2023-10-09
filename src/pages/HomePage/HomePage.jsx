@@ -15,7 +15,7 @@ const HomePage = () => {
         <h1 data-aos="zoom-in" className='font-bold text-center text-transparent lg:text-4xl md:text-3xl text-3xl mx-5 bg-clip-text bg-gradient-to-b from-gray-300 to-gray-600 my-3'>Technical Electrical Society for Learning & Application</h1>
         <h1 data-aos="zoom-in" className='font-extrabold text-center text-transparent lg:text-7xl md:text-5xl text-4xl bg-clip-text bg-gradient-to-r from-blue-400 to-sky-600'>T.E.S.L.A. NIT Patna</h1>
         <div className='relative flex items-center w-full justify-center'>
-          <img data-aos="fade-up" src="./images/hero.png" className='h-auto w-full lg:my-[-8rem] md:my-[-5rem]' alt="electric" />
+          <img data-aos="fade-up" src="./images/hero.png" className='h-auto w-full lg:my-[-8rem] md:my-[-5rem]' alt="electric" width={965} height={480}/>
         </div>
       </div>
 
