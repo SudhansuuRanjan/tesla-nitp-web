@@ -8,7 +8,7 @@ const PI = () => {
                 <div className='flex lg:flex-row md:flex-row flex-col items-center lg:gap-10 md:gap-6 gap-6'>
                     <div>
                         <div className='flex items-center justify-center h-[9rem] w-[9rem] overflow-hidden rounded-full'>
-                            <img className='hover:scale-[103%] transition-all delay-75 ease-in' src="/images/PI.jpg" alt="PI Photo" />
+                            <img className='hover:scale-[103%] transition-all delay-75 ease-in' src="/images/PI.jpg" alt="PI Photo" height={144} width={144}/>
                         </div>
                         <div className='text-center pt-3'>
                             <p className='font-medium text-lg'>Dr. Amitesh Kumar</p>
