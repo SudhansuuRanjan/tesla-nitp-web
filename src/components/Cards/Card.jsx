@@ -114,7 +114,7 @@ const BlogCard = ({ data, isAdmin, refetch }) => {
                 <p className='text-gray-500'>{data.minutes} min read</p>
             </div>
             <div className='h-[9rem] rounded flex items-center justify-center overflow-hidden bg-sky-500 my-2'>
-                <img loading='lazy' className='w-auto rounded h-[12rem] bg-cover bg-center' src={data.image} alt="about" />
+                <img loading='lazy' className='w-auto rounded h-[12rem] bg-cover bg-center' src={data.image} alt="about" height={295} width={210}/>
             </div>
             <div>
                 <h3 className='text-base font-semibold text-white'>{data.title}</h3>
