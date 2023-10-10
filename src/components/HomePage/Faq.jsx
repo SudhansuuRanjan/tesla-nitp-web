@@ -53,7 +53,7 @@ const FaqCard = ({ data }) => {
                 <h5 className='font-semibold lg:text-lg md:text-lg text-base pr-5'>
                     {data.question}
                 </h5>
-                <button name='expandfaq' className={`transition-all delay-75 ease-in-out ${show && '-rotate-180'}`}>
+                <button name='expandfaq'  aria-label="Expand FAQ" className={`transition-all delay-75 ease-in-out ${show && '-rotate-180'}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 hover:text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                     </svg>
