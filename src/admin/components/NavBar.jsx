@@ -141,6 +141,7 @@ const NavBar = () => {
                 }
               }}
               className="animate-pulse md:hidden border focus:ring-[2.5px] focus:outline-none font-medium rounded-lg text-lg px-2.5 py-2.5 text-center items-center focus:ring-gray-500 bg-gray-800 border-gray-900 text-white hover:bg-gray-700 mr-2"
+              aria-label={menu ? 'Close Menu' : 'Open Menu'}
             >
               {!menu ? <HiMenuAlt3 /> : <FiX />}
             </button>
