@@ -87,7 +87,7 @@ const HighlightCard = ({ type, data, icon }) => {
             <h3 className='text-3xl font-semibold mt-3'>
                 <CountUp end={data} enableScrollSpy={true} />+
             </h3>
-            <p className='text-gray-500 font-medium'>{type}</p>
+            <p className='text-gray-400 font-medium'>{type}</p>
         </div>
     )
 }

@@ -75,7 +75,7 @@ const Footer = () => {
 
       <div className="w-[90%] m-[auto] bg-gray-800 h-[1px]"></div>
       <div className="m-[auto] py-7 text-gray-500 font-medium text-sm gap-4 flex flex-col md:flex-row lg:flex-row justify-between items-center w-[90%]">
-        <p className='lg:order-1 md:order-1 order-2'>
+        <p className='lg:order-1 md:order-1 order-2 text-gray-400'>
           © {year} T.E.S.L.A NITP. All Rights Reserved.
         </p>
         {
@@ -90,7 +90,7 @@ const Footer = () => {
                 <div className='flex items-center gap-2'><span className='text-gray-400'>Unique Visitors : </span> <div className='w-10 text-sky-600'><CountUp end={data[0].unique} enableScrollSpy={true} /></div></div>
               </div>
         }
-        <p className='lg:order-3 md:order-3 order-3'>
+        <p className='lg:order-3 md:order-3 order-3 text-gray-400'>
           Designed & Developed by <a style={{ textDecoration: "none" }} className="font-medium text-blue-500" href="https://sudhanshur.vercel.app" target='_blank'>
             <span className='text-sky-500'>Sudhanshu Ranjan</span>
           </a>.
