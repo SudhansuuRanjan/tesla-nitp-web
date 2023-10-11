@@ -5,6 +5,7 @@ import Team from '../../components/HomePage/Team';
 import Blog from '../../components/HomePage/Blog';
 import Faq from '../../components/HomePage/Faq';
 import PI from '../../components/PI/PI';
+import BackToTopButton from '../../components/scroll/BackToTopButton';
 
 const HomePage = () => {
   document.title = 'Tesla NIT Patna | Home';
@@ -26,6 +27,7 @@ const HomePage = () => {
         <Blog />
         <PI/>
         <Faq />
+        <BackToTopButton />
       </div>
     </div>
   )
