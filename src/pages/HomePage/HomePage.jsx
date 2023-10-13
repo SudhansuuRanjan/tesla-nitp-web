@@ -7,6 +7,7 @@ import Faq from "../../components/HomePage/Faq";
 import PI from "../../components/PI/PI";
 import GalleryCarousel from "../../components/HomePage/GalleryCarousel";
 import BackToTopButton from "../../components/scroll/BackToTopButton";
+import Testimonial from "../../components/AlumniTestimonials/Testimonial";
 
 const HomePage = () => {
   document.title = "Tesla NIT Patna | Home";
@@ -50,6 +51,7 @@ const HomePage = () => {
         <Blog />
         <PI />
         <GalleryCarousel />
+        <Testimonial />
         <Faq />
         <BackToTopButton />
       </div>
