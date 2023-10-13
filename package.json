@@ -27,7 +27,8 @@
     "remark-gfm": "^3.0.1",
     "remark-parse": "^10.0.2",
     "remark-rehype": "^10.1.0",
-    "sass": "^1.60.0"
+    "sass": "^1.60.0",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^4.33.0",
