@@ -46,7 +46,7 @@ import { getDocuments } from '../../services/document'
 
 const GalleryCarousel = () => {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['gallery'],
+    queryKey: ['gallery-carousel'],
     queryFn: () => getDocuments('gallery', 10),
     onSuccess: (data) => {
       // console.log(data);
