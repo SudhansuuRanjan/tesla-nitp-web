@@ -17,7 +17,7 @@ import Loader from "../../components/Loader"
 const GalleryCarousel = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['gallery-carousel'],
-    queryFn: () => getDocuments('gallery', 10),
+    queryFn: () => getDocuments('gallery', 15),
     onSuccess: (data) => {
       // console.log(data);
     },
@@ -73,7 +73,7 @@ const GalleryCarousel = () => {
                 <div className="mb-20">
                   <img
                     className="rounded-[1rem] h-[350px] object-fill"
-                    height={1080}
+                    height={900}
                     width={1920}
                     loading="lazy"
                     src={img.url}
