@@ -72,8 +72,8 @@ const GalleryCarousel = () => {
               <SwiperSlide key={index}>
                 <div className="mb-20">
                   <img
-                    className="rounded-[1rem] h-[350px] object-fill"
-                    height={900}
+                    className="rounded-[1rem] h-[300px] object-fill"
+                    height={1080}
                     width={1920}
                     loading="lazy"
                     src={img.url}
