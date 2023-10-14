@@ -12,37 +12,7 @@ import Heading1 from '../Headings/Heading1'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { getDocuments } from '../../services/document'
-
-// const data = [
-//   {
-//     id: 1,
-//     url: 'https://images.unsplash.com/photo-1694631019312-94f94b8d207f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-//   },
-//   {
-//     id: 2,
-//     url: 'https://plus.unsplash.com/premium_photo-1692340973720-3e82f5dc22ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fFM0TUtMQXNCQjc0fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-//   },
-//   {
-//     id: 3,
-//     url: 'https://plus.unsplash.com/premium_photo-1692340973720-3e82f5dc22ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fFM0TUtMQXNCQjc0fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-//   },
-//   {
-//     id: 4,
-//     url: 'https://plus.unsplash.com/premium_photo-1692340973720-3e82f5dc22ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fFM0TUtMQXNCQjc0fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-//   },
-//   {
-//     id: 5,
-//     url: 'https://plus.unsplash.com/premium_photo-1692340973720-3e82f5dc22ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fFM0TUtMQXNCQjc0fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-//   },
-//   {
-//     id: 6,
-//     url: 'https://plus.unsplash.com/premium_photo-1692340973720-3e82f5dc22ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fFM0TUtMQXNCQjc0fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-//   },
-//   {
-//     id: 7,
-//     url: 'https://plus.unsplash.com/premium_photo-1692340973720-3e82f5dc22ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fFM0TUtMQXNCQjc0fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-//   },
-// ]
+import Loader from "../../components/Loader"
 
 const GalleryCarousel = () => {
   const { data, isLoading, isError } = useQuery({
