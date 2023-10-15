@@ -18,7 +18,7 @@ const TestmonialData = [
     message:
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
-      "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      "https://us.123rf.com/450wm/maylim33/maylim332305/maylim33230502153/204878484-ai-generated-illustration-of-concept-of-brain-in-a-lightbulb-illumination.jpg?ver=6",
   },
   {
     id: "1",
@@ -27,7 +27,7 @@ const TestmonialData = [
     message:
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
-      "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      "https://us.123rf.com/450wm/maylim33/maylim332305/maylim33230502153/204878484-ai-generated-illustration-of-concept-of-brain-in-a-lightbulb-illumination.jpg?ver=6",
   },
   {
     id: "2",
@@ -36,7 +36,7 @@ const TestmonialData = [
     message:
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
-      "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      "https://us.123rf.com/450wm/maylim33/maylim332305/maylim33230502153/204878484-ai-generated-illustration-of-concept-of-brain-in-a-lightbulb-illumination.jpg?ver=6",
   },
   {
     id: "3",
@@ -45,7 +45,7 @@ const TestmonialData = [
     message:
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
-      "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      "https://us.123rf.com/450wm/maylim33/maylim332305/maylim33230502153/204878484-ai-generated-illustration-of-concept-of-brain-in-a-lightbulb-illumination.jpg?ver=6",
   },
   {
     id: "4",
@@ -54,7 +54,7 @@ const TestmonialData = [
     message:
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
-      "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      "https://us.123rf.com/450wm/maylim33/maylim332305/maylim33230502153/204878484-ai-generated-illustration-of-concept-of-brain-in-a-lightbulb-illumination.jpg?ver=6",
   },
   {
     id: "5",
@@ -63,7 +63,7 @@ const TestmonialData = [
     message:
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
-      "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      "https://us.123rf.com/450wm/maylim33/maylim332305/maylim33230502153/204878484-ai-generated-illustration-of-concept-of-brain-in-a-lightbulb-illumination.jpg?ver=6",
   },{
     id: "6",
     name: "Mayank Kumar(2025)",
@@ -71,7 +71,7 @@ const TestmonialData = [
     message:
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
-      "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
+      "https://us.123rf.com/450wm/maylim33/maylim332305/maylim33230502153/204878484-ai-generated-illustration-of-concept-of-brain-in-a-lightbulb-illumination.jpg?ver=6",
   }
 ];
 
