@@ -69,13 +69,12 @@ const GalleryCarousel = () => {
             }}
           >
             {data.map((img, index) => (
-              <SwiperSlide key={index}>
-                <div className="mb-20">
+              <SwiperSlide className='rounded-[1rem]' key={index}>
+                <div className="mb-20 flex items-center justify-center rounded-[1rem] lg:h-[300px] overflow-hidden md:h-[400px] h-[240px] object-fill">
                   <img
-                    className="rounded-[1rem] h-[300px] object-fill"
+                    className="w-auto h-auto rounded-[1rem]"
                     height={1080}
                     width={1920}
-                    loading="lazy"
                     src={img.url}
                     alt="gallery-photo"
                   />
@@ -85,7 +84,6 @@ const GalleryCarousel = () => {
           </Swiper>
 
           <div className="swiper-button-prev bg-black hover:bg-black bg-opacity-50 hover:bg-opacity-40 text-white p-6 rounded-full"></div>
-
           <div className="swiper-button-next bg-black hover:bg-black bg-opacity-50 hover:bg-opacity-40 text-white p-6 rounded-full"></div>
         </div>
       )}

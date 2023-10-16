@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FiX } from "react-icons/fi";
 import ScrollStatus from "../scroll/ScrollStatus";
@@ -17,13 +17,7 @@ const NavBar = () => {
         }
     };
 
-    useEffect(() => {
-        window.addEventListener("scroll", changeNavbarColor);
-
-        return () => {
-            window.removeEventListener("scroll", changeNavbarColor);
-        };
-    },[]);
+    window.addEventListener("scroll", changeNavbarColor);
 
     return (
         <div className="fixed top-0 z-10 w-full">

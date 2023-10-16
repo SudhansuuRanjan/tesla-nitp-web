@@ -64,7 +64,7 @@ const TestmonialData = [
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
       "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
-  },{
+  }, {
     id: "6",
     name: "Mayank Kumar(2025)",
     profession: "Dancer @ Google",
@@ -82,14 +82,14 @@ const Testimonial = () => {
         data-aos="zoom-in"
         className="font-bold lg:text-5xl md:text-3xl text-2xl text-center  items-center  "
       >
-        Message from our <span class="text-sky-500">Alumni</span>
+        Message from our <span className="text-sky-500">Alumni</span>
       </h1>
 
       <div className="mt-20 relative">
         <Swiper
           data-aos="zoom-in"
           modules={[Navigation, Pagination, Parallax, A11y]}
-         
+
           // parallax={true}
           pagination={{
             clickable: true,
@@ -114,33 +114,32 @@ const Testimonial = () => {
             },
           }}
         >
-     
-      
-      <div className=" flex   items-center ">
-        {TestmonialData.map((data) => (
-           <SwiperSlide key={data.id}>
-           <div className="mb-10">
-           <TestimonialCard
-            key={data.id}
-            name={data.name}
-            message={data.message}
-            image={data.image}
-            profession={data.profession}
-          />
-           </div>
-         </SwiperSlide>
-        ))}
-        </div>
+
+
+          <div className=" flex   items-center ">
+            {TestmonialData.map((data) => (
+              <SwiperSlide key={data.id}>
+                <div className="mb-10">
+                  <TestimonialCard
+                    key={data.id}
+                    name={data.name}
+                    message={data.message}
+                    image={data.image}
+                    profession={data.profession}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </div>
         </Swiper>
 
         <div className="swiper-button-prev bg-black hover:bg-black bg-opacity-50 hover:bg-opacity-40 text-white p-6 rounded-full"></div>
-
         <div className="swiper-button-next bg-black hover:bg-black bg-opacity-50 hover:bg-opacity-40 text-white p-6 rounded-full"></div>
-          </div>
       </div>
-      
-      
-    
+    </div>
+
+
+
   );
 };
 
