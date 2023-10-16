@@ -40,8 +40,22 @@ const totalCounter = async () => {
 const setVisitedCookie = () => {
     const date = new Date();
     date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
-    document.cookie = `visited=true; expires=${date.toUTCString()}; path=/`;
-}
+
+    const cookieOptions = {
+        expires: date.toUTCString(),
+        path: '/',
+        sameSite: 'None',
+        secure: true,
+    };
+
+    // Convert the cookie options to a string
+    const cookieString = Object.entries(cookieOptions)
+        .map(([key, value]) => `${key}=${value}`)
+        .join('; ');
+
+    document.cookie = `visited=true; ${cookieString}`;
+};
+
 
 const getVisitedCookie = () => {
     const cookies = document.cookie.split(';');
