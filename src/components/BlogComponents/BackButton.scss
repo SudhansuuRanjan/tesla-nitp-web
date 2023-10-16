@@ -10,14 +10,12 @@
 
     .link {
         text-decoration: none;
-        color: skyblue;
         display: flex;
         align-items: center;
         gap: 5px;
     }
 
     .link:hover {
-        color: skyblue;
         font-weight: 600;
     }
 }
