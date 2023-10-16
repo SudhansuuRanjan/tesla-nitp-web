@@ -96,7 +96,7 @@ const NavBar = () => {
 
                         <button
                             onClick={() => setMenu(!menu)}
-                            className="animate-pulse md:hidden border focus:ring-[2.5px] focus:outline-none font-medium rounded-lg text-lg px-2.5 py-2.5 text-center items-centerfocus:ring-gray-500 bg-gray-800 border-gray-900 text-white hover:bg-gray-700 z-50 mr-2"
+                            className="animate-pulse md:hidden border focus:ring-[2.5px] focus:outline-none font-medium rounded-lg text-lg px-2.5 py-2.5 text-center items-centerfocus:ring-gray-500 bg-gray-800 border-gray-900 text-white hover:bg-gray-700 z-[106] mr-2"
                             aria-label={menu ? "Close Menu" : "Open Menu"}
                         >
                             {!menu ? <HiMenuAlt3 /> : <FiX />}
@@ -105,7 +105,7 @@ const NavBar = () => {
                     </div>
                 </div>
 
-                <div className={`md:hidden fixed inset-0 w-screen h-screen flex items-center flex-col justify-center bg-gradient-to-t from-gray-800 via-gray-900 to-black translate-x-0 text-white py-5 transition-all delay-75 ease-in-out lg:gap-8 md:gap-9 gap-10 ${!menu && '-translate-x-[100%] z-[100]'}`}>
+                <div className={`md:hidden fixed inset-0 w-screen h-screen flex items-center flex-col justify-center bg-gradient-to-t from-gray-800 via-gray-900 to-black translate-x-[-100%] z-[105] text-white py-5 transition-all delay-75 ease-in-out lg:gap-8 md:gap-9 gap-10 ${menu && 'translate-x-[0%]'}`}>
                     {
                         navLinks.map((link) => (
                             <NavLink key={link.id} style={{ textDecoration: "none" }} to={link.path}>
