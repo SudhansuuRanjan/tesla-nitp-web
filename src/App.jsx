@@ -132,6 +132,7 @@ function App() {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
+    window.scrollTo(0, 1);
     counter();
   }, []);
 
