@@ -15,7 +15,7 @@ const Gallery = () => {
     queryKey: ['gallery'],
     queryFn: () => getDocuments("gallery"),
     onSuccess: (data) => {
-      console.log(data);
+      // console.log(data);
     },
   })
 

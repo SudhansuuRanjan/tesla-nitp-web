@@ -1,10 +1,10 @@
-import { storage } from "../../appwrite.config";
+import { storage, BUCKET_ID } from "../../appwrite.config";
 import { ID } from "appwrite";
 
 export const uploadFile = async (files) => {
     try {
         const response = await storage.createFile(
-            'photos',
+            BUCKET_ID,
             ID.unique(),
             files
         );
@@ -20,7 +20,7 @@ export const uploadFile = async (files) => {
 
 export const deleteFile = async (fileId) => {
     try {
-        const response = await storage.deleteFile('photos', fileId);
+        const response = await storage.deleteFile(BUCKET_ID, fileId);
         return response;
     } catch (error) {
         throw new Error(error.message);

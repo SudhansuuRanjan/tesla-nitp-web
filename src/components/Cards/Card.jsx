@@ -7,26 +7,28 @@ import { deleteFile } from '../../services/file';
 import { FaEdit, FaTrash } from "react-icons/fa"
 
 
-const TestimonialCard = ({ name, message,profession, image }) => {
+const TestimonialCard = ({ name, message, profession, image }) => {
     return (
         <div data-aos="zoom-in" className='flex ' >
-            <div className='border-[1px] border-gray-500 border-b-cyan-600 border-b-8 rounded-2xl w-[26rem] p-5 pb-7 hover:scale-[102%] z-0 hover:z-10 bg-[#090c14] transition-all delay-[30ms] ease-in-out m-1'>
+            <div className='border-[1px] border-gray-500 border-b-cyan-600 border-b-8 rounded-2xl w-full  p-5 pb-7 hover:scale-[102%] z-0 hover:z-10 bg-[#090c14] transition-all delay-[30ms] ease-in-out m-1'>
                 <div className='h-[10rem] rounded overflow-hidden '>
-                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-sky-400 mb-6" height="38" width="38" xmlns="http://www.w3.org/2000/svg"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path></svg></p>
+                    <p>
+                        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="text-sky-400 mb-6" height="38" width="38" xmlns="http://www.w3.org/2000/svg"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z">
+                        </path>
+                        </svg>
+                    </p>
                     <p className='text-center m -5'>{message}</p>
-                    
                 </div>
                 <div className='flex lg:flex-row md:flex-row flex-col items-center lg:gap-5 md:gap-3 gap-2 mt-6'>
-                <div>
-                <img loading='lazy' className='w-12 h-12 bg-cover bg-center rounded-full ' src={image} alt="about" />
-                </div>
-                <div>
-                    <h4 className='text-base font-semibold'>{name}</h4> 
-                    
-                    <p className='text-gray-500 text-sm font-medium leading-5 mt-1'>
-                        {profession}
-                    </p> 
-                </div>
+                    <div>
+                        <img loading='lazy' className='w-12 h-12 bg-cover bg-center rounded-full ' src={image} alt="about" />
+                    </div>
+                    <div>
+                        <h4 className='text-base font-semibold'>{name}</h4>
+                        <p className='text-gray-500 text-sm font-medium leading-5 mt-1'>
+                            {profession}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,7 +59,7 @@ const Card2 = ({ link, image, title, company }) => {
     return (
         <div data-aos="zoom-in" className='rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0   transition-all delay-[30ms] ease-in-out'>
             <a href={link} target='_blank' className='h-[10rem] flex items-center justify-center overflow-hidden bg-sky-500 mb-5 rounded-xl'>
-                <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} width={295} height={210}/>
+                <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} width={295} height={210} />
             </a>
             <div className='text-center -mt-1'>
                 <h3 className='text-lg font-semibold'>{title}</h3>
@@ -141,7 +143,7 @@ const BlogCard = ({ data, isAdmin, refetch }) => {
                 <p className='text-gray-500'>{data.minutes} min read</p>
             </div>
             <div className='h-[9rem] rounded flex items-center justify-center overflow-hidden bg-sky-500 my-2'>
-                <img loading='lazy' className='w-auto rounded h-[12rem] bg-cover bg-center' src={data.image} alt="about" height={295} width={210}/>
+                <img loading='lazy' className='w-auto rounded h-[12rem] bg-cover bg-center' src={data.image} alt="about" height={295} width={210} />
             </div>
             <div>
                 <h3 className='text-base font-semibold text-white'>{data.title}</h3>
@@ -161,4 +163,4 @@ const BlogCard = ({ data, isAdmin, refetch }) => {
     )
 }
 
-export { Card1, Card2, EventCard, HighlightCard, BlogCard,TestimonialCard };
+export { Card1, Card2, EventCard, HighlightCard, BlogCard, TestimonialCard };

@@ -22,6 +22,107 @@ import ErrorBoundary from './utils/ErrorBoundary';
 
 const queryClient = new QueryClient();
 
+const userRoutes = [
+  {
+    path: "/",
+    component: <HomePage />,
+    id: 1,
+  },
+  {
+    path: "/gallery",
+    component: <Gallery />,
+    id: 2,
+  },
+  {
+    path: "/team",
+    component: <Team />,
+    id: 3,
+  },
+  {
+    path: "/about",
+    component: <About />,
+    id: 4,
+  },
+  {
+    path: "/about_partners",
+    component: <AboutPartners />,
+    id: 5,
+  },
+  {
+    path: "/events",
+    component: <Events />,
+    id: 6,
+  },
+  {
+    path: "/projects",
+    component: <Projects />,
+    id: 7,
+  },
+  {
+    path: "/news",
+    component: <Newsletter />,
+    id: 8,
+  },
+  {
+    path: "/news/:topicSlug",
+    component: <Blog />,
+    id: 9,
+  },
+  {
+    path: "/resources/:type",
+    component: <Resources />,
+    id: 10,
+  },
+  {
+    path: "*",
+    component: <Error />,
+    id: 11,
+  },
+]
+
+const adminProtectedRoutes = [
+  {
+    path: "/admin/dashboard",
+    component: <DashboardAdmin />,
+    id: 1,
+  },
+  {
+    path: "/admin/blogs",
+    component: <BlogsAdmin />,
+    id: 2,
+  },
+  {
+    path: "/admin/gallery",
+    component: <GalleryAdmin />,
+    id: 3,
+  },
+  {
+    path: "/admin/projects",
+    component: <ProjectsAdmin />,
+    id: 4,
+  },
+  {
+    path: "/admin/events",
+    component: <EventsAdmin />,
+    id: 5,
+  },
+  {
+    path: "/admin/team",
+    component: <TeamAdmin />,
+    id: 6,
+  },
+  {
+    path: "/admin/profile",
+    component: <Profile />,
+    id: 7,
+  },
+  {
+    path: "/edit/:type/:id",
+    component: <EditData />,
+    id: 8,
+  }
+]
+
 function App() {
 
   const counter = async () => {
@@ -42,122 +143,45 @@ function App() {
           <AuthProvider>
             <ScrollToTop />
             <Routes>
-              <Route path="/" element={
-                <Layout>
-                  <HomePage />
-                </Layout>
-              } />
-              <Route path="/gallery" element={
-                <Layout>
-                  <Gallery />
-                </Layout>
-              } />
-              <Route path="/team" element={
-                <Layout>
-                  <Team />
-                </Layout>
-              } />
-              <Route path="/about" element={
-                <Layout>
-                  <About />
-                </Layout>
-              } />
-              <Route path="/about_partners" element={
-                <Layout>
-                  <AboutPartners />
-                </Layout>
-              } />
-              <Route path="/events" element={
-                <Layout>
-                  <Events />
-                </Layout>
-              } />
-              <Route path="/projects" element={
-                <Layout>
-                  <Projects />
-                </Layout>
-              } />
-              <Route path="/news" element={
-                <Layout>
-                  <Newsletter />
-                </Layout>
-              } />
-              <Route path="/news/:topicSlug" element={
-                <Layout>
-                  <Blog />
-                </Layout>
-              } />
-
-              <Route path="/resources/:type" element={
-                <Layout>
-                  <Resources />
-                </Layout>
-              } />
-
-              <Route path="*" element={
-                <Layout>
-                  <Error />
-                </Layout>
-              } />
+              {/* User Routes */}
+              <Route path='/' element={<Layout />}>
+                {
+                  userRoutes.map((route) => (
+                    <Route key={route.id} path={route.path} element={
+                      route.component ? route.component : <Error />
+                    } />
+                  ))
+                }
+              </Route>
 
 
               {/* Admin Routes */}
               <Route path="/admin/login" element={
                 <LoginAdmin />
               } />
+
               {/* <Route path="/admin/register" element={
               <Register />
-            } /> */}
+              } /> */}
 
-              <Route path="/admin/dashboard" element={<PrivateRoute />} >
-                <Route path="/admin/dashboard" element={
-                  <AdminLayout>
-                    <DashboardAdmin />
-                  </AdminLayout>
-                } />
+              {/* Admin Protected Routes */}
+              <Route path='/' element={<AdminLayout />}>
+                {
+                  adminProtectedRoutes.map((route) => (
+                    <Route key={route.id} path={route.path} element={<PrivateRoute />} >
+                      <Route path={route.path} element={
+                        route.component ? route.component : <Error />
+                      } />
+                    </Route>
+                  ))
+                }
               </Route>
 
-              <Route path="/admin/blogs" element={
-                <AdminLayout>
-                  <BlogsAdmin />
-                </AdminLayout>
-              } />
-              <Route path="/admin/gallery" element={
-                <AdminLayout>
-                  <GalleryAdmin />
-                </AdminLayout>
-              } />
-              <Route path="/admin/projects" element={
-                <AdminLayout>
-                  <ProjectsAdmin />
-                </AdminLayout>
-              } />
-              <Route path="/admin/events" element={
-                <AdminLayout>
-                  <EventsAdmin />
-                </AdminLayout>
-              } />
-              <Route path="/admin/team" element={
-                <AdminLayout>
-                  <TeamAdmin />
-                </AdminLayout>
-              } />
-              <Route path="/admin/profile" element={
-                <AdminLayout>
-                  <Profile />
-                </AdminLayout>
-              } />
-
-              <Route path="/edit/:type/:id" element={
-                <AdminLayout>
-                  <EditData />
-                </AdminLayout>
-              } />
             </Routes>
           </AuthProvider>
         </Router>
       </ErrorBoundary>
-    </QueryClientProvider>
+    </QueryClientProvider >
   )
 }
 
