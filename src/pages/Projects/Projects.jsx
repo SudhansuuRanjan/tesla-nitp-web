@@ -5,6 +5,7 @@ import ProjectCard from "./ProjectCard";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../components/Loader";
 import { getDocuments } from "../../services/document";
+import transition from "../../utils/transition";
 
 const Projects = () => {
 
@@ -33,4 +34,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default transition(Projects);

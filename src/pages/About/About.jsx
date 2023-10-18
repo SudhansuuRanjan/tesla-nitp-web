@@ -1,5 +1,6 @@
 import './About.scss'
 import Heading from '../../components/Headings/Heading'
+import transition from '../../utils/transition';
 
 const About = () => {
 
@@ -36,4 +37,4 @@ const About = () => {
   )
 }
 
-export default About
+export default transition(About);

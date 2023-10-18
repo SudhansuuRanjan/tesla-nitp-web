@@ -8,6 +8,7 @@ import { BsDot } from 'react-icons/bs'
 import { useQuery } from '@tanstack/react-query';
 import { getDocument } from '../../services/document';
 import MarkDown from '../../components/Markdown';
+import transition from '../../utils/transition';
 
 const Blog = () => {
   const { topicSlug } = useParams("");
@@ -54,4 +55,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default transition(Blog);
