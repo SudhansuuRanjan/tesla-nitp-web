@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import Loader from "../../components/Loader";
 import { getTeamMembers } from "../../services/document";
 import { useSearchParams } from "react-router-dom";
+import transition from "../../utils/transition";
 
 
 const Team = () => {
@@ -53,4 +54,4 @@ const Team = () => {
   )
 }
 
-export default Team
+export default transition(Team);

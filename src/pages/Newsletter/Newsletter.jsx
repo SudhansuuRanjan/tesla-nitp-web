@@ -5,6 +5,7 @@ import { BlogCard } from '../../components/Cards/Card'
 import { useQuery } from '@tanstack/react-query';
 import { getDocuments } from '../../services/document';
 import Loader from "../../components/Loader"
+import transition from '../../utils/transition';
 
 const Newsletter = () => {
   document.title = 'Tesla NIT Patna | News';
@@ -30,4 +31,4 @@ const Newsletter = () => {
   )
 }
 
-export default Newsletter
+export default transition(Newsletter);

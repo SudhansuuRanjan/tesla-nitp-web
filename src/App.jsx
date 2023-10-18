@@ -19,6 +19,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { UpdateCounter } from './services/counter';
 import ErrorBoundary from './utils/ErrorBoundary';
+import { AnimatePresence } from 'framer-motion';
+import transition from './utils/transition';
 
 const queryClient = new QueryClient();
 
@@ -141,45 +143,46 @@ function App() {
       <ToastContainer />
       <ErrorBoundary>
         <Router>
-          <AuthProvider>
-            <ScrollToTop />
-            <Routes>
-              {/* User Routes */}
-              <Route path='/' element={<Layout />}>
-                {
-                  userRoutes.map((route) => (
-                    <Route key={route.id} path={route.path} element={
-                      route.component ? route.component : <Error />
-                    } />
-                  ))
-                }
-              </Route>
+          <AnimatePresence mode='wait'>
+            <AuthProvider>
+              <ScrollToTop />
+              <Routes>
+                {/* User Routes */}
+                <Route path='/' element={<Layout />}>
+                  {
+                    userRoutes.map((route) => (
+                      <Route key={route.id} path={route.path} element={
+                        route.component ? route.component : <Error />
+                      } />
+                    ))
+                  }
+                </Route>
 
 
-              {/* Admin Routes */}
-              <Route path="/admin/login" element={
-                <LoginAdmin />
-              } />
+                {/* Admin Routes */}
+                <Route path="/admin/login" element={
+                  <LoginAdmin />
+                } />
 
-              {/* <Route path="/admin/register" element={
+                {/* <Route path="/admin/register" element={
               <Register />
               } /> */}
 
-              {/* Admin Protected Routes */}
-              <Route path='/' element={<AdminLayout />}>
-                {
-                  adminProtectedRoutes.map((route) => (
-                    <Route key={route.id} path={route.path} element={<PrivateRoute />} >
-                      <Route path={route.path} element={
-                        route.component ? route.component : <Error />
-                      } />
-                    </Route>
-                  ))
-                }
-              </Route>
-
-            </Routes>
-          </AuthProvider>
+                {/* Admin Protected Routes */}
+                <Route path='/' element={<AdminLayout />}>
+                  {
+                    adminProtectedRoutes.map((route) => (
+                      <Route key={route.id} path={route.path} element={<PrivateRoute />} >
+                        <Route path={route.path} element={
+                          route.component ? route.component : <Error />
+                        } />
+                      </Route>
+                    ))
+                  }
+                </Route>
+              </Routes>
+            </AuthProvider>
+          </AnimatePresence>
         </Router>
       </ErrorBoundary>
     </QueryClientProvider >

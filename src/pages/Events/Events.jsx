@@ -5,6 +5,7 @@ import { EventCard } from '../../components/Cards/Card'
 import { useQuery } from '@tanstack/react-query'
 import Loader from '../../components/Loader'
 import { getDocuments } from '../../services/document'
+import transition from '../../utils/transition'
 
 const Events = () => {
 
@@ -33,4 +34,4 @@ const Events = () => {
   )
 }
 
-export default Events
+export default transition(Events);

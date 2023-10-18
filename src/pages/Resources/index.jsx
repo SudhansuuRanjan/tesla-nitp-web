@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+import transition from '../../utils/transition';
 
 
 const Resources = () => {
@@ -19,7 +20,7 @@ const Resources = () => {
     )
 }
 
-export default Resources;
+export default transition(Resources);
 
 const CurrentView = () => {
     return (

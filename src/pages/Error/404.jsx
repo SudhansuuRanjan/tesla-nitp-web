@@ -1,5 +1,6 @@
 import "./404.scss";
 import { Link } from "react-router-dom";
+import transition from "../../utils/transition";
 
 const Error = () => {
   document.title = 'Tesla NIT Patna | 404 Error';
@@ -14,4 +15,4 @@ const Error = () => {
   )
 }
 
-export default Error;
+export default transition(Error);
