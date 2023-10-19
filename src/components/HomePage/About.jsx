@@ -13,13 +13,13 @@ const About = () => {
       id: "0",
       title: "Join the T.E.S.L.A. Club at NIT Patna",
       description: "Join the vibrant T.E.S.L.A. Club at NIT Patna, focused on electrical engineering and blockchain. Explore new frontiers, collaborate on projects, and make a lasting impact in the world of technology.",
-      image: "https://th.bing.com/th/id/OIG.klvSed8Vtzjx8NrColyQ?w=173&h=173&c=6&r=0&o=5&dpr=1.3&pid=ImgGn",
+      image: "https://i0.wp.com/joinhandshake.com/wp-content/uploads/2021/12/HS_21Moments_BlogImage.jpg?resize=294%2C208&ssl=1",
     },
     {
       id: "1",
       title: "Unlock Your Potential with T.E.S.L.A. Club",
       description: "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
-      image: "https://th.bing.com/th/id/OIG.KGc29VQg5noTIVCwX7CR?w=173&h=173&c=6&r=0&o=5&dpr=1.3&pid=ImgGn",
+      image: "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
     },
     {
       id: "2",

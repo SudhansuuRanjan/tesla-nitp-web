@@ -40,7 +40,7 @@ const Card1 = ({ title, description, image }) => {
         <div data-aos="zoom-in" className='w-fit'>
             <div className='border-[1px]  border-gray-800 hover:border-gray-700 rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0 hover:z-10 bg-[#0a0a0a] transition-all delay-[30ms] ease-in-out'>
                 <div className='h-[10rem] rounded flex items-center justify-center overflow-hidden bg-sky-500 mb-5'>
-                    <img height={230} width={360} loading='lazy' className='w-auto h-[13rem] bg-cover bg-center' src={image} alt="about" />
+                    <img  loading='lazy' className='w-[22rem] h-[13rem] bg-cover bg-center' src={image} alt="about" />
                 </div>
                 <div>
                     <h4 className='text-base font-semibold'>{title}</h4>
@@ -59,7 +59,7 @@ const Card2 = ({ link, image, title, company }) => {
     return (
         <div data-aos="zoom-in" className='rounded-2xl w-[21rem] p-5 hover:scale-[102%] z-0   transition-all delay-[30ms] ease-in-out'>
             <a href={link} target='_blank' className='h-[10rem] flex items-center justify-center overflow-hidden bg-sky-500 mb-5 rounded-xl'>
-                <img loading='lazy' className='w-auto h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} width={295} height={210} />
+                <img loading='lazy' className='w-[25rem] h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} width={295} height={195} />
             </a>
             <div className='text-center -mt-1'>
                 <h3 className='text-lg font-semibold'>{title}</h3>
