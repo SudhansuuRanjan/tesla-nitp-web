@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FiX } from "react-icons/fi";
 import ScrollStatus from "../scroll/ScrollStatus";
+import { motion } from "framer-motion";
 
 
 const NavBar = () => {
@@ -68,6 +69,11 @@ const NavBar = () => {
         },
     ]
 
+    const variants = {
+        open: { opacity: 1, x: 0 },
+        closed: { opacity: 0, x: "-100%" },
+    }
+
     return (
         <div className="fixed top-0 z-[100] w-full">
             <div className={`w-[100%] fixed items-center justify-center ${colorChange && " bg-black transition-all delay-100  ease-in-out bg-opacity-20 backdrop-blur-md border-gray-800 shadow-lg"}`}>
@@ -105,7 +111,11 @@ const NavBar = () => {
                     </div>
                 </div>
 
-                <div className={`md:hidden fixed inset-0 w-screen h-screen flex items-center flex-col justify-center bg-gradient-to-t from-gray-800 via-gray-900 to-black translate-x-[-100%] z-[105] text-white py-5 transition-all delay-75 ease-in-out lg:gap-8 md:gap-9 gap-10 ${menu && 'translate-x-[0%]'}`}>
+                <motion.nav
+                    animate={menu ? "open" : "closed"}
+                    variants={variants}
+                    className={`md:hidden fixed inset-0 w-screen h-screen flex items-center flex-col justify-center bg-gradient-to-t from-gray-800 via-gray-900 to-black  z-[105] text-white py-5 lg:gap-8 md:gap-9 gap-10 `}
+                >
                     {
                         navLinks.map((link) => (
                             <NavLink key={link.id} style={{ textDecoration: "none" }} to={link.path}>
@@ -120,7 +130,7 @@ const NavBar = () => {
                             </NavLink>
                         ))
                     }
-                </div>
+                </motion.nav>
 
                 <ScrollStatus />
             </div>

@@ -8,6 +8,7 @@ import PI from "../../components/PI/PI";
 import GalleryCarousel from "../../components/HomePage/GalleryCarousel";
 import BackToTopButton from "../../components/scroll/BackToTopButton";
 import Testimonial from "../../components/AlumniTestimonials/Testimonial";
+import transition from "../../utils/transition";
 
 const HomePage = () => {
   document.title = "TESLA | NITP";
@@ -61,4 +62,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default transition(HomePage);

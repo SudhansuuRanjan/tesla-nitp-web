@@ -5,6 +5,7 @@ import Heading from "../../components/Headings/Heading"
 import { useQuery } from "@tanstack/react-query"
 import { getDocuments } from "../../services/document"
 import Loader from "../../components/Loader"
+import transition from "../../utils/transition"
 
 
 const Gallery = () => {
@@ -90,4 +91,4 @@ const Gallery = () => {
     )
 }
 
-export default Gallery
+export default transition(Gallery);
