@@ -64,7 +64,7 @@ const TestmonialData = [
       "Develop your skills in electrical engineering and blockchain through hands-on projects, workshops, and competitions. Network with industry professionals and unleash your true potential with T.E.S.L.A. Club.",
     image:
       "https://sujeevshakya.com/wp-content/uploads/2017/12/unlockingpotential-1288x724.jpg",
-  }, {
+  },{
     id: "6",
     name: "Mayank Kumar(2025)",
     profession: "Dancer @ Google",
