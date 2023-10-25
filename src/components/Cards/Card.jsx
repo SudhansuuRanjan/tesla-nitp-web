@@ -24,7 +24,7 @@ const TestimonialCard = ({ name, message, profession, image }) => {
                         <img loading='lazy' className='w-12 h-12 bg-cover bg-center rounded-full ' src={image} alt="about" />
                     </div>
                     <div>
-                        <h4 className='text-base font-semibold'>{name}</h4>
+                        <h2 className='text-base font-semibold'>{name}</h2>
                         <p className='text-gray-500 text-sm font-medium leading-5 mt-1'>
                             {profession}
                         </p>
@@ -43,7 +43,7 @@ const Card1 = ({ title, description, image }) => {
                     <img  loading='lazy' className='w-[22rem] h-[13rem] bg-cover bg-center' src={image} alt="about" />
                 </div>
                 <div>
-                    <h4 className='text-base font-semibold'>{title}</h4>
+                    <h2 className='text-base font-semibold'>{title}</h2>
                     <p className='text-gray-500 text-sm font-medium leading-5 mt-1'>
                         {
                             description
@@ -62,7 +62,7 @@ const Card2 = ({ link, image, title, company }) => {
                 <img loading='lazy' className='w-[25rem] h-[13rem] bg-cover bg-center rounded-lg' src={image} alt={title} width={295} height={195} />
             </a>
             <div className='text-center -mt-1'>
-                <h3 className='text-lg font-semibold'>{title}</h3>
+                <h2 className='text-lg font-semibold'>{title}</h2>
                 <p className='text-sky-500 font-medium'>{company}</p>
             </div>
         </div>
@@ -76,7 +76,7 @@ const EventCard = ({ data }) => {
                 <img height={250} width={350} className='w-full z-0 transition-all delay-75 ease-out hover:scale-105' src={data.image} alt={data.name} />
                 <p className='py-1 absolute bottom-2 right-1 z-[5] px-3 rounded-full mt-2 text-sky-500 text-xs  bg-gray-900 w-fit bg-opacity-90'>{data.tag}</p>
             </div>
-            <h3 className='text-xl font-semibold pl-2 mt-2'>{data.name}</h3>
+            <h2 className='text-xl font-semibold pl-2 mt-2'>{data.name}</h2>
             <p className='text-gray-500 text-sm pt-1 pl-2'>{data.description.length > 140 ? data.description.substring(0, 140) + "..." : data.description}</p>
             <div className='bg-gray-800 rounded-lg p-2 flex justify-between mt-2 flex-col'>
                 <div className='flex justify-between text-xs'>
@@ -113,9 +113,9 @@ const HighlightCard = ({ type, data, icon }) => {
             <div>
                 {icon}
             </div>
-            <h3 className='text-3xl font-semibold mt-3'>
+            <h2 className='text-3xl font-semibold mt-3'>
                 <CountUp end={data} enableScrollSpy={true} />+
-            </h3>
+            </h2>
             <p className='text-gray-400 font-medium'>{type}</p>
         </div>
     )
