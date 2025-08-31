@@ -90,12 +90,16 @@ const Footer = () => {
                 <div className='flex items-center gap-2'><span className='text-gray-400'>Unique Visitors : </span> <div className='w-10 text-sky-600'><CountUp end={data[0].unique} enableScrollSpy={true} /></div></div>
               </div>
         }
-        <p className='lg:order-3 md:order-3 order-3 text-gray-400'>
+        <div className="flex flex-col gap-2">
+          <p className='lg:order-3 md:order-3 order-3 text-gray-400'>
           Designed & Developed by <a style={{ textDecoration: "none" }} className="font-medium text-blue-500" href="https://sudhanshur.vercel.app" target='_blank'>
             <span className='text-sky-500'>Sudhanshu Ranjan </span>
           </a>
-          Managed by the <span className='text-sky-500'>TESLA Web Team</span>
-        </p>
+          </p>
+          <p className='lg:order-3 md:order-3 order-3 text-gray-400'>
+            Managed by the <span className='text-sky-500'>TESLA Web Team</span>
+          </p>
+        </div>
       </div>
     </div>
   )
