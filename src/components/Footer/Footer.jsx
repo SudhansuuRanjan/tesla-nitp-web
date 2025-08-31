@@ -66,7 +66,7 @@ const Footer = () => {
 
         <div data-aos="fade-up" className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-3 md:order-3 lg:order-3 text-base'>
           <div className='flex items-center justify-start'><h1 className='font-extrabold text-2xl text-blue-700 mr-3'>|</h1><h1 className='text-lg font-semibold'>Contact Us</h1></div>
-          <p className='max-w-[16rem] pt-4 text'>NIT Patna, Ashok Rajpath, Patna, Bihar-800005, India</p>
+          <p className='max-w-[16rem] pt-4 text'>NIT Patna, Ashok Rajpath, Bihta, Patna, Bihar-800005, India</p>
           <p className='pt-2'>Ph : <a style={{ textDecoration: "none" }} href="tel:+919876512345" className='text-blue-700 ml-2 font-semibold'><span className='hover:text-gray-400 text-sky-500'>+91 90087 45678</span></a></p>
           <p className='pt-2'>Mail : <a style={{ textDecoration: "none" }} href="mailto:tesla.club@nitp.ac.in" className='text-blue-700 ml-2 font-semibold'><span className='hover:text-gray-400 text-sky-500'>tesla.club@nitp.ac.in</span></a></p>
         </div>
@@ -92,8 +92,9 @@ const Footer = () => {
         }
         <p className='lg:order-3 md:order-3 order-3 text-gray-400'>
           Designed & Developed by <a style={{ textDecoration: "none" }} className="font-medium text-blue-500" href="https://sudhanshur.vercel.app" target='_blank'>
-            <span className='text-sky-500'>Sudhanshu Ranjan</span>
-          </a>.
+            <span className='text-sky-500'>Sudhanshu Ranjan </span>
+          </a>
+          Managed by the <span className='text-sky-500'>TESLA Web Team</span>
         </p>
       </div>
     </div>
