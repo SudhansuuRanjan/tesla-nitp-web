@@ -40,9 +40,9 @@ const Team = () => {
     <div className='pt-16'>
       <Heading heading="Team"></Heading>
       <div className="flex m-auto items-center justify-center font-medium lg:text-base md:text-base text-sm lg:gap-5 md:gap-5 gap-3 flex-wrap px-8">
-        <button onClick={onClick} className={`${searchParams.get("year") === "2020-24" && "bg-sky-600 text-white"} border-sky-500 border text-sky-500 transition-all delay-[40ms] ease-in-out lg:px-5 md:px-4 px-4 lg:py-2 md:py-1.5 py-1.5 rounded-xl`}>2020-24</button>
+        <button onClick={onClick} className={`${searchParams.get("year") === "2022-26" && "bg-sky-600 text-white"} border-sky-500 border text-sky-500 transition-all delay-[40ms] ease-in-out lg:px-5 md:px-4 px-4 lg:py-2 md:py-1.5 py-1.5 rounded-xl`}>2022-26</button>
         <button onClick={onClick} className={`${searchParams.get("year") === "2021-25" && "bg-sky-600 text-white "} border-sky-500 border text-sky-500 transition-all delay-[40ms] ease-in-out lg:px-5 md:px-4 px-4 lg:py-2 md:py-1.5 py-1.5 rounded-xl`}>2021-25</button>
-        {/* <button onClick={onClick} className={`${searchParams.get("year") === "2022-26" && "bg-sky-600 text-white"} border-sky-500 border text-sky-500 transition-all delay-[40ms] ease-in-out lg:px-5 md:px-4 px-4 lg:py-2 md:py-1.5 py-1.5 rounded-xl`}>2022-26</button> */}
+        <button onClick={onClick} className={`${searchParams.get("year") === "2020-24" && "bg-sky-600 text-white"} border-sky-500 border text-sky-500 transition-all delay-[40ms] ease-in-out lg:px-5 md:px-4 px-4 lg:py-2 md:py-1.5 py-1.5 rounded-xl`}>2020-24</button>
         <button onClick={onClick} className={`${searchParams.get("year") === "2019-23" && "bg-sky-600 text-white"} border-sky-500 border text-sky-500 transition-all delay-[40ms] ease-in-out lg:px-5 md:px-4 px-4 lg:py-2 md:py-1.5 py-1.5 rounded-xl`}>2019-23</button>
       </div>
       <div className='my-20 mx-5 flex flex-wrap gap-10 items-center justify-center' id='Team_main'>
